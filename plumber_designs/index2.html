@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Stream Plumbing - Reliable & Expert Service</title>
+    
+    <!-- jQuery (Needed for smooth page switching and slider) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+    <!-- Slick-Carousel (For the testimonial slider) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" />
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Fonts: Inter (main) and Roboto (headings) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Roboto:wght@700;900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind Configuration and Custom Styles -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#0C4A6E',   // Primary Dark Blue
+                            blue: '#3B82F6',   // Main Action Blue (lighter)
+                            cyan: '#06B6D4',   // Accent Teal/Cyan
+                            grey: '#4B5563',
+                            light: '#F8FAFC',
+                            dark: '#111827'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Roboto', 'sans-serif']
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 12px rgba(0,0,0,0.05)',
+                        'hover-lg': '0 10px 30px rgba(12, 74, 110, 0.15)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Smooth Page Transitions */
+        .page-section {
+            display: none;
+            animation: fadeIn 0.6s ease-out;
+            min-height: calc(100vh - 80px); /* Ensure a minimum length for content */
+        }
+        
+        .page-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Custom Slick Dots */
+        .slick-dots li button:before {
+            font-size: 10px;
+            color: #ccc;
+            opacity: 1;
+        }
+        .slick-dots li.slick-active button:before {
+            color: #3B82F6; /* Main Action Blue */
+        }
+
+        /* Card Hover Effect */
+        .service-card {
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-bottom: 3px solid #3B82F6;
+        }
+        
+        .accordion-item {
+            border-bottom: 1px solid #E5E7EB;
+        }
+    </style>
+</head>
+<body class="font-sans text-brand-dark bg-brand-light">
+
+    <!-- Header / Navigation -->
+    <nav class="fixed w-full z-50 bg-white shadow-lg top-0">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="#" onclick="switchPage('home')" class="flex items-center gap-2 group">
+                    <div class="bg-brand-blue text-white p-2 rounded-lg">
+                        <i class="fas fa-water text-xl"></i>
+                    </div>
+                    <span class="text-2xl font-black font-heading tracking-tight">BLUE STREAM<span class="text-brand-navy">PLUMBING</span></span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center gap-10">
+                    <ul class="flex gap-8 font-medium text-sm uppercase tracking-wide">
+                        <li><a href="#" onclick="switchPage('home')" class="nav-link hover:text-brand-blue transition-colors border-b-2 border-transparent hover:border-brand-cyan pb-1">Home</a></li>
+                        <li><a href="#" onclick="switchPage('services')" class="nav-link hover:text-brand-blue transition-colors border-b-2 border-transparent hover:border-brand-cyan pb-1">Services</a></li>
+                        <li><a href="#" onclick="switchPage('about')" class="nav-link hover:text-brand-blue transition-colors border-b-2 border-transparent hover:border-brand-cyan pb-1">About Us</a></li>
+                        <li><a href="#" onclick="switchPage('contact')" class="nav-link hover:text-brand-blue transition-colors border-b-2 border-transparent hover:border-brand-cyan pb-1">Contact</a></li>
+                    </ul>
+                    <a href="#" onclick="switchPage('contact')" class="bg-brand-blue hover:bg-brand-navy text-white px-6 py-2.5 rounded-full font-bold text-sm uppercase transition-colors duration-300 shadow-md">
+                        Emergency Service
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden text-2xl text-brand-navy" onclick="$('#mobile-menu').slideToggle()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t p-4">
+            <ul class="flex flex-col gap-3 font-bold text-center">
+                <li><a href="#" onclick="switchPage('home')" class="block py-2 hover:text-brand-blue">Home</a></li>
+                <li><a href="#" onclick="switchPage('services')" class="block py-2 hover:text-brand-blue">Services</a></li>
+                <li><a href="#" onclick="switchPage('about')" class="block py-2 hover:text-brand-blue">About Us</a></li>
+                <li><a href="#" onclick="switchPage('contact')" class="block py-2 text-brand-navy">Contact Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Spacer for Fixed Header -->
+    <div class="h-[80px]"></div>
+
+    <!-- MAIN CONTENT AREA -->
+    <main>
+
+        <!-- ================= HOME PAGE (VERY LONG) ================= -->
+        <div id="home" class="page-section active">
+            
+            <!-- 1. Hero Section -->
+            <div class="relative h-[700px] flex items-center bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1542013936693-edb57bdc0e39?auto=format&fit=crop&q=80&w=2000');">
+                <div class="absolute inset-0 bg-brand-navy/80 via-brand-navy/60 to-transparent"></div>
+                <div class="container mx-auto px-6 relative z-10">
+                    <div class="max-w-3xl">
+                        <span class="bg-brand-cyan text-brand-navy font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-widest mb-4 inline-block shadow-lg">24/7 Rapid Response</span>
+                        <h1 class="text-5xl md:text-7xl font-black font-heading text-white leading-tight mb-6">
+                            TRUSTED PLUMBING <br>
+                            <span class="text-brand-blue">BUILT ON INTEGRITY</span>
+                        </h1>
+                        <p class="text-gray-200 text-xl mb-8 leading-relaxed">
+                            Immediate solutions for leaks, clogs, and major installations. We guarantee quality workmanship and upfront, fair pricing.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <button onclick="switchPage('contact')" class="bg-brand-blue text-white px-8 py-4 rounded-lg font-bold uppercase tracking-wide hover:bg-brand-navy transition-all duration-300 shadow-xl">
+                                Request Appointment
+                            </button>
+                            <button onclick="switchPage('services')" class="border-2 border-white text-white px-8 py-4 rounded-lg font-bold uppercase tracking-wide hover:bg-white hover:text-brand-navy transition-all duration-300">
+                                View Our Promise
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Value Proposition Strip -->
+            <div class="container mx-auto px-6 -mt-16 relative z-20 mb-20">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 bg-white p-8 rounded-xl shadow-hover-lg">
+                    <div class="flex items-center gap-4 border-b md:border-b-0 md:border-r border-gray-100 p-4">
+                        <div class="bg-brand-blue/10 p-4 rounded-full text-brand-blue"><i class="fas fa-clock text-2xl"></i></div>
+                        <div>
+                            <h4 class="font-bold text-lg">Always Open</h4>
+                            <p class="text-sm text-brand-grey">24/7 Emergency Service.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 border-b md:border-b-0 md:border-r border-gray-100 p-4">
+                        <div class="bg-brand-blue/10 p-4 rounded-full text-brand-blue"><i class="fas fa-dollar-sign text-2xl"></i></div>
+                        <div>
+                            <h4 class="font-bold text-lg">Upfront Pricing</h4>
+                            <p class="text-sm text-brand-grey">Clear quotes, no surprises.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 border-b md:border-b-0 md:border-r border-gray-100 p-4">
+                        <div class="bg-brand-blue/10 p-4 rounded-full text-brand-blue"><i class="fas fa-certificate text-2xl"></i></div>
+                        <div>
+                            <h4 class="font-bold text-lg">Certified Pros</h4>
+                            <p class="text-sm text-brand-grey">Licensed and Insured.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 p-4">
+                        <div class="bg-brand-blue/10 p-4 rounded-full text-brand-blue"><i class="fas fa-star text-2xl"></i></div>
+                        <div>
+                            <h4 class="font-bold text-lg">Guaranteed Work</h4>
+                            <p class="text-sm text-brand-grey">Long-term warranty.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Introduction / Why Choose Us -->
+            <div class="container mx-auto px-6 py-16">
+                <div class="flex flex-col lg:flex-row gap-12 items-center">
+                    <div class="lg:w-1/2">
+                        <h2 class="text-base font-bold text-brand-blue uppercase tracking-widest mb-3">The Blue Stream Difference</h2>
+                        <h3 class="text-4xl font-black font-heading text-brand-navy mb-6">Modern Solutions for Every Drop of Water</h3>
+                        <p class="text-lg text-brand-grey mb-8 leading-relaxed">
+                            We combine years of experience with the latest diagnostic technology to solve your plumbing problems quickly, efficiently, and with minimal disruption to your home or business. Our commitment to sustainability means we always look for water-saving and energy-efficient solutions.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-4">
+                                <i class="fas fa-check-circle text-brand-blue text-2xl mt-1 shrink-0"></i>
+                                <div>
+                                    <h4 class="font-bold text-lg">Advanced Leak Detection</h4>
+                                    <p class="text-sm text-brand-grey">Using thermal imaging and acoustic sensors to find leaks without tearing up your property.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <i class="fas fa-check-circle text-brand-blue text-2xl mt-1 shrink-0"></i>
+                                <div>
+                                    <h4 class="font-bold text-lg">Trenchless Pipe Repair</h4>
+                                    <p class="text-sm text-brand-grey">Minimally invasive methods for sewer and water line rehabilitation.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <i class="fas fa-check-circle text-brand-blue text-2xl mt-1 shrink-0"></i>
+                                <div>
+                                    <h4 class="font-bold text-lg">Smart Home Plumbing Integration</h4>
+                                    <p class="text-sm text-brand-grey">Expert installation of smart water shut-off valves and leak monitoring systems.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button onclick="switchPage('about')" class="mt-10 bg-brand-navy text-white px-8 py-3 rounded-lg font-bold hover:bg-brand-blue transition-colors">
+                            Learn More About Our Team
+                        </button>
+                    </div>
+                    <div class="lg:w-1/2">
+                        <img src="https://images.unsplash.com/photo-1542013936693-fe4a9c777189?auto=format&fit=crop&q=80&w=800" class="rounded-xl shadow-2xl w-full" alt="Plumbing Inspection">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Services Overview (Longer Grid) -->
+            <div class="bg-white py-20">
+                <div class="container mx-auto px-6">
+                    <div class="text-center max-w-3xl mx-auto mb-16">
+                        <h2 class="text-4xl font-black font-heading text-brand-navy uppercase mb-4">Comprehensive Plumbing Solutions</h2>
+                        <div class="h-1 w-24 bg-brand-blue mx-auto mb-4"></div>
+                        <p class="text-brand-grey text-lg">We cover every aspect of plumbing for residential, commercial, and industrial clients. Excellence is our standard.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <!-- Service 1 -->
+                        <div class="bg-brand-light p-8 rounded-xl shadow-soft service-card text-center">
+                            <i class="fas fa-toilet-paper text-4xl text-brand-blue mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2">Blockage Removal</h3>
+                            <p class="text-sm text-brand-grey">Fast, guaranteed removal of the toughest drain and sewer clogs.</p>
+                        </div>
+                        <!-- Service 2 -->
+                        <div class="bg-brand-light p-8 rounded-xl shadow-soft service-card text-center">
+                            <i class="fas fa-search-dollar text-4xl text-brand-blue mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2">Sewer Line Services</h3>
+                            <p class="text-sm text-brand-grey">Repair, replacement, and inspection using non-invasive camera technology.</p>
+                        </div>
+                        <!-- Service 3 -->
+                        <div class="bg-brand-light p-8 rounded-xl shadow-soft service-card text-center">
+                            <i class="fas fa-fire-alt text-4xl text-brand-blue mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2">Water Heating</h3>
+                            <p class="text-sm text-brand-grey">Installation and maintenance of traditional and high-efficiency tankless heaters.</p>
+                        </div>
+                        <!-- Service 4 -->
+                        <div class="bg-brand-light p-8 rounded-xl shadow-soft service-card text-center">
+                            <i class="fas fa-house-damage text-4xl text-brand-blue mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2">Emergency Repairs</h3>
+                            <p class="text-sm text-brand-grey">24/7 response for burst pipes, flooding, and critical breakdowns.</p>
+                        </div>
+                        <!-- Service 5 (New) -->
+                        <div class="bg-brand-light p-8 rounded-xl shadow-soft service-card text-center">
+                            <i class="fas fa-pump-soap text-4xl text-brand-blue mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2">Sump Pump Installation</h3>
+                            <p class="text-sm text-brand-grey">Protecting your basement from flooding with reliable pump systems.</p>
+                        </div>
+                        <!-- Service 6 (New) -->
+                        <div class="bg-brand-light p-8 rounded-xl shadow-soft service-card text-center">
+                            <i class="fas fa-tint text-4xl text-brand-blue mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2">Water Filtration</h3>
+                            <p class="text-sm text-brand-grey">Whole-house filtration and water softener systems for better quality water.</p>
+                        </div>
+                        <!-- Service 7 (New) -->
+                        <div class="bg-brand-light p-8 rounded-xl shadow-soft service-card text-center">
+                            <i class="fas fa-bath text-4xl text-brand-blue mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2">Fixture Upgrades</h3>
+                            <p class="text-sm text-brand-grey">Modernizing kitchens and bathrooms with new taps, sinks, and tubs.</p>
+                        </div>
+                        <!-- Service 8 (New) -->
+                        <div class="bg-brand-light p-8 rounded-xl shadow-soft service-card text-center">
+                            <i class="fas fa-snowflake text-4xl text-brand-blue mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2">Winterization</h3>
+                            <p class="text-sm text-brand-grey">Protecting pipes and systems from freezing and cold weather damage.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-12">
+                        <button onclick="switchPage('services')" class="text-brand-blue font-bold uppercase tracking-wide border-b-2 border-brand-blue hover:text-brand-navy hover:border-brand-navy transition-colors">
+                            Explore Detailed Service Pages <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Testimonials Slider -->
+            <div class="bg-brand-navy py-20 bg-cover bg-center relative">
+                <div class="container mx-auto px-6 relative z-10 text-center">
+                    <h2 class="text-brand-cyan text-3xl font-bold uppercase mb-12">Hear It From Our Satisfied Clients</h2>
+                    
+                    <div class="carousel_main max-w-4xl mx-auto text-white">
+                        <div class="px-4">
+                            <i class="fas fa-quote-left text-5xl text-brand-blue mb-6 opacity-60"></i>
+                            <p class="text-xl md:text-2xl font-light italic mb-8 leading-relaxed">"Blue Stream's team handled our entire home re-piping project. Their planning was flawless, the execution was clean, and the final bill matched the original quote perfectly. Highly recommended for complex jobs."</p>
+                            <h4 class="text-xl font-bold text-brand-cyan">Sarah J.</h4>
+                            <p class="text-sm text-gray-400">Residential Client (Re-piping Project)</p>
+                        </div>
+                        <div class="px-4">
+                            <i class="fas fa-quote-left text-5xl text-brand-blue mb-6 opacity-60"></i>
+                            <p class="text-xl md:text-2xl font-light italic mb-8 leading-relaxed">"We had a critical main line break late Friday afternoon. Blue Stream was the only company that responded immediately. They saved our business from serious water damage and were incredibly professional under pressure."</p>
+                            <h4 class="text-xl font-bold text-brand-cyan">Marcus P.</h4>
+                            <p class="text-sm text-gray-400">Commercial Client (Emergency Repair)</p>
+                        </div>
+                        <div class="px-4">
+                            <i class="fas fa-quote-left text-5xl text-brand-blue mb-6 opacity-60"></i>
+                            <p class="text-xl md:text-2xl font-light italic mb-8 leading-relaxed">"The technician patiently explained the benefits of a tankless water heater versus our old unit. The installation was quick, and we've already noticed a drop in our energy bill. Excellent service and knowledge."</p>
+                            <h4 class="text-xl font-bold text-brand-cyan">Emily V.</h4>
+                            <p class="text-sm text-gray-400">Homeowner (Water Heater Upgrade)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. FAQ Section (Longer Content) -->
+            <div class="container mx-auto px-6 py-20">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-4xl font-black font-heading text-brand-navy uppercase mb-4">Frequently Asked Questions</h2>
+                    <div class="h-1 w-24 bg-brand-blue mx-auto mb-4"></div>
+                    <p class="text-brand-grey text-lg">Everything you need to know about scheduling service, pricing, and our guarantees.</p>
+                </div>
+                
+                <div class="max-w-4xl mx-auto">
+                    <!-- FAQ 1 -->
+                    <div class="accordion-item py-4">
+                        <button class="flex justify-between items-center w-full text-left font-bold text-lg text-brand-navy hover:text-brand-blue" onclick="toggleAccordion('faq1')">
+                            How fast can you respond to an emergency?
+                            <i id="icon-faq1" class="fas fa-chevron-down text-brand-blue transition-transform duration-300"></i>
+                        </button>
+                        <div id="faq1" class="hidden pt-3 text-gray-600 leading-relaxed">
+                            <p>Our emergency response team is available 24 hours a day, 7 days a week, 365 days a year. For critical issues like burst pipes or severe flooding, we aim to have a licensed plumber at your location within 60 minutes of your call, depending on traffic and location density. Non-critical appointments are typically scheduled within 24 hours.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ 2 -->
+                    <div class="accordion-item py-4">
+                        <button class="flex justify-between items-center w-full text-left font-bold text-lg text-brand-navy hover:text-brand-blue" onclick="toggleAccordion('faq2')">
+                            What is your policy on pricing and quotes?
+                            <i id="icon-faq2" class="fas fa-chevron-down text-brand-blue transition-transform duration-300"></i>
+                        </button>
+                        <div id="faq2" class="hidden pt-3 text-gray-600 leading-relaxed">
+                            <p>We provide clear, upfront, flat-rate pricing for nearly all standard services. Once the technician diagnoses the issue, they will present a written quote for the entire job before any work begins. There are no hidden fees, and the price will not change, even if the job takes longer than expected. For large, complex installations, we provide detailed proposals.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ 3 -->
+                    <div class="accordion-item py-4">
+                        <button class="flex justify-between items-center w-full text-left font-bold text-lg text-brand-navy hover:text-brand-blue" onclick="toggleAccordion('faq3')">
+                            Are your plumbers licensed and insured?
+                            <i id="icon-faq3" class="fas fa-chevron-down text-brand-blue transition-transform duration-300"></i>
+                        </button>
+                        <div id="faq3" class="hidden pt-3 text-gray-600 leading-relaxed">
+                            <p>Absolutely. Every plumber and technician on the Blue Stream team is fully licensed by the state and carries comprehensive liability insurance. We adhere to all local, state, and national plumbing codes. This ensures that your home and property are fully protected, and all work performed meets the highest standards of safety and quality.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ 4 -->
+                    <div class="accordion-item py-4">
+                        <button class="flex justify-between items-center w-full text-left font-bold text-lg text-brand-navy hover:text-brand-blue" onclick="toggleAccordion('faq4')">
+                            Do you offer any guarantees or warranties on your work?
+                            <i id="icon-faq4" class="fas fa-chevron-down text-brand-blue transition-transform duration-300"></i>
+                        </button>
+                        <div id="faq4" class="hidden pt-3 text-gray-600 leading-relaxed">
+                            <p>We stand behind our work with a robust service warranty. Depending on the type of repair or installation, our labor warranty ranges from 90 days to 2 years. Furthermore, any parts or equipment we install (such as water heaters or fixtures) carry the full manufacturer's warranty, which we will handle processing for you if an issue arises.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ 5 -->
+                    <div class="accordion-item py-4">
+                        <button class="flex justify-between items-center w-full text-left font-bold text-lg text-brand-navy hover:text-brand-blue" onclick="toggleAccordion('faq5')">
+                            What areas do you serve?
+                            <i id="icon-faq5" class="fas fa-chevron-down text-brand-blue transition-transform duration-300"></i>
+                        </button>
+                        <div id="faq5" class="hidden pt-3 text-gray-600 leading-relaxed">
+                            <p>We proudly serve the entire greater metro area and all surrounding counties. If you are unsure whether your location falls within our service area, please call our main office line at 1800-789-3210. For commercial and industrial projects, we can discuss travel arrangements for locations further afield.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ================= SERVICES PAGE (VERY LONG) ================= -->
+        <div id="services" class="page-section">
+            <div class="bg-brand-navy py-16 text-white text-center">
+                <h1 class="text-4xl font-black font-heading uppercase mb-3">Our Complete Service Range</h1>
+                <p class="text-gray-300 text-lg">We provide expert plumbing solutions for every situation, big or small.</p>
+            </div>
+            
+            <div class="container mx-auto px-6 py-20">
+                
+                <!-- Drain & Sewer Services Category -->
+                <div class="mb-20">
+                    <h2 class="text-3xl font-bold font-heading text-brand-navy mb-8 border-l-4 border-brand-blue pl-4">Drain and Sewer Solutions</h2>
+                    <p class="text-brand-grey mb-12 max-w-4xl">Clogged drains and sewer line problems are serious issues that require immediate, professional attention. We use advanced diagnostic tools to ensure the job is done once and done right.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                        <!-- Service Detail 1 -->
+                        <div class="bg-white p-8 rounded-xl shadow-soft border-t-4 border-brand-blue">
+                            <i class="fas fa-pump-medical text-3xl text-brand-blue mb-4"></i>
+                            <h3 class="text-2xl font-bold mb-3">High-Pressure Hydro Jetting</h3>
+                            <p class="text-gray-600 mb-4 leading-relaxed">The most effective way to clear heavy grease, sludge, and tree roots from lines. It cleans the entire interior of the pipe, restoring full flow capacity.</p>
+                            <ul class="text-sm text-gray-500 space-y-2 mt-4">
+                                <li class="flex items-center"><i class="fas fa-check-circle text-brand-cyan mr-3"></i> Restores pipe capacity to near-new condition.</li>
+                                <li class="flex items-center"><i class="fas fa-check-circle text-brand-cyan mr-3"></i> Eco-friendly, chemical-free process.</li>
+                                <li class="flex items-center"><i class="fas fa-check-circle text-brand-cyan mr-3"></i> Recommended for restaurants and commercial kitchens.</li>
+                            </ul>
+                        </div>
+                        <!-- Service Detail 2 -->
+                        <div class="bg-white p-8 rounded-xl shadow-soft border-t-4 border-brand-blue">
+                            <i class="fas fa-camera text-3xl text-brand-blue mb-4"></i>
+                            <h3 class="text-2xl font-bold mb-3">Sewer Line Video Inspection</h3>
+                            <p class="text-gray-600 mb-4 leading-relaxed">We insert a high-resolution camera into your sewer line to pinpoint the exact location and cause of the problem, saving time and money on unnecessary digging.</p>
+                            <ul class="text-sm text-gray-500 space-y-2 mt-4">
+                                <li class="flex items-center"><i class="fas fa-check-circle text-brand-cyan mr-3"></i> Precise detection of cracks, blockages, or roots.</li>
+                                <li class="flex items-center"><i class="fas fa-check-circle text-brand-cyan mr-3"></i> Non-invasive diagnostic procedure.</li>
+                                <li class="flex items-center"><i class="fas fa-check-circle text-brand-cyan mr-3"></i> Provides assurance before purchasing a property.</li>
+                            </div>
+                    </div>
+                </div>
+
+                <!-- Water Quality & Heating Category -->
+                <div class="mb-20">
+                    <h2 class="text-3xl font-bold font-heading text-brand-navy mb-8 border-l-4 border-brand-blue pl-4">Water Quality and Hot Water Systems</h2>
+                    <p class="text-brand-grey mb-12 max-w-4xl">Ensure your family has access to safe, clean water and reliable, energy-efficient hot water supply.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- Service Detail 3 -->
+                        <div class="bg-white p-6 rounded-xl shadow-soft border-b-4 border-brand-cyan">
+                            <i class="fas fa-hand-holding-water text-3xl text-brand-navy mb-4"></i>
+                            <h3 class="text-xl font-bold mb-3">Tankless Water Heater</h3>
+                            <p class="text-gray-600 text-sm">On-demand hot water, saving energy and space. We handle all gas and electric models.</p>
+                        </div>
+                        <!-- Service Detail 4 -->
+                        <div class="bg-white p-6 rounded-xl shadow-soft border-b-4 border-brand-cyan">
+                            <i class="fas fa-filter text-3xl text-brand-navy mb-4"></i>
+                            <h3 class="text-xl font-bold mb-3">Whole-House Filtration</h3>
+                            <p class="text-gray-600 text-sm">Installation of carbon filters, reverse osmosis, and UV systems for optimal drinking water quality.</p>
+                        </div>
+                        <!-- Service Detail 5 -->
+                        <div class="bg-white p-6 rounded-xl shadow-soft border-b-4 border-brand-cyan">
+                            <i class="fas fa-cubes text-3xl text-brand-navy mb-4"></i>
+                            <h3 class="text-xl font-bold mb-3">Water Softeners</h3>
+                            <p class="text-gray-600 text-sm">Protect appliances and reduce soap scum by removing hard minerals from your water supply.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Leak & Pipe Repair Category -->
+                <div class="mb-20">
+                    <h2 class="text-3xl font-bold font-heading text-brand-navy mb-8 border-l-4 border-brand-blue pl-4">Leak Detection and Pipe Integrity</h2>
+                    <p class="text-brand-grey mb-12 max-w-4xl">Even small leaks can cause significant damage. Our non-destructive methods identify and fix the source quickly.</p>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                        <!-- Leak Detection Feature -->
+                        <div class="bg-brand-navy text-white p-8 rounded-xl shadow-2xl">
+                            <i class="fas fa-thermometer-half text-4xl text-brand-cyan mb-4"></i>
+                            <h3 class="text-2xl font-bold mb-3">Precision Leak Detection</h3>
+                            <p class="text-gray-300 mb-6 leading-relaxed">We utilize thermal imaging cameras, acoustic listening devices, and tracer gas to locate even the smallest slab or wall leaks without destructive searching.</p>
+                            <button onclick="switchPage('contact')" class="bg-brand-cyan text-brand-navy px-6 py-2 rounded font-bold hover:bg-white transition-colors">Schedule Inspection</button>
+                        </div>
+                        <!-- Pipe Repair Feature -->
+                        <div class="bg-brand-navy text-white p-8 rounded-xl shadow-2xl">
+                            <i class="fas fa-hand-sparkles text-4xl text-brand-cyan mb-4"></i>
+                            <h3 class="text-2xl font-bold mb-3">Whole-Home Re-piping</h3>
+                            <p class="text-gray-300 mb-6 leading-relaxed">Specializing in durable PEX and Copper re-piping to replace aging, corroded galvanized or polybutylene pipes, ensuring decades of clean water flow.</p>
+                            <button onclick="switchPage('contact')" class="bg-brand-cyan text-brand-navy px-6 py-2 rounded font-bold hover:bg-white transition-colors">Get A Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ================= ABOUT PAGE (VERY LONG) ================= -->
+        <div id="about" class="page-section">
+            <div class="bg-brand-navy py-16 text-white text-center">
+                <h1 class="text-4xl font-black font-heading uppercase mb-3">Our History and Commitment</h1>
+                <p class="text-gray-300 text-lg">Integrity, reliability, and expertise in every service call.</p>
+            </div>
+            
+            <div class="container mx-auto px-6 py-20">
+
+                <!-- 1. Company Story & Mission -->
+                <div class="flex flex-col lg:flex-row items-start gap-12 mb-20">
+                    <div class="lg:w-1/2">
+                        <img src="https://images.unsplash.com/photo-1542013936693-fe4a9c777189?auto=format&fit=crop&q=80&w=800" class="rounded-xl shadow-2xl w-full" alt="Plumber team">
+                    </div>
+                    <div class="lg:w-1/2">
+                        <h2 class="text-4xl font-black font-heading text-brand-navy mb-6">Built from the Ground Up Since 2005</h2>
+                        <p class="text-brand-grey text-lg mb-6 leading-relaxed border-l-4 border-brand-blue pl-4">
+                            Blue Stream Plumbing was founded by Master Plumber David Chen with a simple vision: to provide transparent, honest, and high-quality plumbing services that clients could trust completely. We started small, focusing on residential excellence, and quickly grew through word-of-mouth referrals.
+                        </p>
+                        <p class="text-brand-grey mb-8 leading-relaxed">
+                            Today, we are a leading regional service provider, but our core values remain unchanged. Our team is dedicated to continuous training in the newest sustainable and smart plumbing technologies, ensuring that when you choose Blue Stream, you are choosing future-proof solutions.
+                        </p>
+                        <div class="grid grid-cols-3 gap-4">
+                            <div class="p-4 bg-brand-blue/10 rounded-lg text-center">
+                                <h3 class="text-4xl font-bold text-brand-blue">15+</h3>
+                                <p class="text-sm font-medium text-brand-grey">Years Serving</p>
+                            </div>
+                            <div class="p-4 bg-brand-blue/10 rounded-lg text-center">
+                                <h3 class="text-4xl font-bold text-brand-blue">98%</h3>
+                                <p class="text-sm font-medium text-brand-grey">On-Time Rate</p>
+                            </div>
+                            <div class="p-4 bg-brand-blue/10 rounded-lg text-center">
+                                <h3 class="text-4xl font-bold text-brand-blue">A+</h3>
+                                <p class="text-sm font-medium text-brand-grey">Safety Rating</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Our Detailed Process -->
+                <div class="bg-white p-12 rounded-xl shadow-lg mb-20">
+                    <h2 class="text-3xl font-black font-heading text-brand-navy mb-12 text-center">Our 4-Step Customer Service Protocol</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                        <div class="text-center group">
+                            <div class="w-16 h-16 bg-brand-blue text-white rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-cyan transition-colors">
+                                <i class="fas fa-calendar-alt text-2xl"></i>
+                            </div>
+                            <h4 class="font-bold text-xl mb-2">1. Rapid Scheduling</h4>
+                            <p class="text-sm text-brand-grey">We confirm your appointment and send a text notification with your technician’s bio and ETA.</p>
+                        </div>
+                        <div class="text-center group">
+                            <div class="w-16 h-16 bg-brand-blue text-white rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-cyan transition-colors">
+                                <i class="fas fa-search text-2xl"></i>
+                            </div>
+                            <h4 class="font-bold text-xl mb-2">2. Diagnostics & Quote</h4>
+                            <p class="text-sm text-brand-grey">Thorough problem diagnosis, followed by a detailed, upfront, fixed-price quote. No hidden costs.</p>
+                        </div>
+                        <div class="text-center group">
+                            <div class="w-16 h-16 bg-brand-blue text-white rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-cyan transition-colors">
+                                <i class="fas fa-tools text-2xl"></i>
+                            </div>
+                            <h4 class="font-bold text-xl mb-2">3. Expert Repair</h4>
+                            <p class="text-sm text-brand-grey">Efficient and clean execution of the repair or installation using quality parts and best practices.</p>
+                        </div>
+                        <div class="text-center group">
+                            <div class="w-16 h-16 bg-brand-blue text-white rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-cyan transition-colors">
+                                <i class="fas fa-clipboard-check text-2xl"></i>
+                            </div>
+                            <h4 class="font-bold text-xl mb-2">4. Final Walkthrough</h4>
+                            <p class="text-sm text-brand-grey">We ensure everything works perfectly and clean up the work area completely. Guaranteed satisfaction.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Meet The Team (Expanded) -->
+                <div class="mb-20">
+                    <h3 class="text-3xl font-bold font-heading text-center uppercase mb-12">Our Certified Master Plumbers</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <!-- Team Member 1 -->
+                        <div class="text-center group bg-white rounded-xl shadow-soft p-6">
+                            <div class="overflow-hidden rounded-full w-36 h-36 mx-auto mb-4 border-4 border-brand-blue/50">
+                                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Team Member">
+                            </div>
+                            <h4 class="font-bold text-lg">David Chen</h4>
+                            <p class="text-brand-blue text-sm uppercase">Founder & Master Plumber</p>
+                            <p class="text-xs text-brand-grey mt-2">Specializes in commercial systems and large-scale installations.</p>
+                        </div>
+                        <!-- Team Member 2 -->
+                        <div class="text-center group bg-white rounded-xl shadow-soft p-6">
+                            <div class="overflow-hidden rounded-full w-36 h-36 mx-auto mb-4 border-4 border-brand-blue/50">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Team Member">
+                            </div>
+                            <h4 class="font-bold text-lg">Markus Schultz</h4>
+                            <p class="text-brand-blue text-sm uppercase">Lead Residential Technician</p>
+                            <p class="text-xs text-brand-grey mt-2">Expert in water heater repair and tankless conversions.</p>
+                        </div>
+                        <!-- Team Member 3 -->
+                        <div class="text-center group bg-white rounded-xl shadow-soft p-6">
+                            <div class="overflow-hidden rounded-full w-36 h-36 mx-auto mb-4 border-4 border-brand-blue/50">
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Team Member">
+                            </div>
+                            <h4 class="font-bold text-lg">Alia Khan</h4>
+                            <p class="text-brand-blue text-sm uppercase">Senior Leak Detection Specialist</p>
+                            <p class="text-xs text-brand-grey mt-2">Certified in non-invasive acoustic and thermal detection.</p>
+                        </div>
+                        <!-- Team Member 4 -->
+                        <div class="text-center group bg-white rounded-xl shadow-soft p-6">
+                            <div class="overflow-hidden rounded-full w-36 h-36 mx-auto mb-4 border-4 border-brand-blue/50">
+                                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Team Member">
+                            </div>
+                            <h4 class="font-bold text-lg">Robert James</h4>
+                            <p class="text-brand-blue text-sm uppercase">Drain & Sewer Supervisor</p>
+                            <p class="text-xs text-brand-grey mt-2">Oversees all hydro-jetting and sewer repair operations.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Certifications and Awards -->
+                <div class="bg-brand-navy/5 p-12 rounded-xl">
+                    <h3 class="text-3xl font-bold font-heading text-brand-navy text-center mb-10">Industry Certifications and Recognition</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                        <div>
+                            <i class="fas fa-award text-4xl text-brand-blue mb-3"></i>
+                            <p class="font-bold text-brand-dark">Master Plumber License</p>
+                            <p class="text-xs text-brand-grey">State Certified since 2005</p>
+                        </div>
+                        <div>
+                            <i class="fas fa-hands-helping text-4xl text-brand-blue mb-3"></i>
+                            <p class="font-bold text-brand-dark">WaterSense Partner</p>
+                            <p class="text-xs text-brand-grey">Promoting water efficiency</p>
+                        </div>
+                        <div>
+                            <i class="fas fa-wrench text-4xl text-brand-blue mb-3"></i>
+                            <p class="font-bold text-brand-dark">Tankless Certified</p>
+                            <p class="text-xs text-brand-grey">Certified by all major manufacturers</p>
+                        </div>
+                        <div>
+                            <i class="fas fa-shield-alt text-4xl text-brand-blue mb-3"></i>
+                            <p class="font-bold text-brand-dark">Fully Insured</p>
+                            <p class="text-xs text-brand-grey">Protecting your home</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= CONTACT PAGE ================= -->
+        <div id="contact" class="page-section">
+            <div class="bg-brand-navy py-16 text-white text-center">
+                <h1 class="text-4xl font-black font-heading uppercase mb-3">Book Your Service</h1>
+                <p class="text-gray-300 text-lg">We are ready to respond to your call 24/7.</p>
+            </div>
+            
+            <div class="container mx-auto px-6 py-20">
+                <div class="flex flex-col lg:flex-row gap-12">
+                    <!-- Contact Information Side -->
+                    <div class="lg:w-1/3 bg-white p-8 rounded-xl shadow-lg border-t-4 border-brand-blue h-fit">
+                        <h2 class="text-3xl font-bold font-heading uppercase mb-6 text-brand-navy">Contact Details</h2>
+                        <p class="text-gray-600 mb-8 border-l-2 border-brand-cyan pl-3">
+                            For immediate assistance or to schedule non-emergency service, please use the information below.
+                        </p>
+                        
+                        <div class="space-y-8">
+                            <div class="flex items-start gap-4">
+                                <div class="bg-brand-blue text-white w-12 h-12 rounded-full flex items-center justify-center shrink-0">
+                                    <i class="fas fa-phone text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-xl text-brand-navy">24/7 Emergency Line</h4>
+                                    <p class="text-brand-blue text-lg font-semibold">1800-789-3210</p>
+                                    <p class="text-xs text-gray-500 mt-1">Call this number for leaks or floods only.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="bg-brand-blue text-white w-12 h-12 rounded-full flex items-center justify-center shrink-0">
+                                    <i class="fas fa-envelope text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-xl text-brand-navy">General Inquiries</h4>
+                                    <p class="text-gray-600">service@bluestreamplumbing.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="bg-brand-blue text-white w-12 h-12 rounded-full flex items-center justify-center shrink-0">
+                                    <i class="fas fa-map-marker-alt text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-xl text-brand-navy">Our Main Office</h4>
+                                    <p class="text-gray-600">Unit 301, BlueStream Headquarters</p>
+                                    <p class="text-gray-600">1400 Waterworks Rd, Plumbersville, 90210</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form Side -->
+                    <div class="lg:w-2/3 bg-white p-8 rounded-xl shadow-lg border-t-4 border-brand-cyan">
+                        <h3 class="text-3xl font-bold font-heading mb-6 text-brand-navy">Schedule Your Service Appointment</h3>
+                        <form onsubmit="event.preventDefault(); showConfirmationModal();" class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-bold mb-2 text-brand-dark">Your Name <span class="text-red-500">*</span></label>
+                                    <input type="text" id="name" required class="w-full bg-gray-50 border border-gray-200 rounded-lg p-3 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition-colors" placeholder="First and Last Name">
+                                </div>
+                                <div>
+                                    <label for="phone" class="block text-sm font-bold mb-2 text-brand-dark">Phone Number <span class="text-red-500">*</span></label>
+                                    <input type="tel" id="phone" required class="w-full bg-gray-50 border border-gray-200 rounded-lg p-3 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition-colors" placeholder="(555) 123-4567">
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="email" class="block text-sm font-bold mb-2 text-brand-dark">Email Address</label>
+                                    <input type="email" id="email" class="w-full bg-gray-50 border border-gray-200 rounded-lg p-3 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition-colors" placeholder="you@example.com">
+                                </div>
+                                <div>
+                                    <label for="service" class="block text-sm font-bold mb-2 text-brand-dark">Type of Service Needed <span class="text-red-500">*</span></label>
+                                    <select id="service" required class="w-full bg-gray-50 border border-gray-200 rounded-lg p-3 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition-colors">
+                                        <option value="">-- Select a Service --</option>
+                                        <option value="Emergency">24/7 Emergency (Leak/Burst)</option>
+                                        <option value="Drain">Clogged Drain / Hydro-Jetting</option>
+                                        <option value="Heater">Water Heater Repair / Replacement</option>
+                                        <option value="Installation">Fixture Installation / Upgrade</option>
+                                        <option value="Quote">Large Project Quote (Re-piping, Sewer)</option>
+                                        <option value="Other">Other General Plumbing Issue</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-sm font-bold mb-2 text-brand-dark">Describe the Issue <span class="text-red-500">*</span></label>
+                                <textarea id="message" rows="5" required class="w-full bg-gray-50 border border-gray-200 rounded-lg p-3 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition-colors" placeholder="Please describe the issue in detail, including location and urgency..."></textarea>
+                            </div>
+                            <button type="submit" class="bg-brand-blue text-white px-8 py-4 rounded-lg font-bold uppercase hover:bg-brand-navy transition-colors duration-300 w-full shadow-lg">
+                                Send Service Request
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Google Maps Placeholder (For long page content) -->
+                <div class="mt-20">
+                    <h2 class="text-3xl font-black font-heading text-brand-navy mb-8 text-center">Find Our Headquarters</h2>
+                    <div class="bg-gray-200 w-full h-96 rounded-xl shadow-xl flex items-center justify-center text-gray-500 text-xl font-bold border border-gray-300">
+                        [Placeholder for Interactive Google Map Embed]
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Success Modal UI -->
+    <div id="success-modal" class="fixed inset-0 bg-brand-dark/70 hidden z-[100] items-center justify-center">
+        <div class="bg-white p-8 rounded-xl shadow-2xl max-w-sm w-full text-center transform transition-transform duration-300 scale-90">
+            <div class="text-brand-blue text-6xl mb-4">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-brand-navy mb-3">Request Sent!</h3>
+            <p class="text-gray-600 mb-6">Thank you. We have received your service request and will contact you within the next hour.</p>
+            <button onclick="hideConfirmationModal()" class="bg-brand-blue text-white px-6 py-2 rounded-lg font-bold hover:bg-brand-navy transition-colors">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-brand-navy text-white py-16 border-t border-brand-dark">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="bg-brand-blue text-white p-1.5 rounded-lg">
+                            <i class="fas fa-water"></i>
+                        </div>
+                        <span class="text-xl font-black font-heading">BLUE STREAM<span class="text-brand-blue">PLUMBING</span></span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Reliability you can trust. We are committed to high-quality service, fair pricing, and customer satisfaction since 2005.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-blue transition-colors"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-blue transition-colors"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-blue transition-colors"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-bold text-brand-blue uppercase mb-6">Quick Links</h3>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><a href="#" onclick="switchPage('home')" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#" onclick="switchPage('about')" class="hover:text-white transition-colors">Company History</a></li>
+                        <li><a href="#" onclick="switchPage('services')" class="hover:text-white transition-colors">Service List</a></li>
+                        <li><a href="#" onclick="switchPage('contact')" class="hover:text-white transition-colors">Request a Quote</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Careers</a></li>
+                    </ul>
+                </div>
+
+                <!-- Popular Services -->
+                <div>
+                    <h3 class="text-lg font-bold text-brand-blue uppercase mb-6">Popular Services</h3>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><a href="#" onclick="switchPage('services')" class="hover:text-white transition-colors">Drain Cleaning</a></li>
+                        <li><a href="#" onclick="switchPage('services')" class="hover:text-white transition-colors">Water Heater Repair</a></li>
+                        <li><a href="#" onclick="switchPage('services')" class="hover:text-white transition-colors">Leak Detection</a></li>
+                        <li><a href="#" onclick="switchPage('services')" class="hover:text-white transition-colors">Sewer Line Repair</a></li>
+                        <li><a href="#" onclick="switchPage('services')" class="hover:text-white transition-colors">Commercial Plumbing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Working Hours -->
+                <div>
+                    <h3 class="text-lg font-bold text-brand-blue uppercase mb-6">Working Hours</h3>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li class="flex justify-between">
+                            <span class="font-semibold">Mon - Fri:</span>
+                            <span>8:00 AM - 6:00 PM</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="font-semibold">Saturday:</span>
+                            <span>9:00 AM - 3:00 PM</span>
+                        </li>
+                        <li class="flex justify-between text-brand-cyan">
+                            <span class="font-semibold">Sunday:</span>
+                            <span class="font-bold">Closed (Emergency Only)</span>
+                        </li>
+                        <li class="pt-2">
+                            <i class="fas fa-exclamation-triangle text-brand-cyan mr-2"></i>
+                            <span class="text-xs">24/7 Emergency Service Available</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-xs text-gray-500 flex flex-col md:flex-row justify-between items-center">
+                <p>&copy; 2024 Blue Stream Plumbing. All Rights Reserved.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white">Terms of Service</a>
+                    <a href="#" class="hover:text-white">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // --- Page Switching Logic ---
+        function switchPage(pageId) {
+            // Hide all sections
+            $('.page-section').removeClass('active');
+            
+            // Show target section
+            $('#' + pageId).addClass('active');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+            
+            // Close mobile menu if open
+            $('#mobile-menu').slideUp();
+        }
+
+        // --- Slider Initialization ---
+        $(document).ready(function(){
+            $('.carousel_main').slick({
+                dots: true,
+                infinite: true,
+                speed: 600,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 5000,
+                arrows: false,
+                fade: true
+            });
+            
+            // Ensure home page is active on load
+            switchPage('home');
+        });
+
+        // --- FAQ Accordion Logic ---
+        function toggleAccordion(id) {
+            const content = $('#' + id);
+            const icon = $('#icon-' + id);
+
+            // Toggle visibility
+            content.slideToggle(300);
+            
+            // Rotate icon
+            if (content.hasClass('hidden')) {
+                icon.removeClass('fa-chevron-up').addClass('fa-chevron-down');
+            } else {
+                icon.removeClass('fa-chevron-down').addClass('fa-chevron-up');
+            }
+        }
+        
+        // --- Form Submission / Modal Logic ---
+        function showConfirmationModal() {
+            // Placeholder logic for form submission success
+            $('#success-modal').removeClass('hidden').addClass('flex');
+            
+            // Reset form fields
+            $('form')[0].reset();
+            
+            // Add slight animation
+            $('#success-modal > div').removeClass('scale-90').addClass('scale-100');
+        }
+
+        function hideConfirmationModal() {
+            $('#success-modal > div').removeClass('scale-100').addClass('scale-90');
+            setTimeout(() => {
+                $('#success-modal').removeClass('flex').addClass('hidden');
+            }, 300);
+        }
+    </script>
+
+</body>
+</html>

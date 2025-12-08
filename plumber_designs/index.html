@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RRF Template Challenge</title>
+    <!-- linkjQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Slick-Carousel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Slick-Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Tailwindcss -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Mukta:wght@200;300;400;500;600;700;800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Style -->
+    <style type="text/tailwindcss">
+        @layer base {
+          body {
+            font-family: "Roboto", sans-serif;
+            font-weight: 400;
+            color: black;
+          }
+        }  
+        @layer utilities {
+            .mukta {
+            font-family: "Mukta", sans-serif;
+            }
+            .font_bricolage {
+            font-family: "Bricolage Grotesque", sans-serif;
+            }
+            .txt_cruel_ruby{
+                color: #DD3142;
+            }
+            .bg_cruel_ruby{
+                background-color: #DD3142;
+            }
+            .txt_dove_grey{
+                color: #6D6D6D;
+            }
+            .bg_dove_grey{
+                background-color: #6D6D6D;
+            }
+            .txt_black_sheep{
+                color: #0E0E0E;
+            }
+            .bg_black_sheep{
+                background-color: #0E0E0E;
+            }
+            .container{
+                max-width: 100%;
+                padding-left: 25px;
+                padding-right: 25px;
+            }
+            .container_cild{
+                max-width: 1170px;
+                margin: auto;
+            }
+            /* slider */
+            .slick-dots {
+                display: flex !important;
+                justify-content: center; 
+                gap: 4px;
+            }
+            .slick-dots li {
+                margin: 0;
+                margin-top: 17px;
+            }
+            .slick-dots li button {
+                width: 6px;
+                height: 6px;
+                border-radius: 9999px;
+                background-color: #E2E2E2;
+                padding: 0;
+                font-size: 0;
+            }
+            .slick-dots li.slick-active button {
+                background-color: #DD3142;
+            }
+
+            .slick-dots li button:before {
+                display: none !important;
+            }
+        }
+      </style>   
+</head>
+<body>
+
+    <!-- Header -->
+
+    <div class="container py-[10px] bg-white shadow-[0_4px_24px_rgba(0,0,0,0.05)] z-100">
+        <div class="container_cild flex items-center justify-between">
+            <div><a href="#"><img class="w-[165px]" src="./asset/image/site_logo.svg" alt="site_logo"></a></div>
+            <div class="flex items-center gap-10">
+                <ul class="flex text-sm font-medium	text-[#222222] gap-9">
+                    <li class="border-b-2 border-[#fff] duration-300 hover:border-[#DD3142]"><a class="inline-block py-[1px]" href="#">Home</a></li>
+                    <li class="border-b-2 border-[#fff] duration-300 hover:border-[#DD3142]"><a class="inline-block py-[1px]" href="#">About us</a></li>
+                    <li class="border-b-2 border-[#DD3142]"><a class="inline-block py-[1px]" href="#">Services</a></li>
+                    <li class="border-b-2 border-[#fff] duration-300 hover:border-[#DD3142]"><a class="inline-block py-[1px]" href="#">Project</a></li>
+                    <li class="border-b-2 border-[#fff] duration-300 hover:border-[#DD3142]"><a class="inline-block py-[1px]" href="#">Blogs</a></li>
+                    <li class="border-b-2 border-[#fff] duration-300 hover:border-[#DD3142]"><a class="inline-block py-[1px]" href="#">Contact</a></li>
+                </ul>
+                <a class="bg-[#DD3142] rounded-[5px] flex min-w-[146px] h-[36px] items-center justify-center px-[10px] text-xs	font-bold text-white uppercase duration-300 hover:bg-black" href="#">Request a call Back</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Banner -->
+
+    <div class="container min-h-[304px] bg-[url('./asset/image/service/banner.webp')] bg-cover bg-center pt-31 pb-10">
+        <div class="container_cild">
+            <h1 class="text-[44px] leading-[52px] font-black text-[#EEFF06]">SERVICES</h1>
+            <p class="w-[432px] text-sm/4 text-white mt-4">We provide expert plumbing solutions designed to meet every need — from homes to commercial spaces. Whether it’s an emergency, installation, or routine maintenance, our team is ready to deliver fast, reliable, and quality service every time.
+            </p>
+        </div>
+    </div>
+
+
+    <!-- Our Services -->
+
+    <div class="container pt-15 pb-0">
+
+        <div class="max-w-[728px] m-auto text-center">
+            <h2 class="text-3xl font-medium leading-[35px] txt_black_sheep uppercase">Our Services</h2>
+            <p class="text-base	leading-[21px] txt_dove_grey mt-[15px]">We offer a full range of professional plumbing services tailored to meet the needs of both residential and commercial clients. Whether it’s a small leak or a major installation, our experienced team is here to deliver fast, reliable, and affordable solutions.</p>
+        </div>
+
+        <div class="container_cild grid grid-cols-4 gap-x-[15px] gap-y-5 pt-[55px]">
+
+            <div class="flex flex-col items-center text-center py-10 px-6 shadow-[0_4px_24px_rgba(0,0,0,0.05)] roundex-[5px] p-5">
+                <img class="w-[78px] h-[78px] rounded-full object-cover" src="./asset/image/service/Group 348.svg" alt="">
+                <h3 class="text-sm/6 font-medium mt-[22px] mb-[13px]">Drain Cleaning</h3>
+                <p class="text-xs/4 txt_dove_grey">We remove stubborn clogs from sinks, toilets, and pipelines using advanced tools to ensure smooth water flow and prevent long-term damage or blockages.</p>
+            </div>
+
+            <div class="flex flex-col items-center text-center py-10 px-6 shadow-[0_4px_24px_rgba(0,0,0,0.05)] roundex-[5px] p-5">
+                <img class="w-[78px] h-[78px] rounded-full object-cover" src="./asset/image/service/Group 349.svg" alt="">
+                <h3 class="text-sm/6 font-medium mt-[22px] mb-[13px]">Leak Detection</h3>
+                <p class="text-xs/4 txt_dove_grey">Our experts use modern technology to locate hidden leaks in walls or floors, helping prevent water damage, mold growth, and high utility bills quickly.</p>
+            </div>
+
+            <div class="flex flex-col items-center text-center py-10 px-6 shadow-[0_4px_24px_rgba(0,0,0,0.05)] roundex-[5px] p-5">
+                <img class="w-[78px] h-[78px] rounded-full object-cover" src="./asset/image/service/Group 350.svg" alt="">
+                <h3 class="text-sm/6 font-medium mt-[22px] mb-[13px]">Pipe Repair</h3>
+                <p class="text-xs/4 txt_dove_grey">We repair cracked, burst, or corroded pipes with durable materials to restore water flow and ensure long-lasting performance with minimal disruption to your home.</p>
+            </div>
+
+            <div class="flex flex-col items-center text-center py-10 px-6 shadow-[0_4px_24px_rgba(0,0,0,0.05)] roundex-[5px] p-5">
+                <img class="w-[78px] h-[78px] rounded-full object-cover" src="./asset/image/service/Group 351.svg" alt="">
+                <h3 class="text-sm/6 font-medium mt-[22px] mb-[13px]">Toilet Installation</h3>
+                <p class="text-xs/4 txt_dove_grey">From basic to smart toilets, we install with precision, ensuring proper flushing, sealing, and plumbing connection — all done cleanly and efficiently every time.</p>
+            </div>
+
+            <div class="flex flex-col items-center text-center py-10 px-6 shadow-[0_4px_24px_rgba(0,0,0,0.05)] roundex-[5px] p-5">
+                <img class="w-[78px] h-[78px] rounded-full object-cover" src="./asset/image/service/Group 349.svg" alt="">
+                <h3 class="text-sm/6 font-medium mt-[22px] mb-[13px]">Faucet Repair</h3>
+                <p class="text-xs/4 txt_dove_grey">Fixing dripping or faulty faucets to prevent water waste, improve function, and restore the look and feel of your bathroom or kitchen setup.</p>
+            </div>
+
+            <div class="flex flex-col items-center text-center py-10 px-6 shadow-[0_4px_24px_rgba(0,0,0,0.05)] roundex-[5px] p-5">
+                <img class="w-[78px] h-[78px] rounded-full object-cover" src="./asset/image/service/Group 350.svg" alt="">
+                <h3 class="text-sm/6 font-medium mt-[22px] mb-[13px]">Water Heater</h3>
+                <p class="text-xs/4 txt_dove_grey">We install and service water heaters for consistent hot water. From gas to electric units, we ensure safety, efficiency, and optimal performance always.</p>
+            </div>
+
+            <div class="flex flex-col items-center text-center py-10 px-6 shadow-[0_4px_24px_rgba(0,0,0,0.05)] roundex-[5px] p-5">
+                <img class="w-[78px] h-[78px] rounded-full object-cover" src="./asset/image/service/Group 351.svg" alt="">
+                <h3 class="text-sm/6 font-medium mt-[22px] mb-[13px]">Sewer Cleaning</h3>
+                <p class="text-xs/4 txt_dove_grey">Clearing clogged or backed-up sewer lines using high-pressure equipment to maintain hygiene, proper drainage, and eliminate bad odors from your plumbing system.</p>
+            </div>
+
+            <div class="flex flex-col items-center text-center py-10 px-6 shadow-[0_4px_24px_rgba(0,0,0,0.05)] roundex-[5px] p-5">
+                <img class="w-[78px] h-[78px] rounded-full object-cover" src="./asset/image/service/Group 351.svg" alt="">
+                <h3 class="text-sm/6 font-medium mt-[22px] mb-[13px]">Bathroom Plumbing</h3>
+                <p class="text-xs/4 txt_dove_grey">Complete solutions for bathroom remodeling or repair, including shower lines, sinks, drains, and more — all handled professionally with careful finishing work.</p>
+            </div>
+
+            <div class="flex flex-col items-center text-center py-10 px-6 shadow-[0_4px_24px_rgba(0,0,0,0.05)] roundex-[5px] p-5">
+                <img class="w-[78px] h-[78px] rounded-full object-cover" src="./asset/image/service/Group 350.svg" alt="">
+                <h3 class="text-sm/6 font-medium mt-[22px] mb-[13px]">Emergency Service</h3>
+                <p class="text-xs/4 txt_dove_grey">Available 24/7 for urgent plumbing issues like leaks, bursts, and overflows. Our team responds quickly to minimize damage and restore full system functionality.</p>
+            </div>
+
+            <div class="flex flex-col items-center text-center py-10 px-6 shadow-[0_4px_24px_rgba(0,0,0,0.05)] roundex-[5px] p-5">
+                <img class="w-[78px] h-[78px] rounded-full object-cover" src="./asset/image/service/Group 351.svg" alt="">
+                <h3 class="text-sm/6 font-medium mt-[22px] mb-[13px]">Fixture Upgrade</h3>
+                <p class="text-xs/4 txt_dove_grey">We replace outdated plumbing fixtures with modern, water-saving models — improving performance, appearance, and reducing water bills for both homes and businesses.</p>
+            </div>
+
+            <div class="flex flex-col items-center text-center py-10 px-6 shadow-[0_4px_24px_rgba(0,0,0,0.05)] roundex-[5px] p-5">
+                <img class="w-[78px] h-[78px] rounded-full object-cover" src="./asset/image/service/Group 349.svg" alt="">
+                <h3 class="text-sm/6 font-medium mt-[22px] mb-[13px]">Pump Service</h3>
+                <p class="text-xs/4 txt_dove_grey">We repair, install, and maintain sump and booster pumps to keep basements dry, increase water pressure, and protect against flooding during heavy rains.</p>
+            </div>
+
+            <div class="flex flex-col items-center text-center py-10 px-6 shadow-[0_4px_24px_rgba(0,0,0,0.05)] roundex-[5px] p-5">
+                <img class="w-[78px] h-[78px] rounded-full object-cover" src="./asset/image/service/Group 348.svg" alt="">
+                <h3 class="text-sm/6 font-medium mt-[22px] mb-[13px]">Kitchen Plumbing</h3>
+                <p class="text-xs/4 txt_dove_grey">From sink and dishwasher installation to fixing clogged lines, our kitchen plumbing service keeps your cooking space efficient, clean, and leak-free always.</p>
+            </div>
+
+        </div>
+        
+    </div>
+
+
+        <!-- Our Dedicated Team -->
+
+        <div class="container pb-16 pt-20">
+            <div class="container_cild">
+                <div class="max-w-[600px] m-auto text-center">
+                    <h2 class="text-3xl	txt_black_sheep font-medium uppercase">Our Dedicated Team</h2>
+                    <p class="text-sm txt_dove_grey leading-[133.5%] mt-[8px]">Meet the professionals behind our success. Our team is skilled, friendly, and dedicated to delivering the best plumbing services with a smile.</p>
+                </div>
+                <div class="flex gap-10 mt-17">
+                    <div class="w-1/4 text-center flex flex-col items-center text-white font-medium">
+                        <img class="w-[262px] h-[368px] object-cover -mb-9" src="./asset/image/home/team/image 12.png" alt="">
+                        <div class="bg_cruel_ruby w-[210px] h-[78px] rounded-[4px] flex flex-col gap-[5px] items-center justify-center">
+                            <h3 class="text-lg">Vinay Kumar</h3>
+                            <h4 class="text-xl">Plumber</h4>
+                        </div>
+                    </div>
+                    <div class="w-1/4 text-center flex flex-col items-center text-white font-medium">
+                        <img class="w-[262px] h-[368px] object-contain -mb-9" src="./asset/image/home/team/112.webp" alt="">
+                        <div class="bg_cruel_ruby w-[210px] h-[78px] rounded-[4px] flex flex-col gap-[5px] items-center justify-center">
+                            <h3 class="text-lg">Rohit Singh</h3>
+                            <h4 class="text-xl">Technician</h4>
+                        </div>
+                    </div>
+                    <div class="w-1/4 text-center flex flex-col items-center text-white font-medium">
+                        <img class="w-[262px] h-[368px] object-contain -mb-9" src="./asset/image/home/team/324.webp" alt="">
+                        <div class="bg_cruel_ruby w-[210px] h-[78px] rounded-[4px] flex flex-col gap-[5px] items-center justify-center">
+                            <h3 class="text-lg">Arjun Mehra</h3>
+                            <h4 class="text-xl">Installer</h4>
+                        </div>
+                    </div>
+                    <div class="w-1/4 text-center flex flex-col items-center text-white font-medium">
+                        <img class="w-[262px] h-[368px] object-contain -mb-9" src="./asset/image/home/team/44.webp" alt="">
+                        <div class="bg_cruel_ruby w-[210px] h-[78px] rounded-[4px] flex flex-col gap-[5px] items-center justify-center">
+                            <h3 class="text-lg">Aman Joshi</h3>
+                            <h4 class="text-xl">Supervisor</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Testimonial -->
+
+    <div class="w-full bg-[url('./asset/image/home/testimonial/(3).webp.png')] bg-cover bg-center px-[25px] pt-11 pb-9">
+        <div class="max-w-[930.48px] m-auto text-center text-white flex flex-col items-center gap-10">
+            <h2 class="text-[#EEFF06] text-3xl font-medium uppercase">Testimonial</h2>
+
+            <script>
+                $(document).ready(function(){
+                  $('.carousel_main').slick({
+                    arrows: false,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    dots: true,
+                    autoplay: true,
+                    autoplaySpeed: 3000
+                  });
+                });
+            </script>
+
+            <div class="carousel_main max-w-[930.48px] m-auto">
+                <div>
+                    <p class="text-xl leading-[23px] mb-6">We had a pipe burst late at night, and their team arrived within 30 minutes. They were fast, polite, and extremely professional. It’s rare to find service this responsive. Highly recommended for anyone needing emergency plumbing help!</p>
+                    <h4 class="text-xl font-bold mukta">Johny Vino</h4>
+                </div>
+                <div>
+                    <p class="text-xl leading-[23px] mb-6">I called them for a blocked kitchen drain, and within an hour everything was fixed. The plumber explained the issue clearly and cleaned up afterward too. Great service, transparent pricing, and quick response — I’ll definitely hire them again!</p>
+                    <h4 class="text-xl font-bold mukta">Rahul Sharma</h4>
+                </div>
+                <div>
+                    <p class="text-xl leading-[23px] mb-6">Outstanding service from start to finish. Booking was easy, the plumber showed up on time, and he fixed our leaking tap in no time. Professional, friendly, and affordable. This company truly values customer satisfaction. Great experience overall! </p>
+                    <h4 class="text-xl font-bold mukta">Ahmed Khan</h4>
+                </div>
+                <div>
+                    <p class="text-xl leading-[23px] mb-6">Our office washroom had a major water issue. Their team handled it professionally without disrupting our work. Courteous staff, clear communication, and quality work. We’re now using them for regular maintenance too. Trustworthy and dependable service provider.</p>
+                    <h4 class="text-xl font-bold mukta">Kunal Verma</h4>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+        <!-- our recent blogs -->
+
+        <div class="container py-16">
+            <div class="container_cild">
+                <h2 class="txt_black_sheep text-3xl	font-medium	uppercase mb-10">our recent blogs</h2>
+                <div class="flex gap-22">
+                    <a class="w-1/3" href="#">
+                        <div class=" flex flex-col gap-[15px]">
+                            <img class="w-full h-[132px] object-cover" src="./asset/image/home/blogs/Mask Group (9).png" alt="">
+                            <h3 class="text-xl">Understanding Plumbing Basics at Home</h3>
+                            <p class="text-xs -mt-2">Learn essential plumbing tips and tricks every homeowner should know to avoid costly repairs.</p>
+                        </div>
+                    </a>
+                    <a class="w-1/3" href="#">
+                        <div class="flex flex-col gap-[15px]">
+                            <img class="w-full h-[132px] object-cover" src="./asset/image/home/blogs/Mask Group (10).png" alt="">
+                            <h3 class="text-xl">Why Regular Maintenance Saves You Money</h3>
+                            <p class="text-xs -mt-2">Discover how regular check-ups can help you avoid plumbing disasters and extend system life.</p>
+                        </div>
+                    </a>
+                    <a class="w-1/3" href="#">
+                        <div class="flex flex-col gap-[15px]">
+                            <img class="w-full h-[132px] object-cover" src="./asset/image/home/blogs/Rectangle 172.png" alt="">
+                            <h3 class="text-xl">Choosing the Right Faucet for Your Kitchen</h3>
+                            <p class="text-xs -mt-2">A quick guide on selecting stylish, durable, and efficient kitchen faucets.</p>
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+
+    <!-- Footer -->
+
+    <div class="container py-7 bg-black">
+        <div class="container_cild text-white flex justify-between gap-10">
+            <div class="w-[39%]">
+                <a href="#"><img class="w-[165px]" src="./asset/image/footer/logo.svg" alt=""></a>
+                <p class="text-xs mt-7 mb-5 w-[362px]">Plumber Point is a trusted name in the plumbing industry. We are dedicated to offering reliable, affordable, and high-quality plumbing services to homes and businesses.</p>
+                <div class="flex gap-5">
+                    <a href="#"><img src="./asset/image/footer/Group (6).svg" alt=""></a>
+                    <a href="#"><img src="./asset/image/footer/Vector (30).svg" alt=""></a>
+                    <a href="#"><img src="./asset/image/footer/Vector (31).svg" alt=""></a>
+                </div>
+            </div>
+            <div class="w-[24%] pl-13">
+                <h3 class="text-base font-bold txt_cruel_ruby uppercase">Our Services</h3>
+                <ul class="text-xs flex flex-col gap-4 mt-9">
+                    <li><a class="duration-150 hover:text-[#DD3142]" href="#">Plumber Service</a></li>
+                    <li><a class="duration-150 hover:text-[#DD3142]" href="#">Bathroom Plumbing Service</a></li>
+                    <li><a class="duration-150 hover:text-[#DD3142]" href="#">Kitchen Plumbing Service</a></li>
+                    <li><a class="duration-150 hover:text-[#DD3142]" href="#">Roof Plumbing Service</a></li>
+                    <li><a class="duration-150 hover:text-[#DD3142]" href="#">Bathroom Plumbing Service</a></li>
+                    <li><a class="duration-150 hover:text-[#DD3142]" href="#">Kitchen Plumbing Service</a></li>
+                </ul>
+            </div>
+            <div class="w-[17%]">
+                <h3 class="text-base font-bold txt_cruel_ruby uppercase">Contact</h3>
+
+                <div class="flex flex-col gap-9 text-base leading-4 mt-9">
+                    <a href="#"><h4 class="duration-150 hover:text-[#DD3142]">1800-9938-2839<br><span class="text-xs">support@plumberpoint.com</span></h4></a>
+                    <a href="#"><h4 class="duration-150 hover:text-[#DD3142]">A-507 Mandoli<br><span class="text-xs">New Delhi, India</span></h4></a>
+                    <a href="#"><h4 class="duration-150 hover:text-[#DD3142]">Mon-Sat 9.00-15:00<br><span class="text-xs">Sunday CLOSED</span></h4></a>
+                </div>
+            </div>
+            <div class="w-[27%]">
+                <h3 class="text-base font-bold txt_cruel_ruby uppercase">Recent Post</h3>
+
+                <div class="flex flex-col gap-4 mt-5">
+                    <a href="#">
+                        <div class="flex items-center gap-[11px]">
+                            <img class="w-[68px] h-[50px] object-cover" src="./asset/image/footer/Rectangle 172 (3).png" alt="">
+                            <div class="flex flex-col gap-[3px]">
+                                <h5 class="text-[10px] font-medium">Understanding Plumbing Basics at Home</h5>
+                                <p class="text-[8px] leading-[133.5%]">Learn essential plumbing tips and tricks every homeowner should know to avoid costly repairs.</p>
+                            </div>
+                        </div>
+                    </a>
+    
+                    <a href="#">
+                        <div class="flex items-center gap-[11px]">
+                            <img class="w-[68px] h-[50px] object-cover" src="./asset/image/footer/image (74).webp" alt="">
+                            <div class="flex flex-col gap-[3px]">
+                                <h5 class="text-[10px] font-medium">Why Regular Maintenance Saves You Money</h5>
+                                <p class="text-[8px] leading-[133.5%]">Discover how regular check-ups can help you avoid plumbing disasters and extend system life.</p>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="#">
+                        <div class="flex items-center gap-[11px]">
+                            <img class="w-[68px] h-[50px] object-cover" src="./asset/image/footer/Mask Group (10).png" alt="">
+                            <div class="flex flex-col gap-[3px]">
+                                <h5 class="text-[10px] font-medium">Choosing the Right Faucet for Your Kitchen</h5>
+                                <p class="text-[8px] leading-[133.5%]">A quick guide on selecting stylish, durable, and efficient kitchen faucets.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container py-3 bg-black border-t border-[#FFFFFF]">
+        <div class="container_cild flex justify-between items-center txt_cruel_ruby text-[10px]">
+            <h4>©Copyright 2020 Techwero Systems.</h4>
+            <ul class="flex gap-10">
+                <li><a class="duration-300 hover:text-white" href="#">Term of Services</a></li>
+                <li><a class="duration-300 hover:text-white" href="#">Privacy & policy</a></li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
