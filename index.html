@@ -2,516 +2,715 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Outbuild Studios - Web Design & Development</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>PremierJessie Devs · Next‑Gen Marketing Agency</title>
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Animation Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
     <style>
+        :root {
+            --primary: #6C5CE7;
+            --primary-light: #A29BFE;
+            --accent: #00CEC9;
+            --accent-glow: #55EFC4;
+            --bg: #F8FAFF;
+            --bg-dark: #1E1E2F;
+            --text: #2D3436;
+            --text-light: #636E72;
+            --white: #FFFFFF;
+            --card-shadow: 0 20px 40px -12px rgba(108, 92, 231, 0.18);
+            --hover-shadow: 0 32px 60px -12px rgba(0, 206, 201, 0.25);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0f0f0f;
-            color: #e0e0e0;
+            font-family: 'Montserrat', sans-serif;
+            background: var(--bg);
+            color: var(--text);
             line-height: 1.6;
             overflow-x: hidden;
+        }
+
+        /* animated background shapes */
+        .bg-shapes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.35;
+        }
+        .shape {
+            position: absolute;
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            background: linear-gradient(135deg, var(--primary-light), var(--accent-glow));
+            filter: blur(70px);
+            animation: morph 18s infinite alternate ease-in-out;
+        }
+        .shape1 { width: 550px; height: 550px; top: -100px; right: -100px; background: #A29BFE; opacity: 0.2; }
+        .shape2 { width: 400px; height: 400px; bottom: 10%; left: -80px; background: #81ECEC; opacity: 0.15; animation-delay: -3s; }
+        .shape3 { width: 300px; height: 300px; top: 40%; left: 60%; background: #DFE6E9; opacity: 0.1; animation-delay: -7s; }
+        .shape4 { width: 600px; height: 600px; bottom: -150px; right: 10%; background: #fab1a0; opacity: 0.08; animation-delay: -12s; }
+
+        @keyframes morph {
+            0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+            50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+            100% { border-radius: 40% 60% 30% 60% / 50% 40% 60% 50%; }
         }
 
         /* Navigation */
         nav {
             position: sticky;
             top: 0;
-            background-color: rgba(15, 15, 15, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1.5rem 2rem;
+            width: 100%;
+            z-index: 999;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid rgba(255, 140, 0, 0.2);
-            z-index: 100;
+            justify-content: space-between;
+            padding: 1rem 5%;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.05);
+            border-bottom: 1px solid rgba(108, 92, 231, 0.08);
         }
 
         .logo {
             font-size: 1.8rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #ff8c00 0%, #ff6b00 100%);
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary) 20%, var(--accent) 80%);
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
             background-clip: text;
+            color: transparent;
+            letter-spacing: -1px;
         }
+        .logo i { color: var(--accent); margin-right: 5px; }
 
-        nav ul {
+        .nav-links {
             display: flex;
-            list-style: none;
+            align-items: center;
             gap: 2rem;
+            list-style: none;
         }
-
-        nav a {
-            color: #e0e0e0;
+        .nav-links li a {
             text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
+            color: var(--text);
+            font-weight: 600;
+            font-size: 1rem;
             position: relative;
         }
-
-        nav a:hover {
-            color: #ff8c00;
-        }
-
-        nav a::after {
+        .nav-links li a::after {
             content: '';
             position: absolute;
-            bottom: -5px;
+            bottom: -6px;
             left: 0;
             width: 0;
-            height: 2px;
-            background-color: #ff8c00;
-            transition: width 0.3s ease;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 3px;
+            transition: width 0.35s;
+        }
+        .nav-links li a:hover { color: var(--primary); }
+        .nav-links li a:hover::after { width: 100%; }
+
+        .btn-cta {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.7rem 1.8rem;
+            border-radius: 60px;
+            font-weight: 700;
+            border: none;
+            font-size: 0.95rem;
+            box-shadow: 0 10px 25px -5px rgba(108, 92, 231, 0.35);
+            transition: all 0.3s;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+        .btn-cta:hover {
+            background: var(--accent);
+            color: var(--bg-dark);
+            transform: translateY(-3px);
         }
 
-        nav a:hover::after {
-            width: 100%;
+        /* Hamburger menu */
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            background: none;
+            border: none;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        /* Mobile Navigation */
+        @media (max-width: 900px) {
+            .menu-toggle { display: block; }
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem 0;
+                gap: 1.8rem;
+                transform: translateY(-150%);
+                transition: transform 0.4s ease;
+                box-shadow: 0 20px 30px rgba(0,0,0,0.05);
+                border-bottom: 1px solid #eee;
+                z-index: 998;
+            }
+            .nav-links.active { transform: translateY(0); }
+            .nav-links .btn-cta { margin-left: 0; width: 80%; text-align: center; }
         }
 
         /* Hero Section */
         .hero {
-            min-height: 100vh;
+            min-height: 90vh;
             display: flex;
             align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            justify-content: space-between;
+            padding: 2rem 5% 4rem;
             position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(255, 140, 0, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(30px); }
+            z-index: 5;
         }
 
         .hero-content {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            max-width: 800px;
-            padding: 2rem;
+            max-width: 560px;
+            z-index: 10;
         }
 
-        .hero h1 {
-            font-size: 4rem;
+        .hero-badge {
+            background: rgba(108, 92, 231, 0.1);
+            color: var(--primary);
+            display: inline-block;
+            padding: 0.4rem 1.4rem;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 0.9rem;
             margin-bottom: 1.5rem;
+            backdrop-filter: blur(5px);
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 900;
             line-height: 1.1;
-            background: linear-gradient(135deg, #ff8c00 0%, #ffb84d 100%);
+            margin-bottom: 1.2rem;
+            color: var(--bg-dark);
+            letter-spacing: -2px;
+        }
+        .highlight {
+            background: linear-gradient(145deg, #6C5CE7 30%, #00CEC9 80%);
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
             background-clip: text;
-            animation: fadeInDown 0.8s ease;
+            color: transparent;
         }
-
-        .hero p {
-            font-size: 1.3rem;
-            color: #b0b0b0;
+        .hero-desc {
+            font-size: 1.1rem;
+            color: var(--text-light);
             margin-bottom: 2rem;
-            animation: fadeInUp 0.8s ease 0.2s both;
         }
 
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .cta-buttons {
+        .hero-btns {
             display: flex;
-            gap: 1.5rem;
-            justify-content: center;
+            gap: 1rem;
             flex-wrap: wrap;
-            animation: fadeInUp 0.8s ease 0.4s both;
         }
-
-        .btn {
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: none;
-            font-size: 1rem;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #ff8c00 0%, #ff6b00 100%);
-            color: white;
-            box-shadow: 0 10px 30px rgba(255, 140, 0, 0.3);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(255, 140, 0, 0.4);
-        }
-
         .btn-secondary {
             background: transparent;
-            color: #ff8c00;
-            border: 2px solid #ff8c00;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            padding: 0.7rem 1.8rem;
+            border-radius: 60px;
+            font-weight: 700;
+            transition: 0.3s;
+            cursor: pointer;
         }
 
-        .btn-secondary:hover {
-            background: rgba(255, 140, 0, 0.1);
-            transform: translateY(-3px);
+        .hero-visual {
+            position: relative;
+            width: 50%;
+            max-width: 600px;
+            z-index: 8;
+        }
+        .hero-img-wrapper {
+            position: relative;
+            border-radius: 40% 60% 30% 70% / 50% 40% 60% 50%;
+            overflow: hidden;
+            box-shadow: 0 40px 70px -20px rgba(108, 92, 231, 0.25);
+            animation: float 6s infinite alternate ease-in-out;
+            border: 3px solid rgba(255,255,255,0.6);
+        }
+        .hero-img-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
         }
 
-        /* Services Section */
-        .services {
-            padding: 6rem 2rem;
-            background-color: #0f0f0f;
+        .floating-icon {
+            position: absolute;
+            background: white;
+            border-radius: 20px;
+            padding: 8px 16px;
+            box-shadow: 0 20px 30px -5px rgba(0,0,0,0.08);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            animation: floatIcon 7s infinite;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.5);
+        }
+        .icon-1 { top: 5%; left: -15px; }
+        .icon-2 { bottom: 15%; right: -10px; }
+
+        @keyframes floatIcon {
+            0%,100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-10px); }
         }
 
+        /* Sections */
+        .section {
+            padding: 5rem 5% 4rem;
+            position: relative;
+            z-index: 5;
+        }
         .section-title {
+            font-size: 2.2rem;
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 4rem;
-            color: #e0e0e0;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .section-desc {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1.1rem;
         }
 
-        .section-title span {
-            color: #ff8c00;
-        }
-
+        /* Services Grid */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
         }
-
         .service-card {
-            background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
-            padding: 2.5rem;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 140, 0, 0.2);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 140, 0, 0.1), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .service-card:hover::before {
-            left: 100%;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            border-color: #ff8c00;
-            box-shadow: 0 20px 40px rgba(255, 140, 0, 0.1);
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 2rem;
+            box-shadow: var(--card-shadow);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: all 0.3s;
+            border: 1px solid rgba(255,255,255,0.7);
         }
 
         .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 1.2rem;
             display: inline-block;
+            background: white;
+            padding: 15px;
+            border-radius: 25px;
         }
+        .service-title { font-size: 1.4rem; margin: 0.5rem 0; font-weight: 800; }
 
-        .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #ff8c00;
-        }
-
-        .service-card p {
-            color: #b0b0b0;
-            line-height: 1.8;
-        }
-
-        /* Portfolio Section */
-        .portfolio {
-            padding: 6rem 2rem;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-        }
-
+        /* Portfolio */
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
+            max-width: 1280px;
+            margin: 2rem auto 0;
         }
-
-        .portfolio-item {
+        .portfolio-card {
             position: relative;
-            border-radius: 10px;
+            border-radius: 1.5rem;
             overflow: hidden;
-            background: #1a1a1a;
-            aspect-ratio: 1;
-            cursor: pointer;
-            group: "portfolio";
+            box-shadow: 0 20px 30px -10px rgba(0,0,0,0.1);
+            aspect-ratio: 1 / 0.9;
+            background: #111;
         }
-
-        .portfolio-item img {
+        .portfolio-thumb {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.4s ease;
+            transition: transform 0.6s;
         }
-
-        .portfolio-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .portfolio-overlay {
+        .portfolio-info {
             position: absolute;
-            top: 0;
+            bottom: 0;
             left: 0;
             right: 0;
-            bottom: 0;
-            background: rgba(15, 15, 15, 0.9);
+            background: linear-gradient(to top, rgba(30,30,47,0.95), rgba(30,30,47,0.6));
+            backdrop-filter: blur(8px);
+            color: white;
+            padding: 1.5rem 1.2rem;
+            transform: translateY(100%);
+            transition: transform 0.4s;
+        }
+        .portfolio-card:hover .portfolio-info { transform: translateY(0); }
+        .portfolio-title { font-size: 1.3rem; font-weight: 800; }
+
+        /* Process */
+        .process-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+        .process-step {
+            background: white;
+            border-radius: 1.8rem;
+            padding: 2rem 1.5rem;
+            flex: 1 1 180px;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+        }
+
+        /* Stats */
+        .stats-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            background: rgba(255,255,255,0.6);
+            backdrop-filter: blur(12px);
+            border-radius: 2.5rem;
+            padding: 2.5rem 1.5rem;
+            max-width: 1000px;
+            margin: 2rem auto;
+            gap: 2rem 1rem;
+        }
+        .stat-item { text-align: center; min-width: 120px; }
+        .stat-number { font-size: 2.5rem; font-weight: 900; color: var(--primary); }
+
+        /* Team */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 1.5rem auto;
+        }
+        .team-card {
+            background: white;
+            border-radius: 1.8rem;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+            padding-bottom: 1.2rem;
+        }
+        .team-img { width: 100%; height: 220px; object-fit: cover; }
+
+        /* Case, pricing, blog grids */
+        .case-grid, .pricing-grid, .blog-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .case-card, .pricing-card, .blog-card {
+            background: white;
+            border-radius: 2rem;
+            overflow: hidden;
+            flex: 1 1 280px;
+            box-shadow: var(--card-shadow);
+        }
+        .pricing-card.featured { border: 3px solid var(--accent); }
+        .price { font-size: 2.5rem; font-weight: 800; color: var(--primary); }
+
+        /* CTA Banner */
+        .cta-banner {
+            background: linear-gradient(105deg, #1E1E2F 0%, #2D2D44 100%);
+            border-radius: 2.5rem;
+            padding: 3rem 2rem;
+            margin: 2rem 5% 0;
+            color: white;
             display: flex;
             align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            gap: 1rem;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .portfolio-item:hover .portfolio-overlay {
-            opacity: 1;
-        }
-
-        .portfolio-overlay h3 {
-            color: #ff8c00;
-            font-size: 1.5rem;
-        }
-
-        .portfolio-overlay p {
-            color: #b0b0b0;
-            font-size: 0.9rem;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            padding: 6rem 2rem;
-            background: linear-gradient(135deg, #ff8c00 0%, #ff6b00 100%);
-            text-align: center;
-            color: white;
-        }
-
-        .cta-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .cta-section p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #0a0a0a;
-            border-top: 1px solid rgba(255, 140, 0, 0.2);
-            padding: 3rem 2rem;
-            text-align: center;
-            color: #666;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
+            justify-content: space-between;
             flex-wrap: wrap;
+            gap: 2rem;
         }
 
-        .footer-links a {
-            color: #b0b0b0;
-            text-decoration: none;
-            transition: color 0.3s ease;
+        footer {
+            padding: 3rem 5% 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
         }
 
-        .footer-links a:hover {
-            color: #ff8c00;
-        }
-
-        /* Responsive */
+        /* Mobile fine-tuning */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
+            .logo { font-size: 1.6rem; }
+            .hero { flex-direction: column; text-align: center; padding-top: 1rem; }
+            .hero-content { max-width: 100%; }
+            .hero-title { font-size: 2.5rem; }
+            .hero-visual { width: 100%; margin-top: 2rem; }
+            .hero-btns { justify-content: center; }
+            .floating-icon { padding: 6px 12px; font-size: 0.8rem; }
+            .icon-1 { left: 0; top: 0; }
+            .section-title { font-size: 2rem; }
+            .cta-banner { text-align: center; justify-content: center; }
+            .stats-container { flex-direction: column; align-items: center; }
+            .nav-links .btn-cta { width: 90%; }
+        }
 
-            nav ul {
-                gap: 1rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .btn {
-                width: 100%;
-                max-width: 300px;
-            }
+        @media (max-width: 480px) {
+            .hero-title { font-size: 2rem; }
+            .btn-cta, .btn-secondary { padding: 0.6rem 1.2rem; font-size: 0.9rem; }
+            .section { padding: 3.5rem 5% 3rem; }
+            .portfolio-info { padding: 1rem; }
+            .portfolio-title { font-size: 1.1rem; }
+            .faq-item { padding: 1.2rem; }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
+    <div class="bg-shapes">
+        <div class="shape shape1"></div>
+        <div class="shape shape2"></div>
+        <div class="shape shape3"></div>
+        <div class="shape shape4"></div>
+    </div>
+
+    <!-- Navigation (mobile optimized) -->
     <nav>
-        <div class="logo">Outbuild Studios</div>
-        <ul>
+        <div class="logo"><i class="fas fa-bolt"></i> PremierJessie<span style="color:#00CEC9;">Devs</span></div>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
             <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#team">Team</a></li>
             <li><a href="#contact">Contact</a></li>
+            <li><button class="btn-cta" onclick="alert('Let’s talk growth! 🚀')">Get proposal</button></li>
         </ul>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Craft Digital Excellence</h1>
-            <p>We design and develop stunning web experiences that captivate and convert</p>
-            <div class="cta-buttons">
-                <button class="btn btn-primary">Get Started</button>
-                <button class="btn btn-secondary">View Our Work</button>
+    <!-- Hero -->
+    <section id="home" class="hero">
+        <div class="hero-content" data-aos="fade-right">
+            <span class="hero-badge"><i class="fas fa-rocket"></i> NEXT‑GEN MARKETING</span>
+            <h1 class="hero-title">We <span class="highlight">ignite</span> brands <br>with creative fire.</h1>
+            <p class="hero-desc">Data‑driven campaigns, stunning visuals, and conversion‑focused design. Your growth partner since 2016.</p>
+            <div class="hero-btns">
+                <button class="btn-cta" style="margin-left:0;"><i class="fas fa-phone-alt"></i> Start now</button>
+                <button class="btn-secondary"><i class="fas fa-play"></i> Watch reel</button>
             </div>
+        </div>
+        <div class="hero-visual" data-aos="fade-left">
+            <div class="hero-img-wrapper">
+                <img src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Marketing team collaboration">
+            </div>
+            <div class="floating-icon icon-1"><i class="fas fa-chart-line" style="color:#6C5CE7;"></i> +240% ROI</div>
+            <div class="floating-icon icon-2"><i class="fas fa-users" style="color:#00CEC9;"></i> 150+ clients</div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <h2 class="section-title">Our <span>Services</span></h2>
+    <!-- Services -->
+    <section id="services" class="section">
+        <h2 class="section-title" data-aos="fade-up">what we do best</h2>
+        <div class="section-desc">Creative solutions that drive real business outcomes.</div>
         <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">🎨</div>
-                <h3>Web Design</h3>
-                <p>Beautiful, modern designs that engage your audience and reflect your brand identity.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">💻</div>
-                <h3>Development</h3>
-                <p>Robust, scalable web applications built with cutting-edge technologies and best practices.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">📱</div>
-                <h3>Responsive Design</h3>
-                <p>Perfect performance across all devices, from mobile phones to desktop computers.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">⚡</div>
-                <h3>Performance</h3>
-                <p>Lightning-fast loading speeds and optimized user experiences for maximum conversions.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🔒</div>
-                <h3>Security</h3>
-                <p>Enterprise-grade security measures to protect your data and your users' privacy.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">📊</div>
-                <h3>Analytics</h3>
-                <p>Data-driven insights to track performance and optimize your digital presence.</p>
-            </div>
+            <div class="service-card" data-aos="zoom-in-up"><div class="service-icon"><i class="fas fa-bullhorn"></i></div><div class="service-title">Brand Strategy</div><div class="service-desc">Positioning & identity that resonates.</div></div>
+            <div class="service-card" data-aos="zoom-in-up"><div class="service-icon"><i class="fas fa-chart-pie"></i></div><div class="service-title">Performance Mktg</div><div class="service-desc">Paid social & search — max ROAS.</div></div>
+            <div class="service-card" data-aos="zoom-in-up"><div class="service-icon"><i class="fas fa-paint-brush"></i></div><div class="service-title">Creative Studio</div><div class="service-desc">Video & motion that stops scroll.</div></div>
+            <div class="service-card" data-aos="zoom-in-up"><div class="service-icon"><i class="fas fa-mobile-alt"></i></div><div class="service-title">Web & UX</div><div class="service-desc">High‑performance websites.</div></div>
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio">
-        <h2 class="section-title">Our <span>Portfolio</span></h2>
+    <!-- Process -->
+    <section id="process" class="section" style="background: #f0f3fd;">
+        <h2 class="section-title" data-aos="fade-up">our proven process</h2>
+        <div class="process-grid">
+            <div class="process-step" data-aos="flip-up"><div class="step-number" style="font-size:2.5rem;font-weight:900;">01</div><i class="fas fa-search fa-2x" style="color:var(--primary);margin:0.8rem 0;"></i><h3>Discovery</h3><p>Deep dive into brand & goals.</p></div>
+            <div class="process-step" data-aos="flip-up"><div class="step-number" style="font-size:2.5rem;">02</div><i class="fas fa-lightbulb fa-2x" style="color:var(--accent);margin:0.8rem 0;"></i><h3>Strategy</h3><p>Custom roadmap.</p></div>
+            <div class="process-step" data-aos="flip-up"><div class="step-number" style="font-size:2.5rem;">03</div><i class="fas fa-pencil-ruler fa-2x" style="color:var(--primary);margin:0.8rem 0;"></i><h3>Creation</h3><p>High-end assets.</p></div>
+            <div class="process-step" data-aos="flip-up"><div class="step-number" style="font-size:2.5rem;">04</div><i class="fas fa-chart-bar fa-2x" style="color:var(--accent);margin:0.8rem 0;"></i><h3>Optimize</h3><p>Data-driven iteration.</p></div>
+        </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="work" class="section">
+        <h2 class="section-title">featured projects</h2>
         <div class="portfolio-grid">
-            <a href="https://greatpremier.github.io/outbuild-studios-themes/plumber_designs/blue_stream/">
-            <div class="portfolio-item">
-                <div style="background: linear-gradient(135deg, #ff8c00 0%, #ff6b00 100%); width: 100%; height: 100%;"></div>
-                <div class="portfolio-overlay">
-                    <h3>Project One</h3>
-                    <p>Blue Stream</p>
-                </div>
-            </a>
-            </div>
-            <div class="portfolio-item">
-                <div style="background: linear-gradient(135deg, #ff6b00 0%, #ff4500 100%); width: 100%; height: 100%;"></div>
-                <div class="portfolio-overlay">
-                    <h3>Project Two</h3>
-                    <p>E-Commerce Platform</p>
-                </div>
-            </div>
-            <div class="portfolio-item">
-                <div style="background: linear-gradient(135deg, #ff4500 0%, #ff8c00 100%); width: 100%; height: 100%;"></div>
-                <div class="portfolio-overlay">
-                    <h3>Project Three</h3>
-                    <p>Mobile Application</p>
-                </div>
-            </div>
+            <div class="portfolio-card"><img class="portfolio-thumb" src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=600"><div class="portfolio-info"><div class="portfolio-title">LUMINA</div><div>+312% engagement</div></div></div>
+            <div class="portfolio-card"><img class="portfolio-thumb" src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=600"><div class="portfolio-info"><div class="portfolio-title">NEXUS</div><div>2.4M impressions</div></div></div>
+            <div class="portfolio-card"><img class="portfolio-thumb" src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=600"><div class="portfolio-info"><div class="portfolio-title">URBAN THREADS</div><div>+89% ROAS</div></div></div>
+            <div class="portfolio-card"><img class="portfolio-thumb" src="https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=600"><div class="portfolio-info"><div class="portfolio-title">FINHUB</div><div>Rebrand +210% traffic</div></div></div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section id="contact" class="cta-section">
-        <h2>Ready to Bring Your Vision to Life?</h2>
-        <p>Let's collaborate and create something extraordinary together</p>
-        <button class="btn btn-primary" style="background: white; color: #ff8c00;">Contact Us Today</button>
+    <!-- Stats -->
+    <div class="stats-container" data-aos="fade-up">
+        <div class="stat-item"><div class="stat-number"><span class="countup">250</span>+</div><div>Projects</div></div>
+        <div class="stat-item"><div class="stat-number"><span class="countup">98</span>%</div><div>Satisfaction</div></div>
+        <div class="stat-item"><div class="stat-number">$<span class="countup">150</span>M+</div><div>Revenue</div></div>
+        <div class="stat-item"><div class="stat-number"><span class="countup">45</span>+</div><div>Experts</div></div>
+    </div>
+
+    <!-- Team -->
+    <section id="team" class="section">
+        <h2 class="section-title">meet the creatives</h2>
+        <div class="team-grid">
+            <div class="team-card"><img class="team-img" src="https://images.pexels.com/photos/2380794/pexels-photo-2380794.jpeg?auto=compress&cs=tinysrgb&w=600"><h3>Jessie Park</h3><p>Founder & Strategy</p></div>
+            <div class="team-card"><img class="team-img" src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600"><h3>Marcus Chen</h3><p>Creative Director</p></div>
+            <div class="team-card"><img class="team-img" src="https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=600"><h3>Elena Voss</h3><p>Head of Growth</p></div>
+            <div class="team-card"><img class="team-img" src="https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg?auto=compress&cs=tinysrgb&w=600"><h3>David Okonkwo</h3><p>Performance Lead</p></div>
+        </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-links">
-            <a href="#services">Services</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#contact">Contact</a>
-            <a href="#">Privacy Policy</a>
+    <!-- Case studies -->
+    <section class="section" style="background: #fafbff;">
+        <h2 class="section-title">deep dive: case studies</h2>
+        <div class="case-grid">
+            <div class="case-card"><img class="case-img" style="height:180px;object-fit:cover;" src="https://images.pexels.com/photos/3184460/pexels-photo-3184460.jpeg?auto=compress&cs=tinysrgb&w=600"><div style="padding:1.5rem"><h3>EcoWear · 3x ROAS</h3><p>Full funnel UGC strategy.</p></div></div>
+            <div class="case-card"><img class="case-img" style="height:180px;object-fit:cover;" src="https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&cs=tinysrgb&w=600"><div style="padding:1.5rem"><h3>TechFlow SaaS</h3><p>450+ demos in Q1.</p></div></div>
+            <div class="case-card"><img class="case-img" style="height:180px;object-fit:cover;" src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=600"><div style="padding:1.5rem"><h3>Bloom Beverage</h3><p>2.1M reach campaign.</p></div></div>
         </div>
-        <p>&copy; 2026 Outbuild Studios. All rights reserved.</p>
+    </section>
+
+    <!-- Pricing -->
+    <section class="section">
+        <h2 class="section-title">transparent investment</h2>
+        <div class="pricing-grid">
+            <div class="pricing-card"><h3>Growth</h3><div class="price">$4.5k</div><p>Monthly</p><ul style="list-style:none;margin:1.2rem 0"><li><i class="fas fa-check" style="color:var(--accent);"></i> Strategy & Creative</li><li><i class="fas fa-check"></i> Ad Management</li></ul><button class="btn-secondary" style="width:100%;">Choose</button></div>
+            <div class="pricing-card featured"><h3>Scale <span style="background:var(--accent);padding:2px 10px;border-radius:20px;color:black;">Popular</span></h3><div class="price">$8.9k</div><p>Monthly</p><ul style="list-style:none;margin:1.2rem 0"><li><i class="fas fa-check"></i> Everything in Growth</li><li><i class="fas fa-check"></i> CRO & Email</li></ul><button class="btn-cta" style="width:100%;margin-left:0;">Get started</button></div>
+            <div class="pricing-card"><h3>Enterprise</h3><div class="price">Custom</div><p>Tailored</p><ul style="list-style:none;margin:1.2rem 0"><li><i class="fas fa-check"></i> Full funnel</li><li><i class="fas fa-check"></i> Global</li></ul><button class="btn-secondary" style="width:100%;">Contact</button></div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" style="max-width:900px; margin:0 auto;">
+        <h2 class="section-title">faq</h2>
+        <div class="faq-item" style="background:white;border-radius:1.5rem;padding:1.5rem;margin-bottom:1rem;"><h4><i class="fas fa-question-circle" style="color:var(--primary);"></i> How soon can we start?</h4><p>Typically 5-7 days after onboarding.</p></div>
+        <div class="faq-item" style="background:white;border-radius:1.5rem;padding:1.5rem;margin-bottom:1rem;"><h4><i class="fas fa-question-circle"></i> Do you work with B2B?</h4><p>Absolutely — extensive B2B expertise.</p></div>
+        <div class="faq-item" style="background:white;border-radius:1.5rem;padding:1.5rem;"><h4><i class="fas fa-question-circle"></i> Reporting?</h4><p>Weekly dashboards + monthly reviews.</p></div>
+    </section>
+
+    <!-- Blog -->
+    <section class="section">
+        <h2 class="section-title">latest insights</h2>
+        <div class="blog-grid">
+            <div class="blog-card"><img class="blog-img" style="height:180px;object-fit:cover;" src="https://images.pexels.com/photos/3184398/pexels-photo-3184398.jpeg?auto=compress&cs=tinysrgb&w=600"><div style="padding:1.2rem"><h4>2026 Trends</h4><p>AI & short-form.</p></div></div>
+            <div class="blog-card"><img class="blog-img" style="height:180px;object-fit:cover;" src="https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress&cs=tinysrgb&w=600"><div style="padding:1.2rem"><h4>ROAS optimization</h4><p>Creative testing.</p></div></div>
+            <div class="blog-card"><img class="blog-img" style="height:180px;object-fit:cover;" src="https://images.pexels.com/photos/1181622/pexels-photo-1181622.jpeg?auto=compress&cs=tinysrgb&w=600"><div style="padding:1.2rem"><h4>Brand storytelling</h4><p>Connect & convert.</p></div></div>
+        </div>
+    </section>
+
+    <!-- Clients -->
+    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:2.5rem 4rem; margin: 2rem 0;" data-aos="zoom-in">
+        <div style="font-size:1.5rem; font-weight:700;"><i class="fab fa-airbnb"></i> airbnb</div>
+        <div style="font-size:1.5rem; font-weight:700;"><i class="fab fa-shopify"></i> Shopify</div>
+        <div style="font-size:1.5rem; font-weight:700;"><i class="fab fa-google"></i> Google</div>
+        <div style="font-size:1.5rem; font-weight:700;"><i class="fab fa-microsoft"></i> Microsoft</div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-banner" data-aos="fade-up">
+        <div><h2 style="font-size:2rem;">Ready to dominate?</h2><p>Let’s build something legendary.</p></div>
+        <button class="btn-cta" style="background:#00CEC9; color:#1E1E2F;" onclick="alert('Thanks! We’ll be in touch.')"><i class="fas fa-bolt"></i> Start your project</button>
+    </div>
+
+    <footer id="contact">
+        <div style="font-weight:700;font-size:1.5rem;background:linear-gradient(145deg,#6C5CE7,#00CEC9);-webkit-background-clip:text;background-clip:text;color:transparent;">PremierJessie Devs</div>
+        <div class="social">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-x-twitter"></i></a>
+        </div>
+        <div style="margin-top:1.5rem;width:100%;text-align:center;color:var(--text-light);">© 2026 PremierJessie Devs. All rights reserved. <i class="fas fa-heart" style="color: var(--accent);"></i></div>
     </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, offset: 80, duration: 700 });
+        // Mobile menu toggle
+        const toggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        toggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = toggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+        // Close menu on link click (mobile)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if(window.innerWidth <= 900) navLinks.classList.remove('active');
+                toggle.querySelector('i').classList.add('fa-bars');
+                toggle.querySelector('i').classList.remove('fa-times');
+            });
+        });
+        // Countup
+        const counters = document.querySelectorAll('.countup');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    counters.forEach(c => {
+                        const target = parseInt(c.innerText.replace(/\D/g,'')) || 0;
+                        let count = 0;
+                        const update = () => {
+                            const increment = target / 30;
+                            if(count < target) {
+                                count += increment;
+                                c.innerText = Math.ceil(count);
+                                setTimeout(update, 15);
+                            } else c.innerText = target;
+                        };
+                        update();
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {threshold:0.3});
+        const stats = document.querySelector('.stats-container');
+        if(stats) observer.observe(stats);
+        // shape parallax
+        window.addEventListener('scroll', () => {
+            const shapes = document.querySelectorAll('.shape');
+            let s = window.scrollY;
+            shapes.forEach((el,i) => el.style.transform = `translateY(${s*0.02*(i+1)}px)`);
+        });
+    </script>
 </body>
 </html>
