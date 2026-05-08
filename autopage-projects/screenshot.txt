@@ -1,0 +1,15 @@
+<!-- This is a placeholder for screenshot.png -->
+<!-- In a real theme, this would be a 1200x900 pixel image showing the theme's appearance -->
+<!-- For Autopage Projects theme, the screenshot should show:
+     - The hero section with company name and tagline
+     - Some service items
+     - Portfolio images
+     - Modern, slick design with animations
+-->
+<!-- To create the actual screenshot:
+     1. Install the theme on a WordPress site
+     2. Set up the front page with sample content
+     3. Take a screenshot of the homepage
+     4. Resize to 1200x900 pixels
+     5. Save as screenshot.png in the theme root directory
+-->
