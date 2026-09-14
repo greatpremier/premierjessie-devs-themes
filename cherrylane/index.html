@@ -533,6 +533,19 @@
             transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
     </style>
+    <script>
+        (() => {
+            const blocked = (event) => event.preventDefault();
+            document.addEventListener('contextmenu', blocked);
+            document.addEventListener('dragstart', blocked);
+            document.addEventListener('selectstart', blocked);
+            document.addEventListener('copy', blocked);
+            document.addEventListener('keydown', (event) => {
+                const key = event.key.toLowerCase();
+                if (event.key === 'F12' || (event.ctrlKey && ['s', 'u', 'p'].includes(key)) || (event.ctrlKey && event.shiftKey && ['i', 'j', 'c'].includes(key))) blocked(event);
+            });
+        })();
+    </script>
 </head>
 <body>
     <header id="mainHeader">
