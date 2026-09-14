@@ -5,6 +5,8 @@ const PORT = process.env.PORT || 4000;
 
 // Serve static files (CSS, JS, images)
 app.use(express.static('public'));
+app.use('/cherrylane', express.static(path.join(__dirname, 'cherrylane')));
+app.use('/plumber_designs', express.static(path.join(__dirname, 'plumber_designs')));
 
 // Route for home page
 app.get('/', (req, res) => {
