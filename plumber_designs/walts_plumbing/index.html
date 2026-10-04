@@ -1,0 +1,2386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#001428">
+<title>Walt's Plumbing Co. | Licensed Master Plumbers | 24/7 Emergency Service</title>
+<meta name="description" content="Licensed and insured master plumbers serving the metro area for over 25 years. Fast emergency response, upfront transparent pricing, 100% satisfaction guaranteed.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   DESIGN TOKENS
+   ============================================================ */
+:root{
+  --primary:#001428;
+  --primary-600:#0f2942;
+  --primary-700:#314863;
+  --secondary:#006398;
+  --secondary-soft:#cce5ff;
+  --accent:#ed6425;
+  --accent-600:#c94f18;
+
+  --bg:#f8f9ff;
+  --surface:#ffffff;
+  --surface-low:#eff4ff;
+  --surface-mid:#e5eeff;
+  --surface-high:#dce9ff;
+
+  --ink:#0b1c30;
+  --muted:#43474d;
+  --muted-soft:#74777e;
+  --line:#c3c6ce;
+  --line-soft:#e2e8f0;
+
+  --amber:#f59e0b;
+  --green:#16a34a;
+
+  --r-sm:8px;
+  --r:12px;
+  --r-lg:16px;
+  --r-xl:24px;
+  --r-pill:9999px;
+
+  --sh-sm:0 2px 8px rgba(15,41,66,.06);
+  --sh:0 8px 24px rgba(15,41,66,.12);
+  --sh-lg:0 18px 48px rgba(15,41,66,.18);
+
+  --container:1280px;
+  --gutter:clamp(16px,4vw,48px);
+  --header-h:64px;
+
+  --ease:cubic-bezier(.25,.46,.45,.94);
+  --font-head:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --font-body:'Work Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*,*::before,*::after{box-sizing:border-box}
+html{
+  -webkit-text-size-adjust:100%;
+  scroll-behavior:smooth;
+  scroll-padding-top:calc(var(--header-h) + 20px);
+}
+body{
+  margin:0;
+  font-family:var(--font-body);
+  font-size:16px;
+  line-height:1.6;
+  color:var(--ink);
+  background:var(--bg);
+  -webkit-font-smoothing:antialiased;
+  -webkit-tap-highlight-color:transparent;
+  overflow-x:clip;
+}
+@supports not (overflow:clip){ body{overflow-x:hidden} }
+
+img,svg,iframe,video{display:block;max-width:100%}
+a{color:var(--secondary);text-decoration:none;touch-action:manipulation}
+a:hover{text-decoration:underline}
+h1,h2,h3,h4{
+  font-family:var(--font-head);
+  margin:0;
+  line-height:1.2;
+  color:var(--primary);
+  letter-spacing:-.01em;
+  overflow-wrap:break-word;
+}
+p{margin:0;overflow-wrap:break-word}
+button{font:inherit;cursor:pointer;touch-action:manipulation;border:none;background:none;color:inherit}
+ul{margin:0;padding:0;list-style:none}
+
+:focus-visible{outline:3px solid rgba(15,41,66,.45);outline-offset:2px;border-radius:4px}
+
+.sr-only{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);
+  white-space:nowrap;border:0;
+}
+.skip-link{
+  position:absolute;left:16px;top:-100px;z-index:200;
+  background:var(--primary);color:#fff;padding:12px 20px;border-radius:var(--r-sm);
+  font-family:var(--font-head);font-weight:700;font-size:14px;
+  transition:top .2s var(--ease);
+}
+.skip-link:focus{top:16px;text-decoration:none}
+
+/* ============================================================
+   LAYOUT PRIMITIVES
+   ============================================================ */
+.container{
+  width:100%;
+  max-width:var(--container);
+  margin-inline:auto;
+  padding-inline:var(--gutter);
+}
+.section{padding-block:clamp(52px,7vw,88px)}
+.section--white{background:var(--surface)}
+.section--soft{background:var(--surface-low)}
+.section--bg{background:var(--bg)}
+
+.section-head{max-width:720px;margin-bottom:clamp(28px,4vw,52px)}
+.section-head--center{margin-inline:auto;text-align:center}
+
+.eyebrow{
+  display:inline-block;
+  font-family:var(--font-head);
+  font-size:12px;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;
+  color:var(--secondary);
+  margin-bottom:8px;
+}
+.h1{font-size:clamp(30px,6.5vw,54px);font-weight:800;letter-spacing:-.025em;line-height:1.08}
+.h2{font-size:clamp(24px,4.6vw,38px);font-weight:800;letter-spacing:-.02em}
+.h3{font-size:clamp(19px,3vw,24px);font-weight:700}
+.lead{font-size:clamp(16px,1.6vw,18px);line-height:1.6;color:var(--muted)}
+
+/* Material Symbols */
+.material-symbols-outlined{
+  font-family:'Material Symbols Outlined';
+  font-weight:normal;font-style:normal;font-size:24px;line-height:1;
+  letter-spacing:normal;text-transform:none;display:inline-block;
+  white-space:nowrap;word-wrap:normal;direction:ltr;
+  -webkit-font-smoothing:antialiased;
+  font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;
+}
+.ms-fill{font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  font-family:var(--font-head);font-weight:700;font-size:15px;line-height:1.2;
+  padding:14px 24px;border-radius:var(--r);border:2px solid transparent;
+  text-align:center;text-decoration:none;max-width:100%;
+  transition:background-color .2s var(--ease),color .2s var(--ease),
+             border-color .2s var(--ease),transform .2s var(--ease),box-shadow .2s var(--ease);
+}
+.btn:hover{text-decoration:none}
+.btn:active{transform:scale(.98)}
+.btn .material-symbols-outlined{font-size:20px;flex:none}
+
+.btn--primary{background:var(--primary);color:#fff;box-shadow:var(--sh-sm)}
+.btn--primary:hover{background:var(--primary-600);transform:translateY(-1px);box-shadow:var(--sh)}
+
+.btn--accent{background:var(--accent);color:#fff;box-shadow:var(--sh-sm)}
+.btn--accent:hover{background:var(--accent-600);transform:translateY(-1px);box-shadow:var(--sh)}
+
+.btn--light{background:#fff;color:var(--primary);box-shadow:var(--sh-sm)}
+.btn--light:hover{background:var(--surface-low);transform:translateY(-1px)}
+
+.btn--outline{background:var(--surface-low);color:var(--secondary);border-color:transparent}
+.btn--outline:hover{background:var(--surface-mid)}
+
+.btn--sm{padding:10px 16px;font-size:14px}
+.btn--lg{padding:16px 28px;font-size:16px}
+.btn--block{width:100%}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.site-header{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  box-shadow:0 2px 12px rgba(15,41,66,.06);
+}
+.header-row{
+  height:var(--header-h);
+  display:flex;align-items:center;justify-content:space-between;
+  gap:12px;min-width:0;
+}
+
+/* Brand */
+.brand{
+  display:flex;align-items:center;gap:10px;
+  flex:0 1 auto;min-width:0;text-decoration:none;
+}
+.brand:hover{text-decoration:none}
+.brand img{height:28px;width:auto;flex:none}
+.brand-text{
+  font-family:var(--font-head);font-weight:700;
+  font-size:15px;color:var(--primary);
+  letter-spacing:-.02em;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+
+/* Desktop nav */
+.main-nav{display:none}
+.nav-list{display:flex;align-items:center;gap:22px}
+.nav-list a{
+  position:relative;display:inline-block;
+  font-family:var(--font-head);font-weight:600;font-size:15px;
+  color:var(--ink);padding-block:6px;white-space:nowrap;
+  text-decoration:none;
+  transition:color .2s var(--ease);
+}
+.nav-list a::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:2px;
+  background:var(--accent);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .2s var(--ease);
+}
+.nav-list a:hover{color:var(--primary);text-decoration:none}
+.nav-list a:hover::after{transform:scaleX(1)}
+
+/* Header actions */
+.header-actions{display:flex;align-items:center;gap:8px;flex:none}
+.header-phone{display:none}
+.header-avatar{display:none}
+
+/* Hamburger */
+.nav-toggle{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:44px;height:44px;flex:none;
+  border:1px solid var(--line);border-radius:var(--r);
+  background:#fff;color:var(--primary);
+  transition:background-color .2s var(--ease),border-color .2s var(--ease);
+}
+.nav-toggle:hover{background:var(--surface-low);border-color:var(--muted-soft)}
+.nav-toggle .icon-close{display:none}
+.nav-toggle[aria-expanded="true"] .icon-menu{display:none}
+.nav-toggle[aria-expanded="true"] .icon-close{display:block}
+
+/* ============================================================
+   MOBILE DRAWER
+   ============================================================ */
+.nav-scrim{
+  position:fixed;inset:0;z-index:90;
+  background:rgba(0,20,40,.55);
+  opacity:0;visibility:hidden;
+  transition:opacity .3s var(--ease),visibility .3s var(--ease);
+}
+.nav-scrim.is-open{opacity:1;visibility:visible}
+
+.nav-drawer{
+  position:fixed;top:0;right:0;bottom:0;z-index:100;
+  width:min(88%,360px);
+  display:flex;flex-direction:column;
+  padding:24px;
+  padding-bottom:calc(24px + env(safe-area-inset-bottom,0px));
+  background:var(--primary);color:#fff;
+  overflow-y:auto;-webkit-overflow-scrolling:touch;
+  transform:translateX(100%);
+  transition:transform .35s cubic-bezier(0,0,.2,1);
+}
+.nav-drawer.is-open{transform:translateX(0)}
+
+.drawer-head{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:12px;margin-bottom:28px;
+}
+.drawer-brand{
+  display:flex;align-items:center;gap:8px;min-width:0;
+  font-family:var(--font-head);font-weight:700;font-size:17px;color:#fff;
+}
+.drawer-brand .material-symbols-outlined{color:var(--secondary-soft);flex:none}
+.drawer-close{
+  width:44px;height:44px;flex:none;
+  display:flex;align-items:center;justify-content:center;
+  border:1px solid rgba(255,255,255,.25);border-radius:var(--r);
+  background:transparent;color:#fff;
+  transition:background-color .2s var(--ease);
+}
+.drawer-close:hover{background:rgba(255,255,255,.12)}
+
+.drawer-nav{display:flex;flex-direction:column;margin-bottom:28px}
+.drawer-link{
+  font-family:var(--font-head);font-weight:600;font-size:17px;
+  color:#fff;text-decoration:none;padding:14px 0;
+  border-bottom:1px solid rgba(255,255,255,.12);
+  transition:color .2s var(--ease),padding-left .2s var(--ease);
+}
+.drawer-link:hover{color:#ffb599;padding-left:4px;text-decoration:none}
+
+.drawer-actions{margin-top:auto;display:flex;flex-direction:column;gap:12px}
+.drawer-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:14px 24px;border-radius:var(--r);
+  font-family:var(--font-head);font-weight:700;font-size:15px;line-height:1.2;
+  text-decoration:none;text-align:center;
+  transition:background-color .2s var(--ease),transform .2s var(--ease);
+}
+.drawer-btn:hover{text-decoration:none;transform:translateY(-1px)}
+.drawer-btn .material-symbols-outlined{font-size:20px;flex:none}
+.drawer-btn--call{background:var(--accent);color:#fff}
+.drawer-btn--call:hover{background:var(--accent-600)}
+.drawer-btn--book{background:#fff;color:var(--primary)}
+.drawer-btn--book:hover{background:var(--surface-low)}
+.drawer-note{font-size:13.5px;color:#93a9bd;margin-top:20px}
+
+/* ============================================================
+   ALERT STRIP
+   ============================================================ */
+.alert-strip{
+  background:#4b1600;color:#fff;
+  padding-block:14px;
+}
+.alert-row{
+  display:flex;flex-direction:column;align-items:center;
+  gap:12px;text-align:center;
+}
+.alert-left{
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+}
+.ping{position:relative;display:flex;width:14px;height:14px;flex:none}
+.ping::before{
+  content:"";position:absolute;inset:0;border-radius:50%;
+  background:var(--accent);opacity:.75;
+  animation:ping 1.8s var(--ease) infinite;
+}
+.ping::after{
+  content:"";position:absolute;inset:2px;border-radius:50%;background:var(--accent);
+}
+@keyframes ping{
+  0%{transform:scale(1);opacity:.75}
+  70%,100%{transform:scale(2.2);opacity:0}
+}
+.alert-kicker{
+  font-family:var(--font-head);font-size:13px;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--secondary-soft);
+}
+.alert-text{font-size:14px;color:#ffdbce;max-width:62ch}
+.alert-right{display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center}
+.alert-eta{
+  display:none;align-items:center;gap:6px;
+  font-size:12.5px;color:#ffdbce;
+}
+.alert-eta .material-symbols-outlined{font-size:16px}
+.alert-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:8px 14px;border-radius:var(--r-sm);
+  background:var(--accent);color:#fff;
+  font-family:var(--font-head);font-size:14px;font-weight:700;
+  white-space:nowrap;text-decoration:none;
+  transition:background-color .2s var(--ease);
+}
+.alert-btn:hover{background:var(--accent-600);text-decoration:none}
+.alert-btn .material-symbols-outlined{font-size:18px}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{
+  position:relative;
+  padding-block:clamp(28px,5vw,56px) clamp(40px,6vw,72px);
+  background:var(--surface);
+  overflow:hidden;
+}
+.hero::before{
+  content:"";position:absolute;
+  right:-180px;top:-180px;width:520px;height:520px;border-radius:50%;
+  background:rgba(220,233,255,.55);filter:blur(90px);
+  pointer-events:none;
+}
+.hero::after{
+  content:"";position:absolute;
+  left:-140px;bottom:-140px;width:420px;height:420px;border-radius:50%;
+  background:rgba(204,229,255,.5);filter:blur(90px);
+  pointer-events:none;
+}
+.hero-grid{
+  position:relative;
+  display:grid;grid-template-columns:1fr;
+  gap:clamp(36px,5vw,56px);
+  align-items:center;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:6px 12px;border-radius:var(--r-pill);
+  background:var(--surface-mid);color:var(--secondary);
+  font-family:var(--font-head);font-size:12px;font-weight:700;
+  margin-bottom:20px;box-shadow:var(--sh-sm);
+}
+.hero-badge .material-symbols-outlined{font-size:16px;color:var(--accent)}
+.hero h1{max-width:22ch;margin-bottom:18px}
+.hero .lead{max-width:52ch;margin-bottom:28px}
+
+.hero-cta{
+  display:flex;flex-direction:column;gap:14px;
+  width:100%;margin-bottom:32px;
+}
+.hero-cta .btn{width:100%}
+
+.hero-trust{
+  display:grid;grid-template-columns:1fr;gap:12px;
+  width:100%;padding-top:20px;
+}
+.trust-item{
+  display:flex;align-items:center;gap:12px;
+  padding:12px;border-radius:var(--r);
+  background:var(--surface-low);
+}
+.trust-item .material-symbols-outlined{color:var(--secondary);font-size:26px;flex:none}
+.trust-item strong{
+  display:block;font-family:var(--font-head);font-size:14px;
+  color:var(--primary);line-height:1.25;
+}
+.trust-item span{display:block;font-size:12px;color:var(--muted);line-height:1.4}
+
+/* Hero visual */
+.hero-visual{position:relative;max-width:520px;margin-inline:auto;width:100%}
+.hero-photo{
+  border-radius:var(--r-lg);
+  overflow:hidden;
+  box-shadow:var(--sh-lg);
+  background:linear-gradient(150deg,var(--primary),var(--primary-600));
+  aspect-ratio:4/5;
+}
+.hero-photo img{width:100%;height:100%;object-fit:cover}
+.hero-rating{
+  position:absolute;top:-10px;right:0;
+  display:flex;align-items:center;gap:8px;
+  padding:10px 14px;border-radius:var(--r);
+  background:var(--primary);color:#fff;
+  box-shadow:var(--sh);
+}
+.hero-rating .material-symbols-outlined{color:var(--secondary-soft);font-size:20px;flex:none}
+.hero-rating strong{
+  display:block;font-family:var(--font-head);font-size:14px;
+  font-weight:800;line-height:1.1;color:#fff;
+}
+.hero-rating small{display:block;font-size:11px;color:#b0c9e8;line-height:1.2}
+
+.hero-crew{
+  display:flex;align-items:center;gap:14px;
+  margin-top:16px;padding:16px;border-radius:var(--r);
+  background:#fff;box-shadow:var(--sh);
+}
+.hero-crew-icon{
+  width:48px;height:48px;border-radius:50%;flex:none;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--secondary-soft);color:var(--primary);
+}
+.hero-crew-label{
+  display:block;font-family:var(--font-head);font-size:11px;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
+}
+.hero-crew-value{
+  display:flex;align-items:center;gap:8px;
+  font-family:var(--font-head);font-weight:700;font-size:16px;color:var(--primary);
+}
+.dot-live{
+  width:8px;height:8px;border-radius:50%;background:var(--green);flex:none;
+  box-shadow:0 0 0 3px rgba(22,163,74,.18);
+}
+.hero-crew small{display:block;font-size:12px;color:var(--muted)}
+
+/* ============================================================
+   STATS RIBBON
+   ============================================================ */
+.stats-ribbon{background:var(--primary);color:#fff;padding-block:clamp(28px,4vw,40px)}
+.stats-grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:clamp(18px,3vw,28px);text-align:center;
+}
+.stat-value{
+  display:block;font-family:var(--font-head);font-weight:800;
+  font-size:clamp(26px,4.6vw,40px);line-height:1.05;
+  letter-spacing:-.03em;color:var(--secondary-soft);
+}
+.stat-value--accent{color:var(--accent)}
+.stat-label{
+  display:block;margin-top:6px;
+  font-family:var(--font-head);font-size:13.5px;font-weight:600;
+  color:#d1e4ff;
+}
+.stat-sub{display:block;font-size:12px;color:#7991af;margin-top:2px}
+
+/* ============================================================
+   SERVICE CARDS
+   ============================================================ */
+.services-grid{
+  display:grid;grid-template-columns:1fr;
+  gap:clamp(20px,2.4vw,24px);
+}
+.service-card{
+  position:relative;
+  display:flex;flex-direction:column;justify-content:space-between;
+  background:#fff;border-radius:var(--r-lg);
+  box-shadow:var(--sh-sm);overflow:hidden;
+  transition:transform .25s var(--ease),box-shadow .25s var(--ease);
+}
+.service-card:hover{transform:translateY(-4px);box-shadow:var(--sh-lg)}
+.service-card--accent::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:5px;
+  background:var(--accent);
+}
+.service-card-body{padding:clamp(22px,2.8vw,32px)}
+.card-icon{
+  width:56px;height:56px;border-radius:var(--r);
+  display:flex;align-items:center;justify-content:center;
+  background:var(--surface-mid);color:var(--secondary);
+  margin-bottom:20px;flex:none;
+  transition:transform .25s var(--ease);
+}
+.card-icon--accent{background:#ffdbce;color:var(--accent)}
+.service-card:hover .card-icon{transform:scale(1.08)}
+.card-icon .material-symbols-outlined{font-size:30px}
+.card-tag{
+  display:inline-block;padding:4px 10px;border-radius:var(--r-pill);
+  background:var(--surface-mid);color:var(--secondary);
+  font-family:var(--font-head);font-size:11.5px;font-weight:700;
+  margin-bottom:8px;
+}
+.card-tag--accent{background:#ffdbce;color:#7f2b00}
+.service-card h3{font-size:clamp(18px,2.2vw,22px);margin-bottom:10px}
+.service-card p{font-size:14.5px;line-height:1.6;color:var(--muted)}
+.card-foot{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:18px clamp(22px,2.8vw,32px);
+  background:rgba(239,244,255,.6);
+  border-top:1px solid var(--line-soft);
+}
+.card-foot-label{display:block;font-size:12px;color:var(--muted)}
+.card-foot-value{
+  display:block;font-family:var(--font-head);font-size:14.5px;
+  font-weight:700;color:var(--primary);
+}
+.card-arrow{
+  display:flex;align-items:center;justify-content:center;
+  width:38px;height:38px;border-radius:var(--r-sm);flex:none;
+  background:#fff;color:var(--secondary);
+  transition:background-color .2s var(--ease),color .2s var(--ease);
+}
+.service-card:hover .card-arrow{background:var(--primary);color:#fff}
+.card-arrow .material-symbols-outlined{font-size:20px}
+
+/* ============================================================
+   PILLARS
+   ============================================================ */
+.pillars-grid{
+  display:grid;grid-template-columns:1fr;
+  gap:clamp(20px,2.6vw,28px);
+}
+.pillar{
+  display:flex;flex-direction:column;justify-content:space-between;
+  background:#fff;border-radius:var(--r-lg);
+  padding:clamp(22px,2.6vw,28px);
+  box-shadow:var(--sh-sm);
+}
+.pillar-icon{
+  width:48px;height:48px;border-radius:var(--r);
+  display:flex;align-items:center;justify-content:center;
+  background:var(--surface-mid);color:var(--primary);
+  margin-bottom:18px;
+}
+.pillar-icon .material-symbols-outlined{font-size:28px}
+.pillar h3{font-size:19px;margin-bottom:8px}
+.pillar p{font-size:14.5px;color:var(--muted);line-height:1.6}
+.pillar-foot{
+  display:flex;align-items:center;gap:6px;
+  margin-top:22px;padding-top:16px;
+  border-top:1px solid var(--line-soft);
+  font-family:var(--font-head);font-size:13px;font-weight:700;
+  color:var(--secondary);
+}
+.pillar-foot .material-symbols-outlined{font-size:16px;flex:none}
+
+/* ============================================================
+   BOOKING SECTION
+   ============================================================ */
+.booking-grid{
+  display:grid;grid-template-columns:1fr;
+  gap:clamp(32px,5vw,48px);align-items:start;
+}
+.booking-intro h2{margin-bottom:14px}
+.booking-intro > p{margin-bottom:24px;color:var(--muted)}
+.booking-photo{
+  border-radius:var(--r-lg);overflow:hidden;
+  box-shadow:var(--sh);background:var(--surface-mid);
+  aspect-ratio:16/10;margin-top:16px;
+}
+.booking-photo img{width:100%;height:100%;object-fit:cover}
+.phone-card{
+  display:flex;flex-direction:column;gap:16px;
+  padding:20px;border-radius:var(--r-lg);
+  background:#4b1600;color:#fff;margin-top:20px;
+  box-shadow:var(--sh);
+}
+.phone-card-kicker{
+  display:block;font-family:var(--font-head);font-size:11.5px;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--secondary-soft);
+}
+.phone-card-number{
+  font-family:var(--font-head);font-size:22px;font-weight:800;color:#fff;
+  margin-top:2px;
+}
+.phone-card small{display:block;font-size:12px;color:#ffb599;margin-top:4px}
+.phone-card-btn{
+  display:flex;align-items:center;justify-content:center;
+  width:56px;height:56px;border-radius:var(--r);flex:none;
+  background:var(--accent);color:#fff;align-self:flex-start;
+  transition:transform .2s var(--ease);
+}
+.phone-card-btn:hover{transform:scale(1.05)}
+.phone-card-btn .material-symbols-outlined{font-size:28px}
+
+/* Form */
+.form-panel{
+  background:var(--surface-low);
+  border-radius:var(--r-xl);
+  padding:clamp(20px,3vw,40px);
+  box-shadow:var(--sh-sm);
+}
+.form-grid{
+  display:grid;grid-template-columns:1fr;
+  gap:20px;
+}
+.field label{
+  display:block;
+  font-family:var(--font-head);font-size:14px;font-weight:600;
+  color:var(--primary);margin-bottom:8px;
+}
+.field input,.field select,.field textarea{
+  width:100%;
+  font-family:var(--font-body);font-size:16px;color:var(--ink);
+  background:#fff;border:1px solid var(--line);
+  border-radius:var(--r);padding:14px 16px;
+  min-height:52px;
+  transition:border-color .2s var(--ease),box-shadow .2s var(--ease);
+}
+.field textarea{min-height:110px;resize:vertical;line-height:1.55}
+.field select{
+  appearance:none;-webkit-appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%2343474d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 14px center;
+  padding-right:46px;
+}
+.field input:focus,.field select:focus,.field textarea:focus{
+  outline:none;border-color:var(--secondary);
+  box-shadow:0 0 0 3px rgba(0,99,152,.18);
+}
+
+.radio-grid{display:grid;grid-template-columns:1fr;gap:12px}
+.radio-card{
+  display:flex;align-items:flex-start;gap:12px;
+  padding:16px;border-radius:var(--r);
+  background:#fff;cursor:pointer;box-shadow:var(--sh-sm);
+  transition:background-color .2s var(--ease);
+}
+.radio-card:hover{background:var(--surface-mid)}
+.radio-card input{margin-top:3px;flex:none;accent-color:var(--secondary)}
+.radio-card strong{
+  display:block;font-family:var(--font-head);font-size:14px;
+  color:var(--primary);
+}
+.radio-card strong.accent{color:var(--accent);display:flex;align-items:center;gap:4px}
+.radio-card small{display:block;font-size:12.5px;color:var(--muted);margin-top:2px}
+
+.form-footer{
+  display:flex;flex-direction:column;gap:14px;padding-top:8px;
+}
+.form-privacy{
+  display:flex;align-items:center;gap:8px;
+  font-size:12.5px;color:var(--muted);
+}
+.form-privacy .material-symbols-outlined{font-size:16px;color:var(--green);flex:none}
+
+.form-success{
+  display:none;margin-top:24px;padding:24px;
+  border-radius:var(--r-lg);
+  background:var(--surface-high);color:var(--primary);
+}
+.form-success.is-visible{display:flex;gap:16px;align-items:flex-start}
+.form-success .material-symbols-outlined{font-size:32px;color:var(--secondary);flex:none}
+.form-success h4{font-size:18px;margin-bottom:4px}
+.form-success p{font-size:14px;color:var(--muted)}
+
+/* ============================================================
+   REVIEWS
+   ============================================================ */
+.reviews-head{
+  display:flex;flex-direction:column;gap:20px;
+  margin-bottom:clamp(28px,4vw,48px);
+}
+.rating-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:6px}
+.stars{display:inline-flex;gap:2px;color:var(--amber)}
+.stars .material-symbols-outlined{font-size:20px;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24}
+.rating-value{font-family:var(--font-head);font-size:16px;font-weight:800;color:var(--primary)}
+.rating-count{font-size:14px;color:var(--muted)}
+.badge-row{display:flex;flex-wrap:wrap;gap:10px}
+.badge-pill{
+  padding:6px 14px;border-radius:var(--r-pill);
+  background:var(--surface-mid);color:var(--secondary);
+  font-family:var(--font-head);font-size:12px;font-weight:700;
+  white-space:nowrap;
+}
+
+.reviews-grid{
+  display:grid;grid-template-columns:1fr;
+  gap:clamp(20px,2.4vw,28px);
+}
+.review-card{
+  display:flex;flex-direction:column;justify-content:space-between;
+  background:#fff;border-radius:var(--r-lg);
+  padding:clamp(22px,2.6vw,30px);
+  box-shadow:var(--sh-sm);
+}
+.review-card blockquote{
+  margin:16px 0 22px;
+  font-size:15.5px;line-height:1.65;color:var(--ink);font-style:italic;
+}
+.review-author{
+  display:flex;align-items:center;gap:12px;
+  padding-top:18px;border-top:1px solid var(--line-soft);
+}
+.avatar-sm{
+  width:42px;height:42px;border-radius:50%;flex:none;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--surface-mid);color:var(--primary);
+  font-family:var(--font-head);font-weight:700;font-size:14px;
+}
+.review-author strong{
+  display:block;font-family:var(--font-head);font-size:14.5px;color:var(--primary);
+}
+.review-author small{display:block;font-size:12.5px;color:var(--muted)}
+.verified{margin-left:auto;color:var(--green);flex:none}
+.verified .material-symbols-outlined{font-size:20px;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24}
+
+/* ============================================================
+   FAQ + COVERAGE
+   ============================================================ */
+.faq-grid{
+  display:grid;grid-template-columns:1fr;
+  gap:clamp(32px,5vw,48px);
+}
+.coverage-map{
+  position:relative;width:100%;aspect-ratio:16/10;
+  border-radius:var(--r-lg);overflow:hidden;
+  box-shadow:var(--sh);
+  background:
+    radial-gradient(500px 260px at 30% 20%, rgba(0,99,152,.45), transparent 70%),
+    linear-gradient(150deg,var(--primary),#062032);
+  display:flex;align-items:center;justify-content:center;
+  padding:20px;margin-bottom:20px;
+}
+.coverage-map::before{
+  content:"";position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);
+  background-size:34px 34px;pointer-events:none;
+}
+.coverage-card{
+  position:relative;background:#fff;border-radius:var(--r);
+  padding:18px;text-align:center;
+  box-shadow:var(--sh-lg);max-width:340px;
+}
+.coverage-card-title{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  font-family:var(--font-head);font-size:15px;font-weight:700;color:var(--primary);
+  margin-bottom:6px;
+}
+.coverage-card-title .material-symbols-outlined{font-size:22px;color:var(--secondary)}
+.coverage-card p{font-size:13px;color:var(--muted);line-height:1.5}
+
+.hub-grid{display:grid;grid-template-columns:1fr;gap:10px}
+.hub{
+  display:flex;align-items:center;gap:10px;
+  padding:12px;border-radius:var(--r);
+  background:#fff;box-shadow:var(--sh-sm);
+  font-size:13.5px;font-weight:600;color:var(--primary);
+}
+
+.faq-list{display:flex;flex-direction:column;gap:12px;margin-top:24px}
+.faq-item{
+  background:#fff;border-radius:var(--r-lg);
+  box-shadow:var(--sh-sm);overflow:hidden;
+  transition:box-shadow .2s var(--ease);
+}
+.faq-item[open]{box-shadow:var(--sh)}
+.faq-item summary{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:18px 20px;cursor:pointer;list-style:none;
+  font-family:var(--font-head);font-size:15.5px;font-weight:700;
+  color:var(--primary);line-height:1.35;
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary:hover{background:var(--surface-low)}
+.faq-chev{
+  flex:none;color:var(--secondary);
+  transition:transform .3s var(--ease);
+}
+.faq-item[open] .faq-chev{transform:rotate(180deg)}
+.faq-answer{
+  padding:0 20px 20px;
+  font-size:14.5px;line-height:1.65;color:var(--muted);
+}
+
+/* ============================================================
+   SERVICE AREAS
+   ============================================================ */
+.area-grid{
+  display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+}
+.area-chip{
+  position:relative;
+  display:inline-flex;align-items:center;gap:8px;
+  max-width:100%;
+  padding:12px 18px;border-radius:var(--r-pill);
+  background:#fff;border:1px solid var(--line);
+  font-family:var(--font-head);font-weight:600;font-size:14.5px;
+  line-height:1.2;color:var(--primary);
+  text-decoration:none;cursor:pointer;
+  transition:border-color .2s var(--ease),background-color .2s var(--ease),
+             color .2s var(--ease),transform .2s var(--ease);
+}
+.area-chip:hover{
+  border-color:var(--accent);background:#fff7ed;color:var(--accent-600);
+  transform:translateY(-2px);text-decoration:none;
+}
+.area-chip .material-symbols-outlined{font-size:18px;color:var(--accent);flex:none}
+
+.area-chip--featured{background:var(--primary);border-color:var(--primary);color:#fff}
+.area-chip--featured .material-symbols-outlined{color:var(--secondary-soft)}
+.area-chip--featured:hover{background:var(--primary-600);border-color:var(--primary-600);color:#fff}
+
+.area-chip--locked{color:var(--muted);border-style:dashed}
+.area-chip--locked .material-symbols-outlined{color:var(--muted-soft)}
+.area-chip--locked:hover{
+  background:var(--surface-low);border-color:var(--muted-soft);
+  color:var(--muted);transform:translateY(-2px);
+}
+.area-chip--locked.is-tip{border-color:var(--accent);background:#fff7ed}
+
+.area-tip{
+  position:absolute;bottom:calc(100% + 10px);left:50%;
+  transform:translate(-50%,6px);
+  width:max-content;max-width:min(190px,72vw);
+  padding:9px 13px;border-radius:var(--r-sm);
+  background:var(--primary);color:#fff;
+  font-family:var(--font-head);font-size:12.5px;font-weight:600;
+  line-height:1.35;text-align:center;
+  opacity:0;visibility:hidden;pointer-events:none;
+  box-shadow:var(--sh);z-index:20;
+  transition:opacity .2s var(--ease),transform .2s var(--ease),visibility .2s var(--ease);
+}
+.area-tip::after{
+  content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);
+  border:6px solid transparent;border-top-color:var(--primary);
+}
+.area-chip--locked:hover .area-tip,
+.area-chip--locked:focus-visible .area-tip,
+.area-chip--locked.is-tip .area-tip{
+  opacity:1;visibility:visible;transform:translate(-50%,0);
+}
+.area-note{
+  text-align:center;margin-top:32px;
+  font-size:13.5px;color:var(--muted);
+  max-width:52ch;margin-inline:auto;
+}
+
+/* ============================================================
+   CTA BANNER
+   ============================================================ */
+.cta-banner{
+  background:var(--primary-600);color:#fff;
+  padding-block:clamp(44px,6vw,64px);
+}
+.cta-row{
+  display:flex;flex-direction:column;align-items:center;
+  gap:28px;text-align:center;
+}
+.cta-kicker{
+  font-family:var(--font-head);font-size:12px;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--secondary-soft);
+}
+.cta-row h2{color:#fff;margin-top:6px}
+.cta-row p{color:#b0c9e8;max-width:52ch;margin-top:8px}
+.cta-actions{
+  display:flex;flex-direction:column;gap:12px;width:100%;
+}
+.cta-actions .btn{width:100%}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer{
+  background:var(--primary);color:#d1e4ff;
+  padding-block:clamp(40px,6vw,64px) 32px;
+}
+.footer-grid{
+  display:grid;grid-template-columns:1fr;
+  gap:clamp(28px,4vw,44px);
+  padding-bottom:36px;
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+.footer-brand{
+  display:flex;align-items:center;gap:10px;margin-bottom:16px;
+  font-family:var(--font-head);font-weight:700;font-size:18px;color:#fff;
+}
+.footer-brand .material-symbols-outlined{color:var(--secondary-soft);font-size:26px;flex:none}
+.footer-about p{font-size:14.5px;line-height:1.65;color:#93a9bd;margin-bottom:18px}
+.footer-chips{display:flex;flex-wrap:wrap;gap:8px}
+.footer-chip{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:6px 12px;border-radius:var(--r-pill);
+  background:rgba(255,255,255,.08);color:#d1e4ff;
+  font-family:var(--font-head);font-size:12px;font-weight:600;
+}
+.footer-chip .material-symbols-outlined{font-size:14px;color:var(--secondary-soft)}
+
+.site-footer h4{
+  font-family:var(--font-head);font-size:15px;font-weight:700;
+  color:#fff;margin-bottom:16px;
+}
+.footer-list{display:flex;flex-direction:column;gap:10px}
+.footer-list a,.footer-list span{
+  font-size:14.5px;color:#93a9bd;line-height:1.5;
+  display:flex;align-items:center;gap:8px;
+}
+.footer-list a:hover{color:#fff;text-decoration:underline}
+.footer-list .material-symbols-outlined{font-size:18px;flex:none}
+
+.footer-guarantee{
+  background:rgba(255,255,255,.06);
+  border-radius:var(--r);padding:16px;
+  display:flex;flex-direction:column;gap:12px;
+}
+.footer-guarantee div{display:flex;align-items:flex-start;gap:10px}
+.footer-guarantee .material-symbols-outlined{
+  font-size:20px;color:var(--secondary-soft);flex:none;margin-top:2px;
+}
+.footer-guarantee p{font-size:13.5px;color:#d1e4ff;line-height:1.5}
+
+.footer-contact-card{
+  background:#fff;color:var(--ink);
+  border-radius:var(--r);padding:16px;margin-bottom:16px;
+}
+.footer-contact-card span{
+  display:block;font-family:var(--font-head);font-size:11.5px;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
+}
+.footer-contact-card a{
+  display:flex;align-items:center;gap:8px;
+  font-family:var(--font-head);font-size:17px;font-weight:800;
+  color:var(--accent);margin-top:6px;
+}
+.footer-contact-card a:hover{text-decoration:none;color:var(--accent-600)}
+.footer-contact-card .material-symbols-outlined{font-size:24px;flex:none}
+
+.footer-bottom{
+  display:flex;flex-direction:column;gap:14px;align-items:center;
+  padding-top:24px;text-align:center;
+  font-size:13.5px;color:#7991af;
+}
+.footer-bottom nav{display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
+.footer-bottom a{color:#93a9bd}
+.footer-bottom a:hover{color:#fff}
+
+/* ============================================================
+   FLOATING CTA
+   ============================================================ */
+.floating-cta{
+  position:fixed;
+  right:max(16px, env(safe-area-inset-right));
+  bottom:calc(16px + env(safe-area-inset-bottom, 0px));
+  z-index:80;
+  display:flex;flex-direction:column;align-items:flex-end;gap:12px;
+}
+.fab-stack{
+  display:flex;flex-direction:column;align-items:flex-end;gap:12px;
+  pointer-events:none;
+}
+.fab-stack .fab{
+  opacity:0;visibility:hidden;
+  transform:translateY(14px) scale(.85);
+  transform-origin:bottom right;
+  transition:opacity .22s var(--ease),transform .28s var(--ease),
+             visibility .28s var(--ease),background-color .2s var(--ease);
+}
+.floating-cta.is-open .fab-stack{pointer-events:auto}
+.floating-cta.is-open .fab-stack .fab{opacity:1;visibility:visible;transform:none}
+.floating-cta.is-open .fab-stack .fab:nth-child(1){transition-delay:.06s}
+.floating-cta.is-open .fab-stack .fab:nth-child(2){transition-delay:.02s}
+
+.fab{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:14px 22px;border-radius:var(--r-pill);
+  font-family:var(--font-head);font-weight:700;font-size:15px;
+  color:#fff;text-decoration:none;white-space:nowrap;
+  box-shadow:var(--sh);
+  transition:transform .2s var(--ease),box-shadow .2s var(--ease),background-color .2s var(--ease);
+}
+.fab:hover{transform:translateY(-2px);box-shadow:var(--sh-lg);text-decoration:none}
+.fab .material-symbols-outlined{flex:none}
+.fab--call{background:var(--accent)}
+.fab--call:hover{background:var(--accent-600)}
+.fab--text{background:var(--secondary)}
+.fab--text:hover{background:#004b73}
+
+.fab-toggle{
+  position:relative;
+  width:60px;height:60px;border-radius:50%;
+  background:var(--primary);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:var(--sh-lg);
+  transition:transform .2s var(--ease),background-color .2s var(--ease);
+}
+.fab-toggle:hover{background:var(--primary-600);transform:translateY(-2px)}
+.fab-toggle:active{transform:scale(.94)}
+.fab-toggle .icon-close{display:none}
+.floating-cta.is-open .fab-toggle .icon-chat{display:none}
+.floating-cta.is-open .fab-toggle .icon-close{display:block}
+.fab-toggle::after{
+  content:"";position:absolute;inset:0;border-radius:50%;
+  border:2px solid var(--primary);
+  animation:fabPulse 3.2s var(--ease) infinite;
+  pointer-events:none;
+}
+.floating-cta.is-open .fab-toggle::after{display:none}
+@keyframes fabPulse{
+  0%{transform:scale(1);opacity:.45}
+  65%{transform:scale(1.55);opacity:0}
+  100%{transform:scale(1.55);opacity:0}
+}
+.fab-toggle .material-symbols-outlined{font-size:26px}
+
+/* Section flash on nav click */
+@keyframes sectionFlash{
+  0%{box-shadow:inset 0 0 0 3px rgba(237,100,37,.5)}
+  100%{box-shadow:inset 0 0 0 3px rgba(237,100,37,0)}
+}
+.section-flash{animation:sectionFlash 1.4s ease-out}
+
+/* ============================================================
+   RESPONSIVE — TABLET (≥640px)
+   ============================================================ */
+@media (min-width:640px){
+  .hero-cta{flex-direction:row;flex-wrap:wrap;width:auto}
+  .hero-cta .btn{width:auto}
+  .hero-trust{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .alert-row{flex-direction:row;justify-content:space-between;text-align:left}
+  .alert-left{flex-direction:row;align-items:center}
+  .hub-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cta-actions{flex-direction:row;justify-content:center;width:auto}
+  .cta-actions .btn{width:auto}
+  .phone-card{flex-direction:row;align-items:center;justify-content:space-between}
+  .phone-card-btn{align-self:auto}
+  .form-footer{flex-direction:row;align-items:center;justify-content:space-between}
+  .form-footer .btn{width:auto}
+  .footer-bottom{flex-direction:row;justify-content:space-between;text-align:left}
+}
+
+/* ============================================================
+   RESPONSIVE — SMALL TABLET (≥768px)
+   ============================================================ */
+@media (min-width:768px){
+  :root{--header-h:80px}
+
+  .brand img{height:32px}
+  .brand-text{font-size:17px}
+
+  .stats-grid{grid-template-columns:repeat(4,minmax(0,1fr));text-align:left}
+  .stat{border-right:1px solid rgba(255,255,255,.14);padding-right:16px}
+  .stat:last-child{border-right:none;padding-right:0}
+
+  .services-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pillars-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .reviews-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .footer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .form-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .radio-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .alert-eta{display:inline-flex}
+}
+
+/* ============================================================
+   RESPONSIVE — DESKTOP (≥992px)
+   ============================================================ */
+@media (min-width:992px){
+  .header-phone{display:inline-flex;align-items:center;gap:10px;padding:8px 16px;border-radius:var(--r);background:var(--surface-low);color:var(--secondary);text-decoration:none;transition:background-color .2s var(--ease)}
+  .header-phone:hover{background:var(--surface-mid);text-decoration:none}
+  .header-phone .material-symbols-outlined{font-size:20px;color:var(--accent)}
+  .header-phone .phone-text{display:flex;flex-direction:column;text-align:left;line-height:1}
+  .header-phone .phone-num{font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--primary)}
+  .header-phone .phone-sub{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--accent);margin-top:2px}
+  .header-avatar{display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:var(--primary);color:#fff}
+  .header-avatar .material-symbols-outlined{font-size:18px}
+
+  .hero-grid{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:56px}
+  .hero-visual{margin-inline:0;max-width:none}
+  .hero-photo{aspect-ratio:4/4.4}
+
+  .services-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .pillars-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+
+  .booking-grid{grid-template-columns:minmax(0,5fr) minmax(0,7fr)}
+  .faq-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .footer-grid{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1.1fr)}
+
+  .cta-row{flex-direction:row;justify-content:space-between;text-align:left}
+  .reviews-head{flex-direction:row;align-items:flex-end;justify-content:space-between}
+}
+
+/* ============================================================
+   RESPONSIVE — SHOW DESKTOP NAV (≥1200px)
+   ============================================================ */
+@media (min-width:1200px){
+  .main-nav{display:block;margin-inline:auto}
+  .nav-toggle{display:none}
+}
+
+/* ============================================================
+   SMALL PHONE TWEAKS (≤520px)
+   ============================================================ */
+@media (max-width:520px){
+  .brand img{height:26px}
+  .brand-text{font-size:14px}
+  .header-actions .btn{padding:10px 14px;font-size:14px}
+  .nav-toggle{width:42px;height:42px}
+  .hero-rating{top:-8px;padding:8px 12px}
+  .hero-rating strong{font-size:13px}
+  .hero-crew{padding:14px}
+  .hero-crew-icon{width:42px;height:42px}
+  .faq-item summary{padding:16px 18px;font-size:15px}
+  .faq-answer{padding:0 18px 18px}
+  .area-chip{font-size:13.5px;padding:11px 15px}
+  .fab{padding:12px 18px;font-size:14px}
+  .fab-toggle{width:56px;height:56px}
+}
+
+/* ============================================================
+   VERY SMALL PHONE (≤380px)
+   ============================================================ */
+@media (max-width:380px){
+  .btn{white-space:normal;line-height:1.25}
+  .brand-text{font-size:13px}
+  .nav-toggle{width:40px;height:40px}
+  .hero-badge{font-size:11px;padding:5px 10px}
+}
+
+/* ============================================================
+   MOTION PREFERENCES
+   ============================================================ */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+  }
+}
+</style>
+</head>
+
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<header class="site-header">
+  <div class="container header-row">
+
+    <a class="brand" href="#main" aria-label="Walt's Plumbing Co. — home">
+      <img src="https://lh3.googleusercontent.com/aida/AEtjO1WrbLvFYMAa7xgXVRDvsVG-4MPDYYPq5c7cNWAQ_MZW67PIofuYBQC-v__VY02x0HCSl11ilvg0q2sF7YBWBDlQba7DEb3QSFKF1iituoUzep618ikcIMQzvuSixopjoeZoCWfUW9VIrVV2gzzKu2FRD3tPuOVf-RL6dmJLNa9IMAGheGPN7E17J0Otl5YSKKCSwXDjXbskNV5ehG1aXVcxNjt44OnLE0MQ6Wv_v3cRaijw-CCxUfFRov8" alt="">
+      <span class="brand-text">Walt's Plumbing Co.</span>
+    </a>
+
+    <nav class="main-nav" aria-label="Main navigation">
+      <ul class="nav-list">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#quick-booking">Emergency 24/7</a></li>
+        <li><a href="#why">About Us</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#areas">Areas</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a class="header-phone" href="tel:5558399258">
+        <span class="material-symbols-outlined">phone_in_talk</span>
+        <span class="phone-text">
+          <span class="phone-num">(555) 839-WALT</span>
+          <span class="phone-sub">Available 24/7</span>
+        </span>
+      </a>
+
+      <a class="btn btn--primary btn--sm" href="#quick-booking">Book Service</a>
+
+      <span class="header-avatar" aria-hidden="true">
+        <span class="material-symbols-outlined">person</span>
+      </span>
+
+      <button class="nav-toggle" id="nav-toggle" type="button"
+              aria-label="Open menu" aria-expanded="false" aria-controls="nav-drawer">
+        <svg class="icon-menu" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M3 6h18M3 12h18M3 18h18"/>
+        </svg>
+        <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M18 6 6 18M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<!-- ============================================================
+     MOBILE DRAWER
+     ============================================================ -->
+<div class="nav-scrim" id="nav-scrim" hidden></div>
+<aside class="nav-drawer" id="nav-drawer" aria-label="Mobile navigation" aria-hidden="true">
+
+  <div class="drawer-head">
+    <span class="drawer-brand">
+      <span class="material-symbols-outlined">plumbing</span>
+      Walt's Plumbing Co.
+    </span>
+    <button class="drawer-close" type="button" data-close-nav aria-label="Close menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <path d="M18 6 6 18M6 6l12 12"/>
+      </svg>
+    </button>
+  </div>
+
+  <nav class="drawer-nav" aria-label="Mobile menu">
+    <a class="drawer-link" href="#services">Services</a>
+    <a class="drawer-link" href="#quick-booking">Emergency 24/7</a>
+    <a class="drawer-link" href="#why">About Us</a>
+    <a class="drawer-link" href="#reviews">Reviews</a>
+    <a class="drawer-link" href="#faq">FAQ</a>
+    <a class="drawer-link" href="#areas">Service Areas</a>
+  </nav>
+
+  <div class="drawer-actions">
+    <a class="drawer-btn drawer-btn--call" href="tel:5558399258" data-close-nav>
+      <span class="material-symbols-outlined">call</span>
+      Call (555) 839-WALT
+    </a>
+    <a class="drawer-btn drawer-btn--book" href="#quick-booking" data-close-nav>
+      <span class="material-symbols-outlined">calendar_month</span>
+      Book Service
+    </a>
+  </div>
+
+  <p class="drawer-note">Available 24/7 · Average arrival 38 mins</p>
+</aside>
+
+<main id="main">
+
+  <!-- ============================================================
+       ALERT TICKER
+       ============================================================ -->
+  <section class="alert-strip" aria-label="Emergency dispatch status">
+    <div class="container alert-row">
+      <div class="alert-left">
+        <span class="ping" aria-hidden="true"></span>
+        <div>
+          <span class="alert-kicker">Rapid Dispatch Active</span>
+          <p class="alert-text">Burst pipe or basement flooding? Our rapid response crews are staged across 4 metro sectors right now.</p>
+        </div>
+      </div>
+      <div class="alert-right">
+        <span class="alert-eta">
+          <span class="material-symbols-outlined">timer</span>
+          Average Arrival: 38 mins
+        </span>
+        <a class="alert-btn" href="tel:5558399258">
+          <span class="material-symbols-outlined">bolt</span>
+          Call 24/7 Crew
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container hero-grid">
+
+      <div class="hero-copy">
+        <span class="hero-badge">
+          <span class="material-symbols-outlined">military_tech</span>
+          Metro area premier master plumbers since 1999
+        </span>
+
+        <h1 class="h1" id="hero-title">Honest, Reliable Plumbing When You Need It Most.</h1>
+
+        <p class="lead">
+          Licensed &amp; insured master plumbers serving the metro area for over 25 years.
+          Fast emergency response, upfront transparent pricing, and 100% satisfaction guaranteed.
+        </p>
+
+        <div class="hero-cta">
+          <a class="btn btn--primary btn--lg" href="#quick-booking">
+            Book Online Now
+            <span class="material-symbols-outlined">calendar_month</span>
+          </a>
+          <a class="btn btn--accent btn--lg" href="tel:5558399258">
+            <span class="material-symbols-outlined">call</span>
+            (555) 839-WALT
+          </a>
+        </div>
+
+        <div class="hero-trust">
+          <div class="trust-item">
+            <span class="material-symbols-outlined">alarm_on</span>
+            <div>
+              <strong>45-Min Response</strong>
+              <span>Average emergency ETA</span>
+            </div>
+          </div>
+          <div class="trust-item">
+            <span class="material-symbols-outlined">price_check</span>
+            <div>
+              <strong>Zero Overtime Fees</strong>
+              <span>Same flat rate 24/7/365</span>
+            </div>
+          </div>
+          <div class="trust-item">
+            <span class="material-symbols-outlined">verified</span>
+            <div>
+              <strong>Lic #PL-48920</strong>
+              <span>Fully Insured &amp; Bonded</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-photo">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDH3MUD3HtZCrXTLmgefaM4bLOih5naUvEboM4WX8sl23A_TPoHgJpUz1yhfxQ3oeV58aSMmgPBegT5bnSdUzeUJ5jevL-RGtc3-h4kxuxWbGh5Fi6rowJnxfCoYnhv2AXQnw5kRE8vv98z1jkFsmj7nyhI3Z8EZtRP18_ommOZjnzO_QyonJnGmoctx6D5djp_a9HxybQcJZbfcvemA2o0y8gsAM2ZIDOD-pjZhm8jz-DAnvAgIcL3" alt="Master plumber inspecting a tankless water heater in a residential basement">
+        </div>
+
+        <div class="hero-rating">
+          <span class="material-symbols-outlined">stars</span>
+          <div>
+            <strong>4.9 / 5.0</strong>
+            <small>1,200+ Reviews</small>
+          </div>
+        </div>
+
+        <div class="hero-crew">
+          <span class="hero-crew-icon">
+            <span class="material-symbols-outlined">engineering</span>
+          </span>
+          <div style="min-width:0">
+            <span class="hero-crew-label">Technicians On Duty</span>
+            <span class="hero-crew-value">
+              <span class="dot-live" aria-hidden="true"></span>
+              14 Trucks Rolled Out
+            </span>
+            <small>Next open dispatch: 15 mins</small>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       STATS RIBBON
+       ============================================================ -->
+  <section class="stats-ribbon" aria-label="Company statistics">
+    <div class="container stats-grid">
+      <div class="stat">
+        <span class="stat-value">25+</span>
+        <span class="stat-label">Years Serving Metro</span>
+        <span class="stat-sub">Established in 1999</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">32,400+</span>
+        <span class="stat-label">Repairs Completed</span>
+        <span class="stat-sub">Drains, pipes &amp; fixtures</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value stat-value--accent">38 min</span>
+        <span class="stat-label">Median Arrival Time</span>
+        <span class="stat-sub">For verified burst lines</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">100%</span>
+        <span class="stat-label">Guaranteed Work</span>
+        <span class="stat-sub">Parts &amp; labor covered</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SERVICES
+       ============================================================ -->
+  <section class="section section--bg" id="services" aria-labelledby="services-title">
+    <div class="container">
+
+      <div class="section-head" style="max-width:none">
+        <span class="eyebrow">Licensed Capabilities</span>
+        <h2 class="h2" id="services-title">Our Core Plumbing Services</h2>
+        <p class="lead" style="max-width:60ch;margin-top:10px">
+          Every call receives flat-rate upfront estimates before any wrench turns.
+          No diagnostic surprises, no hidden supply charges.
+        </p>
+      </div>
+
+      <div class="services-grid">
+
+        <!-- 1 -->
+        <article class="service-card service-card--accent">
+          <div class="service-card-body">
+            <div class="card-icon card-icon--accent">
+              <span class="material-symbols-outlined">crisis_alert</span>
+            </div>
+            <span class="card-tag card-tag--accent">Priority 24/7 Dispatch</span>
+            <h3>Emergency Plumbing</h3>
+            <p>Burst pipes, catastrophic leaks, sewage backups, and main shut-off failures. Our fully stocked vans arrive equipped to stop water loss immediately.</p>
+          </div>
+          <div class="card-foot">
+            <div>
+              <span class="card-foot-label">Estimate Basis</span>
+              <span class="card-foot-value">$0 Dispatch w/ Repair</span>
+            </div>
+            <a class="card-arrow" href="#quick-booking" aria-label="Emergency plumbing details">
+              <span class="material-symbols-outlined">east</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 2 -->
+        <article class="service-card">
+          <div class="service-card-body">
+            <div class="card-icon">
+              <span class="material-symbols-outlined">water_drop</span>
+            </div>
+            <span class="card-tag">Hydro-Scrubbing Tech</span>
+            <h3>Drain Cleaning &amp; Jetting</h3>
+            <p>High-pressure hydro jetting removes grease, root intrusion, and calcification. Safe for old PVC, cast iron, and modern copper sewer lines.</p>
+          </div>
+          <div class="card-foot">
+            <div>
+              <span class="card-foot-label">Starting at</span>
+              <span class="card-foot-value">$99 Fixed Drain Clear</span>
+            </div>
+            <a class="card-arrow" href="#quick-booking" aria-label="Drain cleaning details">
+              <span class="material-symbols-outlined">east</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 3 -->
+        <article class="service-card">
+          <div class="service-card-body">
+            <div class="card-icon">
+              <span class="material-symbols-outlined">mode_heat</span>
+            </div>
+            <span class="card-tag">Tank &amp; Tankless Certified</span>
+            <h3>Water Heater Solutions</h3>
+            <p>Same-day replacement and precision diagnostic servicing for gas, electric, and on-demand continuous systems from Rheem, Navien, and Bradford White.</p>
+          </div>
+          <div class="card-foot">
+            <div>
+              <span class="card-foot-label">Diagnostics</span>
+              <span class="card-foot-value">Free In-Home Assessment</span>
+            </div>
+            <a class="card-arrow" href="#quick-booking" aria-label="Water heater details">
+              <span class="material-symbols-outlined">east</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 4 -->
+        <article class="service-card">
+          <div class="service-card-body">
+            <div class="card-icon">
+              <span class="material-symbols-outlined">sensors</span>
+            </div>
+            <span class="card-tag">Acoustic &amp; Thermal Scan</span>
+            <h3>Leak Detection &amp; Repair</h3>
+            <p>Non-invasive pinpoint detection for concealed slab leaks, in-wall pipe pinholes, and mysterious foundation moisture without tearing out drywall.</p>
+          </div>
+          <div class="card-foot">
+            <div>
+              <span class="card-foot-label">Precision Rate</span>
+              <span class="card-foot-value">Upfront Flat Diagnostic</span>
+            </div>
+            <a class="card-arrow" href="#quick-booking" aria-label="Leak detection details">
+              <span class="material-symbols-outlined">east</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 5 -->
+        <article class="service-card">
+          <div class="service-card-body">
+            <div class="card-icon">
+              <span class="material-symbols-outlined">videocam</span>
+            </div>
+            <span class="card-tag">HD Fiberoptic Video</span>
+            <h3>Sewer Line Inspection</h3>
+            <p>Color HD camera inspections with live depth-tracing beacons. We deliver recorded digital video reports pinpointing collapses, cracks, and offset joints.</p>
+          </div>
+          <div class="card-foot">
+            <div>
+              <span class="card-foot-label">Special Offer</span>
+              <span class="card-foot-value">$149 Camera Run w/ USB</span>
+            </div>
+            <a class="card-arrow" href="#quick-booking" aria-label="Sewer inspection details">
+              <span class="material-symbols-outlined">east</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 6 -->
+        <article class="service-card">
+          <div class="service-card-body">
+            <div class="card-icon">
+              <span class="material-symbols-outlined">shower</span>
+            </div>
+            <span class="card-tag">Code Compliant Fixtures</span>
+            <h3>Fixtures &amp; Remodeling</h3>
+            <p>Expert rough-ins and finish plumbing for designer bathrooms, kitchen islands, freestanding soaker tubs, garbage disposals, and water softeners.</p>
+          </div>
+          <div class="card-foot">
+            <div>
+              <span class="card-foot-label">Consultation</span>
+              <span class="card-foot-value">Itemized Scope &amp; Quote</span>
+            </div>
+            <a class="card-arrow" href="#quick-booking" aria-label="Fixture and remodel details">
+              <span class="material-symbols-outlined">east</span>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       WHY US
+       ============================================================ -->
+  <section class="section section--soft" id="why" aria-labelledby="why-title">
+    <div class="container">
+
+      <div class="section-head section-head--center">
+        <span class="eyebrow">The Walt's Difference</span>
+        <h2 class="h2" id="why-title">Built On 4 Non-Negotiable Pillars</h2>
+        <p class="lead" style="margin-top:12px">
+          We treat your home like our grandmother's house: with technical excellence,
+          absolute cleanliness, and zero predatory upsells.
+        </p>
+      </div>
+
+      <div class="pillars-grid">
+
+        <article class="pillar">
+          <div>
+            <div class="pillar-icon">
+              <span class="material-symbols-outlined">payments</span>
+            </div>
+            <h3>Upfront Flat Pricing</h3>
+            <p>You sign off on the exact dollar figure before we unholster a tool. Even if the project hits stubborn snags, your quote doesn't creep upward.</p>
+          </div>
+          <div class="pillar-foot">
+            <span class="material-symbols-outlined">check_circle</span>
+            No Hidden Surcharges
+          </div>
+        </article>
+
+        <article class="pillar">
+          <div>
+            <div class="pillar-icon">
+              <span class="material-symbols-outlined">cleaning_services</span>
+            </div>
+            <h3>Clean Home Guarantee</h3>
+            <p>Boot covers on before crossing your threshold. Heavy canvas floor runners rolled out from entryway to worksite, plus complete sanitize cleanup.</p>
+          </div>
+          <div class="pillar-foot">
+            <span class="material-symbols-outlined">check_circle</span>
+            Shoe Covers &amp; Drop Cloths
+          </div>
+        </article>
+
+        <article class="pillar">
+          <div>
+            <div class="pillar-icon">
+              <span class="material-symbols-outlined">workspace_premium</span>
+            </div>
+            <h3>25+ Years Experience</h3>
+            <p>Every dispatched technician holds active journeyman or master plumber credentials. Continuous weekly training on newer code and high-tech diagnostics.</p>
+          </div>
+          <div class="pillar-foot">
+            <span class="material-symbols-outlined">check_circle</span>
+            Master Plumber Supervised
+          </div>
+        </article>
+
+        <article class="pillar">
+          <div>
+            <div class="pillar-icon">
+              <span class="material-symbols-outlined">verified_user</span>
+            </div>
+            <h3>Lifetime Warranty</h3>
+            <p>We stand behind our pipe fittings, solder joints, and sewer replacements with an ironclad lifetime workmanship guarantee for homeowner peace of mind.</p>
+          </div>
+          <div class="pillar-foot">
+            <span class="material-symbols-outlined">check_circle</span>
+            100% Written Guarantee
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       BOOKING
+       ============================================================ -->
+  <section class="section section--white" id="quick-booking" aria-labelledby="booking-title">
+    <div class="container booking-grid">
+
+      <div class="booking-intro">
+        <span class="hero-badge" style="margin-bottom:16px">
+          <span class="material-symbols-outlined">bolt</span>
+          Instant Digital Confirmation
+        </span>
+
+        <h2 class="h2" id="booking-title">Schedule Your Service or In-Home Estimate</h2>
+
+        <p>
+          Complete this quick request. Our dispatch team confirms within 10 minutes via SMS or
+          phone call. If this is an emergency, tap the phone link for immediate routing.
+        </p>
+
+        <div class="booking-photo">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgtd5WLdYzYI-sjxPU1LwtHzlhFpaqNYvB9nqIQ0qcTbcoFKeeuxSolStCakxcojSOO6C2E8R2OmQssBrJvLNecVvZf2-oqH6JXJ52HLCfp9emzlxSMQhS-5T1hL98EPUd06BXEM2XhX4vXfKbpvM5f4FBf9X_jdI0qjwhNCKHgomloO53rgaB80VRhMBsCPLPWNNufCeoj9RHd_ltKn_XqA0RZmOyUv7pwSyytSqnw0EN0X6ssKY8" alt="Copper plumbing pipes joined with brass valves and a pressure gauge in a residential mechanical room">
+        </div>
+
+        <div class="phone-card">
+          <div>
+            <span class="phone-card-kicker">Prefer to speak right now?</span>
+            <div class="phone-card-number">(555) 839-WALT</div>
+            <small>Direct dispatcher line · zero answering service holds</small>
+          </div>
+          <a class="phone-card-btn" href="tel:5558399258" aria-label="Call the dispatcher line">
+            <span class="material-symbols-outlined">phone_in_talk</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="form-panel">
+        <form id="booking-form" novalidate>
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="bk-name">Full Name <span aria-hidden="true" style="color:var(--accent)">*</span></label>
+              <input id="bk-name" name="name" type="text" autocomplete="name" placeholder="e.g. Sarah Jenkins" required>
+            </div>
+            <div class="field">
+              <label for="bk-phone">Phone Number <span aria-hidden="true" style="color:var(--accent)">*</span></label>
+              <input id="bk-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(555) 000-0000" required>
+            </div>
+            <div class="field">
+              <label for="bk-service">Service Needed <span aria-hidden="true" style="color:var(--accent)">*</span></label>
+              <select id="bk-service" name="service" required>
+                <option value="" selected disabled>Select service type…</option>
+                <option>Emergency Active Leak / Flooding</option>
+                <option>Clogged Drain / Hydro Jetting</option>
+                <option>Water Heater Repair or Replacement</option>
+                <option>Acoustic Leak Detection</option>
+                <option>Sewer Line Camera Inspection</option>
+                <option>Fixture Install / Kitchen &amp; Bath Remodel</option>
+                <option>General Plumbing Diagnostic</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="bk-time">Preferred Timeframe</label>
+              <select id="bk-time" name="timeframe">
+                <option>Immediate Emergency Dispatch (under 1 hr)</option>
+                <option>Today (Within 3-4 hours)</option>
+                <option>Tomorrow Morning (8 AM – 12 PM)</option>
+                <option>Tomorrow Afternoon (12 PM – 5 PM)</option>
+                <option>Flexible / Schedule This Week</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field" style="margin-top:20px">
+            <label>Urgency Level</label>
+            <div class="radio-grid">
+              <label class="radio-card">
+                <input type="radio" name="urgency" value="standard" checked>
+                <div>
+                  <strong>Standard Appointment</strong>
+                  <small>Normal maintenance or scheduled install</small>
+                </div>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="urgency" value="emergency">
+                <div>
+                  <strong class="accent">
+                    <span class="material-symbols-outlined" style="font-size:16px">priority_high</span>
+                    Emergency Need
+                  </strong>
+                  <small>Water is active or sewer is backing up</small>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="bk-message">Issue Description (Optional)</label>
+            <textarea id="bk-message" name="message" rows="3" placeholder="Briefly describe what is happening (e.g. water leaking under kitchen sink, water heater making rumbling sound)…"></textarea>
+          </div>
+
+          <div class="form-footer">
+            <span class="form-privacy">
+              <span class="material-symbols-outlined">lock</span>
+              Your details are protected. No spam ever.
+            </span>
+            <button class="btn btn--primary btn--lg" type="submit">
+              Confirm &amp; Request Callback →
+            </button>
+          </div>
+
+        </form>
+
+        <div class="form-success" id="form-success" role="status">
+          <span class="material-symbols-outlined">check_circle</span>
+          <div>
+            <h4>Request Received • Dispatch Alerted</h4>
+            <p>A dispatch coordinator has logged your file. You will receive an SMS verification and phone call shortly to confirm arrival timing.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       REVIEWS
+       ============================================================ -->
+  <section class="section section--bg" id="reviews" aria-labelledby="reviews-title">
+    <div class="container">
+
+      <div class="reviews-head">
+        <div>
+          <div class="rating-row">
+            <span class="stars" aria-label="Rated 4.9 out of 5">
+              <span class="material-symbols-outlined">star</span>
+              <span class="material-symbols-outlined">star</span>
+              <span class="material-symbols-outlined">star</span>
+              <span class="material-symbols-outlined">star</span>
+              <span class="material-symbols-outlined">star</span>
+            </span>
+            <span class="rating-value">4.9 / 5 Rating</span>
+            <span class="rating-count">• 1,248 Verified Reviews</span>
+          </div>
+          <h2 class="h2" id="reviews-title">What Your Neighbors Say</h2>
+        </div>
+        <div class="badge-row">
+          <span class="badge-pill">Google Verified</span>
+          <span class="badge-pill">Angi Super Service</span>
+          <span class="badge-pill">BBB A+ Rated</span>
+        </div>
+      </div>
+
+      <div class="reviews-grid">
+
+        <article class="review-card">
+          <div>
+            <span class="stars" aria-label="5 out of 5">
+              <span class="material-symbols-outlined">star</span>
+              <span class="material-symbols-outlined">star</span>
+              <span class="material-symbols-outlined">star</span>
+              <span class="material-symbols-outlined">star</span>
+              <span class="material-symbols-outlined">star</span>
+            </span>
+            <blockquote>
+              "Woke up on a Sunday at 3 AM to water rushing through the downstairs ceiling. Walt's dispatcher answered on the 2nd ring. Marcus was here in 35 minutes, shut down the main, and had the split pipe sleeved before dawn. Honest price, zero holiday markup."
+            </blockquote>
+          </div>
+          <div class="review-author">
+            <span class="avatar-sm" aria-hidden="true">DH</span>
+            <div style="min-width:0">
+              <strong>David Henderson</strong>
+              <small>Northfield • Emergency Burst Line</small>
+            </div>
+            <span class="verified" title="Verified Customer">
+              <span class="material-symbols-outlined">check_circle</span>
+            </span>
+          </div>
+        </article>
+
+        <article class="review-card">
+          <div>
+            <span class="stars" aria-label="5 out of 5">
+              <span class="material-symbols-outlined">star</span>
+              <span class="material-symbols-outlined">star</span>
+              <span class="material-symbols-outlined">star</span>
+              <span class="material-symbols-outlined">star</span>
+              <span class="material-symbols-outlined">star</span>
+            </span>
+            <blockquote>
+              "Had two other companies quote astronomical amounts to dig up my entire front lawn for a sewer line issue. Walt's sent out an optical camera, found it was just stubborn root ingress at a single elbow, and hydro-jetted it clear in under two hours. Saved me over $4,000."
+            </blockquote>
+          </div>
+          <div class="review-author">
+            <span class="avatar-sm" aria-hidden="true">MK</span>
+            <div style="min-width:0">
+              <strong>Megan Kravitz</strong>
+              <small>Pine Valley • Sewer Camera &amp; Jetting</small>
+            </div>
+            <span class="verified" title="Verified Customer">
+              <span class="material-symbols-outlined">check_circle</span>
+            </span>
+          </div>
+        </article>
+
+        <article class="review-card">
+          <div>
+            <span class="stars" aria-label="5 out of 5">
+              <span class="material-symbols-outlined">star</span>
+              <span class="material-symbols-outlined">star</span>
+              <span class="material-symbols-outlined">star</span>
+              <span class="material-symbols-outlined">star</span>
+              <span class="material-symbols-outlined">star</span>
+            </span>
+            <blockquote>
+              "Replaced our old 50-gal electric water heater with a high efficiency tankless unit. Clean installation, perfectly leveled, gas lines up to strict code, and zero mess left behind. Their Clean Home promise is legitimate — boot covers never came off."
+            </blockquote>
+          </div>
+          <div class="review-author">
+            <span class="avatar-sm" aria-hidden="true">AR</span>
+            <div style="min-width:0">
+              <strong>Anthony Rossi</strong>
+              <small>Fairview Heights • Tankless Installation</small>
+            </div>
+            <span class="verified" title="Verified Customer">
+              <span class="material-symbols-outlined">check_circle</span>
+            </span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FAQ + COVERAGE
+       ============================================================ -->
+  <section class="section section--soft" id="faq" aria-labelledby="faq-title">
+    <div class="container faq-grid">
+
+      <div>
+        <span class="eyebrow">Local Coverage</span>
+        <h2 class="h2">Serving Greater Metro &amp; Surrounding Counties</h2>
+        <p class="lead" style="margin-top:12px;margin-bottom:24px">
+          We maintain four staging hubs to guarantee arrival under 45 minutes for emergency
+          dispatch anywhere within our primary service perimeter.
+        </p>
+
+        <div class="coverage-map">
+          <div class="coverage-card">
+            <div class="coverage-card-title">
+              <span class="material-symbols-outlined">pin_drop</span>
+              All 14 Metro Districts Active
+            </div>
+            <p>Northfield • Highlands • Westridge • River Oaks • Fairview • Downtown Financial</p>
+          </div>
+        </div>
+
+        <div class="hub-grid">
+          <div class="hub"><span class="dot-live" aria-hidden="true"></span> North Sector Hub: Open</div>
+          <div class="hub"><span class="dot-live" aria-hidden="true"></span> West Sector Hub: Open</div>
+          <div class="hub"><span class="dot-live" aria-hidden="true"></span> Central Hub: Open</div>
+          <div class="hub"><span class="dot-live" aria-hidden="true"></span> South Hub: Open</div>
+        </div>
+      </div>
+
+      <div>
+        <span class="eyebrow">Frequently Asked</span>
+        <h2 class="h2" id="faq-title">Plumbing Questions Answered</h2>
+
+        <div class="faq-list">
+
+          <details class="faq-item" open>
+            <summary>
+              Do you really charge zero overtime or weekend rates?
+              <span class="material-symbols-outlined faq-chev">expand_more</span>
+            </summary>
+            <div class="faq-answer">
+              Yes. A pipe doesn't check the calendar before bursting at 2 AM on Christmas Eve.
+              We provide flat-rate, upfront pricing regardless of the hour, weekend, or holiday.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              What qualifies as a plumbing emergency?
+              <span class="material-symbols-outlined faq-chev">expand_more</span>
+            </summary>
+            <div class="faq-answer">
+              Active burst water lines, main sewer drain backups into tubs or sinks, complete loss
+              of hot water during freezing weather, smell of gas near water heaters, or failing
+              sump pumps during a storm. If water is uncontrollable, call our emergency line immediately.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              How does your upfront pricing work?
+              <span class="material-symbols-outlined faq-chev">expand_more</span>
+            </summary>
+            <div class="faq-answer">
+              Our technician performs a diagnostic assessment upon arrival, explains the issue
+              thoroughly, and provides a fixed dollar figure for the repair. You approve it prior
+              to any work beginning. Even if the repair takes longer than expected, you only pay
+              what you approved.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              Are you licensed, bonded, and insured?
+              <span class="material-symbols-outlined faq-chev">expand_more</span>
+            </summary>
+            <div class="faq-answer">
+              Walt's Plumbing carries full Master Plumber State Licensure (#PL-48920), along with
+              $2,000,000 commercial general liability insurance and workman's compensation on every
+              technician who enters your property.
+            </div>
+          </details>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SERVICE AREAS
+       ============================================================ -->
+  <section class="section section--bg" id="areas" aria-labelledby="areas-title">
+    <div class="container">
+
+      <div class="section-head section-head--center">
+        <span class="eyebrow">Where We Work</span>
+        <h2 class="h2" id="areas-title">Plumbers Across the Metro Area</h2>
+        <p class="lead" style="margin-top:12px">
+          We cover all 14 metro districts from four staging hubs. Our Northfield page covers that area in depth.
+        </p>
+      </div>
+
+      <div class="area-grid">
+
+        <a class="area-chip area-chip--featured" href="#" target="_blank" rel="noopener">
+          <span class="material-symbols-outlined">location_on</span>
+          Northfield — dedicated page
+        </a>
+
+        <button class="area-chip area-chip--locked" type="button" data-area="Highlands">
+          <span class="material-symbols-outlined">location_on</span>
+          Highlands
+          <span class="area-tip" aria-hidden="true">Page under construction</span>
+        </button>
+
+        <button class="area-chip area-chip--locked" type="button" data-area="Westridge">
+          <span class="material-symbols-outlined">location_on</span>
+          Westridge
+          <span class="area-tip" aria-hidden="true">Page under construction</span>
+        </button>
+
+        <button class="area-chip area-chip--locked" type="button" data-area="River Oaks">
+          <span class="material-symbols-outlined">location_on</span>
+          River Oaks
+          <span class="area-tip" aria-hidden="true">Page under construction</span>
+        </button>
+
+        <button class="area-chip area-chip--locked" type="button" data-area="Pine Valley">
+          <span class="material-symbols-outlined">location_on</span>
+          Pine Valley
+          <span class="area-tip" aria-hidden="true">Page under construction</span>
+        </button>
+
+        <button class="area-chip area-chip--locked" type="button" data-area="Fairview Heights">
+          <span class="material-symbols-outlined">location_on</span>
+          Fairview Heights
+          <span class="area-tip" aria-hidden="true">Page under construction</span>
+        </button>
+
+        <button class="area-chip area-chip--locked" type="button" data-area="South Point">
+          <span class="material-symbols-outlined">location_on</span>
+          South Point
+          <span class="area-tip" aria-hidden="true">Page under construction</span>
+        </button>
+
+        <button class="area-chip area-chip--locked" type="button" data-area="Oakridge">
+          <span class="material-symbols-outlined">location_on</span>
+          Oakridge
+          <span class="area-tip" aria-hidden="true">Page under construction</span>
+        </button>
+
+        <button class="area-chip area-chip--locked" type="button" data-area="Sunset Valley">
+          <span class="material-symbols-outlined">location_on</span>
+          Sunset Valley
+          <span class="area-tip" aria-hidden="true">Page under construction</span>
+        </button>
+
+        <button class="area-chip area-chip--locked" type="button" data-area="Downtown &amp; Financial District">
+          <span class="material-symbols-outlined">location_on</span>
+          Downtown &amp; Financial District
+          <span class="area-tip" aria-hidden="true">Page under construction</span>
+        </button>
+
+      </div>
+
+      <p class="area-note">
+        Only our Northfield page is live right now — tap any other area and we'll still
+        dispatch a crew there today.
+      </p>
+
+      <p class="sr-only" role="status" aria-live="polite" id="area-status"></p>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       BOTTOM CTA
+       ============================================================ -->
+  <section class="cta-banner">
+    <div class="container cta-row">
+      <div>
+        <span class="cta-kicker">Don't Wait For Water Damage To Spread</span>
+        <h2 class="h2">Need a Plumber On Site Today?</h2>
+        <p>From a leaking hose bib to complete main sewer line repiping, we get the job done right on the first visit.</p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn btn--light btn--lg" href="#quick-booking">Book Online Appointment</a>
+        <a class="btn btn--accent btn--lg" href="tel:5558399258">
+          <span class="material-symbols-outlined">phone_in_talk</span>
+          Call (555) 839-WALT
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="site-footer">
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div class="footer-about">
+        <div class="footer-brand">
+          <span class="material-symbols-outlined">plumbing</span>
+          Walt's Plumbing Co.
+        </div>
+        <p>Engineered reliability, upfront pricing, and immediate emergency response for residential and light commercial plumbing across the tri-county area.</p>
+        <div class="footer-chips">
+          <span class="footer-chip">
+            <span class="material-symbols-outlined">verified</span>
+            Master Plumber #10492
+          </span>
+          <span class="footer-chip">
+            <span class="material-symbols-outlined">shield</span>
+            Fully Insured
+          </span>
+        </div>
+      </div>
+
+      <div>
+        <h4>Our Guarantee</h4>
+        <div class="footer-guarantee">
+          <div>
+            <span class="material-symbols-outlined">verified_user</span>
+            <p>100% Satisfaction Guarantee on all repairs, labor, and fixture installs.</p>
+          </div>
+          <div>
+            <span class="material-symbols-outlined">schedule</span>
+            <p>On-time dispatch promise with live technician tracking notifications.</p>
+          </div>
+          <div>
+            <span class="material-symbols-outlined">payments</span>
+            <p>Transparent flat-rate pricing upfront. No hidden dispatch surcharges.</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h4>Service Areas</h4>
+        <nav class="footer-list" aria-label="Service areas">
+          <a href="#areas">Metro Downtown &amp; Financial District</a>
+          <a href="#areas">Northfield, Highlands &amp; Westridge</a>
+          <a href="#areas">River Oaks &amp; Pine Valley</a>
+          <a href="#areas">Fairview Heights &amp; South Point</a>
+          <a href="#areas">Oakridge &amp; Sunset Valley</a>
+          <a href="#areas">Expanded 24/7 County Emergency Zone</a>
+        </nav>
+      </div>
+
+      <div>
+        <h4>Direct Contact</h4>
+        <div class="footer-contact-card">
+          <span>24/7 Emergency Dispatch</span>
+          <a href="tel:5558399258">
+            <span class="material-symbols-outlined">support_agent</span>
+            (555) 839-WALT
+          </a>
+        </div>
+        <div class="footer-list">
+          <span>
+            <span class="material-symbols-outlined">mail</span>
+            service@waltsplumbing.com
+          </span>
+          <span>
+            <span class="material-symbols-outlined">location_on</span>
+            4820 Industrial Pkwy, Suite 100
+          </span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2024 Walt's Plumbing Co. All rights reserved. State Lic #MP-10492-C.</span>
+      <nav aria-label="Legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Warranty Coverage</a>
+      </nav>
+    </div>
+
+  </div>
+</footer>
+
+<!-- ============================================================
+     FLOATING CTA
+     ============================================================ -->
+<div class="floating-cta" id="floating-cta">
+  <div class="fab-stack" id="fab-stack">
+    <a class="fab fab--text" href="sms:5558399258" aria-label="Text us">
+      <span class="material-symbols-outlined">chat</span>
+      <span>Text us</span>
+    </a>
+    <a class="fab fab--call" href="tel:5558399258" aria-label="Call us now">
+      <span class="material-symbols-outlined">call</span>
+      <span>Call now</span>
+    </a>
+  </div>
+
+  <button class="fab-toggle" id="fab-toggle" type="button"
+          aria-expanded="false" aria-controls="fab-stack"
+          aria-label="Open contact options">
+    <span class="material-symbols-outlined icon-chat">chat</span>
+    <span class="material-symbols-outlined icon-close">close</span>
+  </button>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ---------------------------------------------------------
+     Mobile navigation drawer
+     --------------------------------------------------------- */
+  var navToggle = document.getElementById('nav-toggle');
+  var drawer    = document.getElementById('nav-drawer');
+  var scrim     = document.getElementById('nav-scrim');
+  var lastFocus = null;
+
+  function openNav() {
+    if (!drawer || !scrim || !navToggle) return;
+    lastFocus = document.activeElement;
+    scrim.hidden = false;
+    requestAnimationFrame(function () {
+      scrim.classList.add('is-open');
+      drawer.classList.add('is-open');
+    });
+    drawer.setAttribute('aria-hidden', 'false');
+    navToggle.setAttribute('aria-expanded', 'true');
+    navToggle.setAttribute('aria-label', 'Close menu');
+    document.body.style.overflow = 'hidden';
+    var first = drawer.querySelector('a, button');
+    if (first) first.focus();
+  }
+
+  function closeNav() {
+    if (!drawer || !drawer.classList.contains('is-open')) return;
+    scrim.classList.remove('is-open');
+    drawer.classList.remove('is-open');
+    drawer.setAttribute('aria-hidden', 'true');
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.setAttribute('aria-label', 'Open menu');
+    document.body.style.overflow = '';
+    setTimeout(function () { scrim.hidden = true; }, 300);
+    if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
+  }
+
+  if (navToggle && drawer && scrim) {
+    navToggle.addEventListener('click', function () {
+      var isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+      isOpen ? closeNav() : openNav();
+    });
+
+    scrim.addEventListener('click', closeNav);
+
+    document.querySelectorAll('[data-close-nav]').forEach(function (btn) {
+      btn.addEventListener('click', closeNav);
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && drawer.classList.contains('is-open')) closeNav();
+    });
+
+    /* Reset state if viewport grows past the desktop breakpoint */
+    window.addEventListener('resize', function () {
+      if (window.innerWidth >= 1200 && drawer.classList.contains('is-open')) closeNav();
+    });
+  }
+
+  /* ---------------------------------------------------------
+     Floating CTA toggle
+     --------------------------------------------------------- */
+  var fabWrap   = document.getElementById('floating-cta');
+  var fabToggle = document.getElementById('fab-toggle');
+
+  function closeFab() {
+    if (!fabWrap || !fabWrap.classList.contains('is-open')) return;
+    fabWrap.classList.remove('is-open');
+    fabToggle.setAttribute('aria-expanded', 'false');
+    fabToggle.setAttribute('aria-label', 'Open contact options');
+  }
+
+  if (fabWrap && fabToggle) {
+    fabToggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = fabWrap.classList.toggle('is-open');
+      fabToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      fabToggle.setAttribute('aria-label', open ? 'Close contact options' : 'Open contact options');
+    });
+
+    document.addEventListener('click', function (e) {
+      if (fabWrap.classList.contains('is-open') && !fabWrap.contains(e.target)) closeFab();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeFab();
+    });
+
+    fabWrap.querySelectorAll('.fab').forEach(function (link) {
+      link.addEventListener('click', function () {
+        setTimeout(closeFab, 180);
+      });
+    });
+  }
+
+  /* ---------------------------------------------------------
+     Nav links: scroll to target and flash the section
+     --------------------------------------------------------- */
+  function handleNavClick(e) {
+    var href = e.currentTarget.getAttribute('href');
+    if (!href || href.charAt(0) !== '#' || href.length < 2) return;
+
+    var target = document.getElementById(href.slice(1));
+    if (!target) return;
+
+    /* html has scroll-behavior:smooth + scroll-padding-top, so the browser
+       scrolls correctly. We just add a short flash so the user sees the
+       section "open". */
+    target.classList.remove('section-flash');
+    void target.offsetWidth; /* force reflow to restart the animation */
+    target.classList.add('section-flash');
+    setTimeout(function () { target.classList.remove('section-flash'); }, 1500);
+  }
+
+  document.querySelectorAll('.nav-list a[href^="#"], .drawer-link[href^="#"]')
+    .forEach(function (link) {
+      link.addEventListener('click', handleNavClick);
+    });
+
+  /* ---------------------------------------------------------
+     Service area tooltips
+     --------------------------------------------------------- */
+  var areaStatus = document.getElementById('area-status');
+  var areaTimers = new WeakMap();
+
+  document.querySelectorAll('.area-chip--locked').forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      document.querySelectorAll('.area-chip--locked.is-tip').forEach(function (other) {
+        if (other !== chip) other.classList.remove('is-tip');
+      });
+
+      chip.classList.add('is-tip');
+
+      var name = chip.getAttribute('data-area') || 'This area';
+      if (areaStatus) {
+        areaStatus.textContent = name + ' — page under construction. Only our Northfield page is live right now.';
+      }
+
+      var existing = areaTimers.get(chip);
+      if (existing) clearTimeout(existing);
+
+      var timer = setTimeout(function () {
+        chip.classList.remove('is-tip');
+      }, 2600);
+      areaTimers.set(chip, timer);
+    });
+
+    chip.addEventListener('mouseleave', function () {
+      var t = areaTimers.get(chip);
+      if (t) clearTimeout(t);
+      chip.classList.remove('is-tip');
+    });
+
+    chip.addEventListener('blur', function () {
+      chip.classList.remove('is-tip');
+    });
+  });
+
+  /* ---------------------------------------------------------
+     FAQ: only one panel open at a time
+     --------------------------------------------------------- */
+  var faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(function (item) {
+    item.addEventListener('toggle', function () {
+      if (item.open) {
+        faqItems.forEach(function (other) {
+          if (other !== item) other.open = false;
+        });
+      }
+    });
+  });
+
+  /* ---------------------------------------------------------
+     Booking form
+     --------------------------------------------------------- */
+  var bookingForm = document.getElementById('booking-form');
+  if (bookingForm) {
+    bookingForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      var name  = bookingForm.querySelector('[name="name"]');
+      var phone = bookingForm.querySelector('[name="phone"]');
+      var svc   = bookingForm.querySelector('[name="service"]');
+
+      if (!name.value.trim()) { name.focus(); return; }
+      if (!phone.value.trim()) { phone.focus(); return; }
+      if (!svc.value) { svc.focus(); return; }
+
+      var success = document.getElementById('form-success');
+      bookingForm.style.display = 'none';
+      if (success) {
+        success.classList.add('is-visible');
+        success.setAttribute('tabindex', '-1');
+        success.focus();
+      }
+    });
+  }
+
+})();
+</script>
+
+</body>
+</html>
