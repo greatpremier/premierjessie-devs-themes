@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-tertiary":"#ffffff","on-secondary-fixed":"#001d31","on-surface":"#0b1c30","error-container":"#ffdad6","on-tertiary-fixed-variant":"#7f2b00","background":"#f8f9ff","primary-container":"#0f2942","on-secondary-container":"#00476e","surface-variant":"#d3e4fe","primary-fixed":"#d1e4ff","on-secondary-fixed-variant":"#004b73","on-secondary":"#ffffff","surface-container-high":"#dce9ff","on-primary-container":"#7991af","inverse-primary":"#b0c9e8","tertiary-fixed":"#ffdbce","on-primary-fixed":"#011d35","secondary-container":"#5bb8fe","on-primary-fixed-variant":"#314863","secondary-fixed":"#cce5ff","on-background":"#0b1c30","on-tertiary-container":"#ed6425","on-surface-variant":"#43474d","on-error-container":"#93000a","surface-container-highest":"#d3e4fe","inverse-surface":"#213145","surface-container-low":"#eff4ff","on-tertiary-fixed":"#370e00","surface-bright":"#f8f9ff","surface-tint":"#49607c","primary-fixed-dim":"#b0c9e8","surface":"#f8f9ff","secondary":"#006398","primary":"#001428","tertiary-container":"#4b1600","secondary-fixed-dim":"#93ccff","on-primary":"#ffffff","tertiary-fixed-dim":"#ffb599","tertiary":"#290800","inverse-on-surface":"#eaf1ff","outline":"#74777e","on-error":"#ffffff","error":"#ba1a1a","outline-variant":"#c3c6ce","surface-container-lowest":"#ffffff","surface-dim":"#cbdbf5","surface-container":"#e5eeff"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"space-sm":"0.5rem","space-md":"1rem","space-xl":"2.5rem",margin:"2rem",gutter:"1.5rem","space-lg":"1.5rem","margin-mobile":"1rem","gutter-mobile":"1rem","space-xs":"0.25rem"},fontFamily:{"body-sm":["Work Sans"],"headline-lg":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"body-lg":["Work Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"body-md":["Work Sans"],"display-lg":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"]},fontSize:{"body-sm":["0.875rem",{lineHeight:"1.45",fontWeight:"400"}],"headline-lg":["2rem",{lineHeight:"1.25",fontWeight:"700"}],"headline-sm":["1.25rem",{lineHeight:"1.35",fontWeight:"600"}],"headline-md":["1.5rem",{lineHeight:"1.3",fontWeight:"600"}],"body-lg":["1.125rem",{lineHeight:"1.6",fontWeight:"400"}],"display-lg-mobile":["2.25rem",{lineHeight:"1.15",fontWeight:"800"}],"label-md":["0.875rem",{lineHeight:"1.3",fontWeight:"600"}],"label-sm":["0.75rem",{lineHeight:"1.2",fontWeight:"700"}],"headline-xl":["2.5rem",{lineHeight:"1.2",fontWeight:"700"}],"label-lg":["1rem",{lineHeight:"1.4",fontWeight:"600"}],"body-md":["1rem",{lineHeight:"1.5",fontWeight:"400"}],"display-lg":["3.5rem",{lineHeight:"1.1",fontWeight:"800"}],"headline-xl-mobile":["1.875rem",{lineHeight:"1.25",fontWeight:"700"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_2px_12px_rgba(15,41,66,0.06)]"><div class="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-gutter"><div class="flex items-center gap-space-md"><img alt="Walt's Plumbing Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WrbLvFYMAa7xgXVRDvsVG-4MPDYYPq5c7cNWAQ_MZW67PIofuYBQC-v__VY02x0HCSl11ilvg0q2sF7YBWBDlQba7DEb3QSFKF1iituoUzep618ikcIMQzvuSixopjoeZoCWfUW9VIrVV2gzzKu2FRD3tPuOVf-RL6dmJLNa9IMAGheGPN7E17J0Otl5YSKKCSwXDjXbskNV5ehG1aXVcxNjt44OnLE0MQ6Wv_v3cRaijw-CCxUfFRov8"/><span class="font-headline-sm text-headline-sm text-primary tracking-tight font-bold whitespace-nowrap">Walt's Plumbing Co.</span></div><nav class="hidden xl:flex items-center gap-space-sm" data-active-classes="bg-surface-container text-primary font-bold rounded-lg"><a aria-current="page" class="px-space-sm py-space-xs transition-all duration-150 bg-surface-container text-primary font-bold rounded-lg" data-path="services" href="#">Services</a><a class="px-space-sm py-space-xs font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-all duration-150 rounded-lg" data-path="emergency-24-7" href="#">Emergency 24/7</a><a class="px-space-sm py-space-xs font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-all duration-150 rounded-lg" data-path="drain-cleaning" href="#">Drain Cleaning</a><a class="px-space-sm py-space-xs font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-all duration-150 rounded-lg" data-path="water-heaters" href="#">Water Heaters</a><a class="px-space-sm py-space-xs font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-all duration-150 rounded-lg" data-path="about-us" href="#">About Us</a><a class="px-space-sm py-space-xs font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-all duration-150 rounded-lg" data-path="reviews" href="#">Reviews</a></nav><div class="flex items-center gap-space-md"><a class="hidden sm:inline-flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-surface-container-low text-secondary hover:bg-surface-container transition-all group" href="tel:5558399258"><span class="material-symbols-outlined text-[20px] text-on-tertiary-container group-hover:scale-110 transition-transform">phone_in_talk</span><div class="flex flex-col text-left leading-none"><span class="font-label-sm text-label-sm text-primary">(555) 839-WALT</span><span class="font-label-sm text-label-sm text-on-tertiary-container text-[11px]">Available 24/7</span></div></a><a class="inline-flex items-center justify-center px-space-lg py-space-sm rounded-lg bg-primary text-on-primary font-label-lg text-label-lg hover:bg-primary-container shadow-sm hover:shadow transition-all duration-200" data-path="book-service" href="#">Book Service</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-background"><div class="flex flex-col w-full">
+<!-- Top Visual Accent & Editorial Header Strip -->
+<section class="relative w-full bg-surface-container-low px-6 lg:px-12 py-space-xl overflow-hidden">
+<div class="absolute -right-20 -top-24 w-96 h-96 rounded-full bg-secondary-container/20 blur-3xl pointer-events-none"></div>
+<div class="absolute left-1/3 bottom-0 w-80 h-80 rounded-full bg-tertiary-fixed/30 blur-2xl pointer-events-none"></div>
+<div class="max-w-7xl mx-auto flex flex-col lg:flex-row lg:items-end justify-between gap-gutter relative z-10">
+<div class="max-w-3xl space-y-space-sm">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-lowest shadow-sm text-secondary font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse"></span>
+          OFFICIAL 2024 FIELD CATALOG • LIC #MP-10492-C
+        </div>
+<h1 class="font-headline-xl text-headline-xl lg:text-display-lg text-primary tracking-tight font-extrabold leading-none">
+          Comprehensive Plumbing Solutions for Residential &amp; Commercial
+        </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl pt-2">
+          Engineered precision meets upfront honesty. From rapid residential fixture repairs to high-capacity industrial sewer rehabilitation, our certified master plumbers deliver permanent fixes with zero guesswork.
+        </p>
+</div>
+<!-- Quick Emergency Telemetry Card -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-md flex flex-col gap-space-xs min-w-[280px]">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>TRI-COUNTY DISPATCH</span>
+<span class="inline-flex items-center gap-1 text-on-tertiary-container font-semibold">
+<span class="material-symbols-outlined text-[16px]">bolt</span> ACTIVE
+          </span>
+</div>
+<div class="font-headline-md text-headline-md text-primary font-bold">14 Crews On Road</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-on-tertiary-container h-full rounded-full w-3/4"></div>
+</div>
+<div class="flex justify-between items-center pt-2">
+<span class="font-body-sm text-body-sm text-outline">Avg Response: <strong>32 Mins</strong></span>
+<a class="text-on-tertiary-container font-label-md text-label-md hover:underline flex items-center gap-0.5" href="tel:5558399258">
+            Call Live <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Category Directory & Filter System -->
+<section class="w-full max-w-7xl mx-auto px-6 lg:px-12 py-space-xl">
+<!-- Category Tabs Filter -->
+<div class="flex flex-wrap items-center gap-2 p-1.5 bg-surface-container rounded-xl w-fit shadow-inner mb-space-xl" id="categoryNav">
+<button class="cat-tab active-tab px-space-md py-space-sm rounded-lg font-label-md text-label-md transition-all duration-200 bg-primary text-on-primary shadow-sm" data-category="all" onclick="filterService('all')">
+        All Divisions (12)
+      </button>
+<button class="cat-tab px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-primary transition-all duration-200" data-category="residential" onclick="filterService('residential')">
+        1. Residential Plumbing
+      </button>
+<button class="cat-tab px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-primary transition-all duration-200" data-category="water-heating" onclick="filterService('water-heating')">
+        2. Water Heating
+      </button>
+<button class="cat-tab px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-primary transition-all duration-200" data-category="drains-sewers" onclick="filterService('drains-sewers')">
+        3. Drains &amp; Sewers
+      </button>
+<button class="cat-tab px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-primary transition-all duration-200" data-category="commercial" onclick="filterService('commercial')">
+        4. Commercial &amp; Business
+      </button>
+</div>
+<!-- Catalog Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter" id="servicesCatalog">
+<!-- Category 1: Residential 1 -->
+<article class="service-card group bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden" data-category="residential">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A professional licensed plumber using specialized copper fitting crimping tool under a sleek quartz residential kitchen sink with clean illuminated plumbing pipes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_DMKwiHHbqwdXbkodB3k7Wsvlh1KI0ekK9yyRtIM5tzKoC3saELfgMtUIIIRsFO5iFkA30UJHQ82woeUlOP87WUxE545QkTHgIhiWoQbgqj1Jy3RG5o-coGjrykMBVvZ_iKkVxJnhfwdVlzEAVDso5-PHyqHF46O4dh6rE2lQ1mPNH9JA0f4kwqCAAdNWUd3oEB_4lBJzrlzSOSmIBShbOY6BRDdVVsHXoxlVyDn4uUAxtmtKc7uo"/>
+<div class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-md px-2.5 py-1 rounded-full font-label-sm text-label-sm text-primary flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">home_repair_service</span> Residential
+          </div>
+<span class="absolute top-3 right-3 bg-primary text-on-primary text-[11px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Same Day</span>
+</div>
+<div class="p-space-lg flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-baseline justify-between mb-2">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Drain Clog &amp; Blockage Extraction</h3>
+<span class="font-label-md text-label-md text-secondary font-bold">From $129</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+              Targeted clearing of stubborn kitchen, bath, and mainline clogs using motor-snakes and mechanical rooter blades. Includes free optical pre-check.
+            </p>
+<div class="flex flex-wrap gap-1.5 mb-space-md">
+<span class="bg-surface-container px-2 py-0.5 rounded text-[12px] text-on-surface font-medium">Hair/Soap Debris</span>
+<span class="bg-surface-container px-2 py-0.5 rounded text-[12px] text-on-surface font-medium">Safe Snake Tech</span>
+<span class="bg-surface-container px-2 py-0.5 rounded text-[12px] text-on-surface font-medium">30-Day Guarantee</span>
+</div>
+</div>
+<div class="pt-space-md flex items-center justify-between border-t border-surface-container">
+<span class="font-label-sm text-label-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 1–2 hr service
+            </span>
+<a class="font-label-md text-label-md text-secondary hover:text-on-tertiary-container font-bold inline-flex items-center gap-1 group-hover:translate-x-1 transition-all" data-path="book-service" href="#">
+              Book Dispatch →
+            </a>
+</div>
+</div>
+</article>
+<!-- Category 1: Residential 2 -->
+<article class="service-card group bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden" data-category="residential">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close up of a plumber expertly installing a brushed nickel designer kitchen pull-down faucet with shining basin and copper supply lines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEYjd_CO3bAr9PIL7nIQ5LQG5V1ekQUncD1QUEyJq9cy7w6THDPJDWBIPreDQQ6hmFW10IvVuEZy3FOj_nmN71PK1wL_GsFaXy7BxCq93LX7r0txmUSMQw4HrjdEcDjcKyoYjl7EJ5H_McqvU07GuM72T9PCZdM6UGhROCZUEMqsUskbP2N9bsDuG4o20oVlNL0UA03R7zOZNrlkaorwgce0IkfvmW6K4BJ9oGOu4tLxvBomDnYzjB"/>
+<div class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-md px-2.5 py-1 rounded-full font-label-sm text-label-sm text-primary flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">faucet</span> Fixtures
+          </div>
+</div>
+<div class="p-space-lg flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-baseline justify-between mb-2">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Faucet &amp; Valve Restoration</h3>
+<span class="font-label-md text-label-md text-secondary font-bold">From $149</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+              Complete rebuild or designer replacement of leaking cartridges, pinhole supply lines, aerators, and whole-house emergency shut-off ball valves.
+            </p>
+<div class="flex flex-wrap gap-1.5 mb-space-md">
+<span class="bg-surface-container px-2 py-0.5 rounded text-[12px] text-on-surface font-medium">Ceramic Disc Carts</span>
+<span class="bg-surface-container px-2 py-0.5 rounded text-[12px] text-on-surface font-medium">Pressure Balancing</span>
+</div>
+</div>
+<div class="pt-space-md flex items-center justify-between border-t border-surface-container">
+<span class="font-label-sm text-label-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 1 hr service
+            </span>
+<a class="font-label-md text-label-md text-secondary hover:text-on-tertiary-container font-bold inline-flex items-center gap-1 group-hover:translate-x-1 transition-all" data-path="book-service" href="#">
+              Book Dispatch →
+            </a>
+</div>
+</div>
+</article>
+<!-- Category 1: Residential 3 -->
+<article class="service-card group bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden" data-category="residential">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Plumbing installer aligning modern dual flush porcelain toilet base onto a fresh wax ring in a bright contemporary subway tile bathroom." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9GL8qwj3G_bG9qVgCL-7RDXDMJQafkf9Yl8NfWTfem91Y99f3tTv90NNDKeX-kgT8NKYs9ZbpHbFxflTM36PNmLwgyU-agU1kGce9NIH32WVkyigC8KCqMBurSGuIwCi6-I33KnyWaOYRh59kvHFDyPlPK1Xcdf4G0q_TbSsZAoFlwdfzzD2rB4-5rGhKWZ7SsItwuTwAtl-eRZ5po_Ru5N7YaXbYR-Ofy7WH0HOTj2cBeQ7q4HsB"/>
+<div class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-md px-2.5 py-1 rounded-full font-label-sm text-label-sm text-primary flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">wc</span> Residential
+          </div>
+</div>
+<div class="p-space-lg flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-baseline justify-between mb-2">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Toilet Replacement &amp; Seal Rebuild</h3>
+<span class="font-label-md text-label-md text-secondary font-bold">From $185</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+              High-efficiency toilet upgrades, flange reconstruction, subfloor wax seal seating, and silent fill-valve overhauls with eco-smart GPF ratings.
+            </p>
+<div class="flex flex-wrap gap-1.5 mb-space-md">
+<span class="bg-surface-container px-2 py-0.5 rounded text-[12px] text-on-surface font-medium">Leak-Free Flanges</span>
+<span class="bg-surface-container px-2 py-0.5 rounded text-[12px] text-on-surface font-medium">Kohler &amp; TOTO Specs</span>
+</div>
+</div>
+<div class="pt-space-md flex items-center justify-between border-t border-surface-container">
+<span class="font-label-sm text-label-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 1–2 hrs
+            </span>
+<a class="font-label-md text-label-md text-secondary hover:text-on-tertiary-container font-bold inline-flex items-center gap-1 group-hover:translate-x-1 transition-all" data-path="book-service" href="#">
+              Book Dispatch →
+            </a>
+</div>
+</div>
+</article>
+<!-- Category 1: Residential 4 (Repiping) -->
+<article class="service-card group bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden" data-category="residential">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Neat parallel runs of red and blue PEX water piping in basement rafters installed meticulously by an experienced technician." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeqaGhKb9CE3ZNYcztUGdFprITldax4_uf_CtY9fHlQHjEPSFIK1inFQ8ARvzA1sFyZGY8LWWw1v2m9eWJyTrliTKrtA_9PsoaeH7ndv6HwKSaJIH0EHwKy2cRWThABJs4FJPFMB2_WvS_13yhPpF04n0vbOnHpz7hPg26C0Irp6bnqqiwZ6hD9bUZevwLy7xXAe1ypOJNHdoE466bTcf-H8ol8qyki7SdnMS65TJxxRWDqLC-CwZz"/>
+<div class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-md px-2.5 py-1 rounded-full font-label-sm text-label-sm text-primary flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">linear_scale</span> Whole-Home
+          </div>
+<span class="absolute top-3 right-3 bg-secondary text-on-primary text-[11px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Free In-Home Quote</span>
+</div>
+<div class="p-space-lg flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-baseline justify-between mb-2">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Whole-Home PEX &amp; Copper Repipe</h3>
+<span class="font-label-md text-label-md text-secondary font-bold">Custom Scope</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+              Full eradication of corroded galvanized pipes or defective polybutylene. Seamless PEX-A expansion installs with drywall surgical access.
+            </p>
+<div class="flex flex-wrap gap-1.5 mb-space-md">
+<span class="bg-surface-container px-2 py-0.5 rounded text-[12px] text-on-surface font-medium">Uponor PEX-A</span>
+<span class="bg-surface-container px-2 py-0.5 rounded text-[12px] text-on-surface font-medium">25-Yr Material Warranty</span>
+</div>
+</div>
+<div class="pt-space-md flex items-center justify-between border-t border-surface-container">
+<span class="font-label-sm text-label-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">verified</span> Comprehensive Plan
+            </span>
+<a class="font-label-md text-label-md text-secondary hover:text-on-tertiary-container font-bold inline-flex items-center gap-1 group-hover:translate-x-1 transition-all" data-path="book-service" href="#">
+              Schedule Consult →
+            </a>
+</div>
+</div>
+</article>
+<!-- Category 2: Water Heating 1 -->
+<article class="service-card group bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden" data-category="water-heating">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A modern wall mounted Navien tankless water heater with clean copper piping and concentric vent pipes in an organized utility room." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAU8LIKvnxScDWtuVhk3mvUq3kmEvke182Sy2qH58E9zy2t1L8S-pZotnrOaKumnV6kL50DQ6mRs6hqLGityWj2E-V521d2OrIrIFI4Jg-MaP24uG41V7A3RySEjaK79xdvee3UrnD46kTTW-7tZ6s7Fh0vOB99OENNsh0g9TxGn-KZz26bqyKrMTuJ7Lnlj9Ye91gx4U8o2j3HasZEs3d2fMn1FyaiWQoCoEkZZu5pVwmZTLr1VEa4"/>
+<div class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-md px-2.5 py-1 rounded-full font-label-sm text-label-sm text-primary flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-on-tertiary-container">local_fire_department</span> Water Heating
+          </div>
+<span class="absolute top-3 right-3 bg-on-tertiary-container text-on-tertiary text-[11px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Top Efficiency</span>
+</div>
+<div class="p-space-lg flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-baseline justify-between mb-2">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Tankless Water Heater Conversions</h3>
+<span class="font-label-md text-label-md text-secondary font-bold">From $1,890</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+              Unlimited continuous hot water on demand. Energy Star-rated units with dual stainless heat exchangers and up to 40% fuel bill reduction.
+            </p>
+<div class="flex flex-wrap gap-1.5 mb-space-md">
+<span class="bg-surface-container px-2 py-0.5 rounded text-[12px] text-on-surface font-medium">Navien / Rinnai Elite</span>
+<span class="bg-surface-container px-2 py-0.5 rounded text-[12px] text-on-surface font-medium">Federal Rebate Eligible</span>
+</div>
+</div>
+<div class="pt-space-md flex items-center justify-between border-t border-surface-container">
+<span class="font-label-sm text-label-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">bolt</span> 4–6 hr install
+            </span>
+<a class="font-label-md text-label-md text-secondary hover:text-on-tertiary-container font-bold inline-flex items-center gap-1 group-hover:translate-x-1 transition-all" data-path="book-service" href="#">
+              Book Conversion →
+            </a>
+</div>
+</div>
+</article>
+<!-- Category 2: Water Heating 2 -->
+<article class="service-card group bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden" data-category="water-heating">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Plumber testing the temperature pressure relief valve of a tall commercial grade 50 gallon domestic water heater unit in a well lit mechanical space." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWufkhaarR6CgMDu0Kj6Hm6Yx-pECgcxU1nSFlfUS-G9bQzT-x5Pb90anbKRAhQ8EE1b7YX2I8pfo1AMzgw6H8GbG5B-ECx1WZeNfA1u6cX4PjdhLqCmLfDRZfjoMGN3Jx_Yp2oqP_ypEg0dS6220MCCQjNFuBxzUoaCTl6FWvX30CEHiPsHA4kQJwRHPvdKXaAvOVWkSSvRUJO0HFgjbbfgYxF9HU18venZ2uvgiaQpBY4NysfXKz"/>
+<div class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-md px-2.5 py-1 rounded-full font-label-sm text-label-sm text-primary flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">water_heater</span> Conventional
+          </div>
+</div>
+<div class="p-space-lg flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-baseline justify-between mb-2">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Standard Tank Replacement (40-80 Gal)</h3>
+<span class="font-label-md text-label-md text-secondary font-bold">From $1,250</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+              Direct haul-away and code-compliant installation of heavy-duty atmospheric or power-vented tanks with expansion vessels and brass drain valves.
+            </p>
+<div class="flex flex-wrap gap-1.5 mb-space-md">
+<span class="bg-surface-container px-2 py-0.5 rounded text-[12px] text-on-surface font-medium">Bradford White Pro</span>
+<span class="bg-surface-container px-2 py-0.5 rounded text-[12px] text-on-surface font-medium">Includes Haul Away</span>
+</div>
+</div>
+<div class="pt-space-md flex items-center justify-between border-t border-surface-container">
+<span class="font-label-sm text-label-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 2–3 hrs
+            </span>
+<a class="font-label-md text-label-md text-secondary hover:text-on-tertiary-container font-bold inline-flex items-center gap-1 group-hover:translate-x-1 transition-all" data-path="book-service" href="#">
+              Request Setup →
+            </a>
+</div>
+</div>
+</article>
+<!-- Category 2: Water Heating 3 -->
+<article class="service-card group bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden" data-category="water-heating">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Technician descaling a tankless water heater heat exchanger with an electric circulating pump and white vinegar descaling solution in buckets." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCx8SuRd2fR3XJ-Za70UHU9DtKUu-n7c35ZwTg-D0B34sO5FoLBaoIw6BDZiHFoXVRNc7mqLEonSwg7oUU9qIJMUBr30BXm-L74dD3T4LriwzjH3CRKN8g8FVGXx1vapHPfRDmA_Yi6ap6ddLRZKlbWUesqo0AO0PPXuF1loz5hPPJcB_rpyq0BLYwmqSVqvA1iGA3pK1ONB4KP4GfSIY2b-Cs82pu0t0KxK4qFJV-wroVpkAildCbD"/>
+<div class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-md px-2.5 py-1 rounded-full font-label-sm text-label-sm text-primary flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">cleaning_services</span> Maintenance
+          </div>
+</div>
+<div class="p-space-lg flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-baseline justify-between mb-2">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Annual Flush &amp; Anode Tune-Up</h3>
+<span class="font-label-md text-label-md text-secondary font-bold">Flat $169</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+              Descaling calcium buildup, testing burner thermopiles, replacing sacrificial anode rods, and certifying thermal pressure release systems.
+            </p>
+<div class="flex flex-wrap gap-1.5 mb-space-md">
+<span class="bg-surface-container px-2 py-0.5 rounded text-[12px] text-on-surface font-medium">Eliminates Knocking</span>
+<span class="bg-surface-container px-2 py-0.5 rounded text-[12px] text-on-surface font-medium">Extends Life 5+ Yrs</span>
+</div>
+</div>
+<div class="pt-space-md flex items-center justify-between border-t border-surface-container">
+<span class="font-label-sm text-label-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 1 hr service
+            </span>
+<a class="font-label-md text-label-md text-secondary hover:text-on-tertiary-container font-bold inline-flex items-center gap-1 group-hover:translate-x-1 transition-all" data-path="book-service" href="#">
+              Schedule Tune-Up →
+            </a>
+</div>
+</div>
+</article>
+<!-- Category 3: Drains & Sewers 1 -->
+<article class="service-card group bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden" data-category="drains-sewers">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="High tech fiber optic sewer camera monitor showing clear real-time footage of subterranean drainage pipe interiors with a technician taking diagnostics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxKIK4Wp67IZp44p9ZhmlB8cDA7Sgjo_hQrFVtgxLY5WkByc2tbM2wsPGh4zn6l9lR85q2hJ3jauNVPIzAyoNnJu9hi7PSu8KsS1XHOdJXKt4VVLMHMFqOllQ76ogVfkfAu6a5TInfSyjeazLnuYrtrCUUzq1ofGqotu-P-HfTdKchB3BVpt0yZadqrsfZ-AsgafdoB98K3MTYodnLZ0ICmyF4yl7hFIrv8xaVmOF6GjjzSn8GwM9n"/>
+<div class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-md px-2.5 py-1 rounded-full font-label-sm text-label-sm text-primary flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">videocam</span> Diagnostic
+          </div>
+<span class="absolute top-3 right-3 bg-surface-container text-primary text-[11px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Free w/ Repair</span>
+</div>
+<div class="p-space-lg flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-baseline justify-between mb-2">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">HD Color Sewer Camera Inspection</h3>
+<span class="font-label-md text-label-md text-secondary font-bold">Flat $195</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+              Full-length digital pipe run diagnostic with sonde location transmitter to pinpoint exact depth, breaks, tree root intrusions, and offset joints.
+            </p>
+<div class="flex flex-wrap gap-1.5 mb-space-md">
+<span class="bg-surface-container px-2 py-0.5 rounded text-[12px] text-on-surface font-medium">Digital USB Video Copy</span>
+<span class="bg-surface-container px-2 py-0.5 rounded text-[12px] text-on-surface font-medium">Surface Depth Sonde</span>
+</div>
+</div>
+<div class="pt-space-md flex items-center justify-between border-t border-surface-container">
+<span class="font-label-sm text-label-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 45–60 mins
+            </span>
+<a class="font-label-md text-label-md text-secondary hover:text-on-tertiary-container font-bold inline-flex items-center gap-1 group-hover:translate-x-1 transition-all" data-path="book-service" href="#">
+              Book Inspection →
+            </a>
+</div>
+</div>
+</article>
+<!-- Category 3: Drains & Sewers 2 -->
+<article class="service-card group bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden" data-category="drains-sewers">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Industrial 4000 PSI high pressure hydro jetting machine mounted in a work truck with specialized rotating nozzle hose entering a cleanout line." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWWsnWHT4FFsm1dwBA4TM-J7Akjsf0VciiwcLMoanS-BBngNMROfkeAmLd-V6p3-GHwOecZKR5EmHvT7bP5ubsJVwl6kWF4h15j1eIi01lVXTBrSPNZvaJrM4j54Ln35xefu6IObud1tNWFHSIyck91uve-TZt_NF5mU34pWUcIzSOgsE2i6RyZUHnzpJ3iUcg_i5t4ENFUzLq1uT5MK90wiJUebexl1utatgorpbc0FaxV1b3n3V_"/>
+<div class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-md px-2.5 py-1 rounded-full font-label-sm text-label-sm text-primary flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">water_drop</span> Heavy Duty
+          </div>
+</div>
+<div class="p-space-lg flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-baseline justify-between mb-2">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">4,000 PSI Hydro Jetting Service</h3>
+<span class="font-label-md text-label-md text-secondary font-bold">From $450</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+              Restores line capacity to 100%. Scours away calcified scale, severe restaurant grease, and stubborn invasive root mats without digging.
+            </p>
+<div class="flex flex-wrap gap-1.5 mb-space-md">
+<span class="bg-surface-container px-2 py-0.5 rounded text-[12px] text-on-surface font-medium">360° Rotary Scour</span>
+<span class="bg-surface-container px-2 py-0.5 rounded text-[12px] text-on-surface font-medium">1-Year Clog Free Guarantee</span>
+</div>
+</div>
+<div class="pt-space-md flex items-center justify-between border-t border-surface-container">
+<span class="font-label-sm text-label-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 2 hrs
+            </span>
+<a class="font-label-md text-label-md text-secondary hover:text-on-tertiary-container font-bold inline-flex items-center gap-1 group-hover:translate-x-1 transition-all" data-path="book-service" href="#">
+              Clear My Mainline →
+            </a>
+</div>
+</div>
+</article>
+<!-- Category 3: Drains & Sewers 3 -->
+<article class="service-card group bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden" data-category="drains-sewers">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Cured-in-place pipe CIPP lining equipment with epoxy-saturated textile sleeve being fed into an outdoor sewer cleanout without damaging pristine green lawn." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUBLVTvf74_SzR48-fJhrSN2n29fI0sW7RbUF40Q0XYn1lcTY9voQEcN6SHhfk7wQbS7MAbF6Ft59gnw8WqKdkosqL1r4UzOVtw45xVegJaT-eroJVVtfQuTUjAYqt8MCV0wiaPImAxfQie8X5bdXe2Bhiz9KznMx0TU3RJ3VkDW_xRbCxHc44bKj2M1OaYFzAzNCf8NsFW25NH4gxIEFAe7DgXJh8b9WXzPUyEqaX-c4-y65UAiej"/>
+<div class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-md px-2.5 py-1 rounded-full font-label-sm text-label-sm text-primary flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">architecture</span> Trenchless
+          </div>
+<span class="absolute top-3 right-3 bg-secondary-container text-on-secondary-container text-[11px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Zero Lawn Digging</span>
+</div>
+<div class="p-space-lg flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-baseline justify-between mb-2">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Trenchless Sewer Relining (CIPP)</h3>
+<span class="font-label-md text-label-md text-secondary font-bold">Custom Scope</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+              Create an indestructible pipe within your cracked sewer line using epoxy resin sleeves. Preserves driveways, expensive pavers, and heritage landscaping.
+            </p>
+<div class="flex flex-wrap gap-1.5 mb-space-md">
+<span class="bg-surface-container px-2 py-0.5 rounded text-[12px] text-on-surface font-medium">50-Year Design Life</span>
+<span class="bg-surface-container px-2 py-0.5 rounded text-[12px] text-on-surface font-medium">No Trench Trenchless</span>
+</div>
+</div>
+<div class="pt-space-md flex items-center justify-between border-t border-surface-container">
+<span class="font-label-sm text-label-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">verified</span> 50-Yr Warranty
+            </span>
+<a class="font-label-md text-label-md text-secondary hover:text-on-tertiary-container font-bold inline-flex items-center gap-1 group-hover:translate-x-1 transition-all" data-path="book-service" href="#">
+              Request Evaluation →
+            </a>
+</div>
+</div>
+</article>
+<!-- Category 4: Commercial 1 -->
+<article class="service-card group bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden" data-category="commercial">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Large commercial stainless steel restaurant kitchen grease trap with heavy lids and valves being serviced by certified technical technicians." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCL_6jL9vJHaWWk5261PoFfJKA8tfhIbVg1jRCzoYQcz849apTjW6PyWSZROVsW8h9CuK1enxZSWfgKj5sZuGJCpd8zoQFvilK-hBf8aIISo1Cr_srkRC9ifBxIl-d6L62WNBLWx-bnMssxA2ulZyzGkmbrrCNRl_rXhap3TEPADlTwdgUZKQFuLzl6rwgRGP74vvsx8dbi6SB2JKHVndKwSOPnma4f2vdXSVeG6HXtElk2O1uWn7ku"/>
+<div class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-md px-2.5 py-1 rounded-full font-label-sm text-label-sm text-primary flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">corporate_fare</span> Commercial
+          </div>
+</div>
+<div class="p-space-lg flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-baseline justify-between mb-2">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Commercial Grease Trap Interceptors</h3>
+<span class="font-label-md text-label-md text-secondary font-bold">From $380</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+              Complete installation, municipal compliance pump-outs, replacement baffles, and odor-tight gasket seals for food service and commercial kitchens.
+            </p>
+<div class="flex flex-wrap gap-1.5 mb-space-md">
+<span class="bg-surface-container px-2 py-0.5 rounded text-[12px] text-on-surface font-medium">Health Dept Certified</span>
+<span class="bg-surface-container px-2 py-0.5 rounded text-[12px] text-on-surface font-medium">FOG Program Ready</span>
+</div>
+</div>
+<div class="pt-space-md flex items-center justify-between border-t border-surface-container">
+<span class="font-label-sm text-label-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> Scheduled Care
+            </span>
+<a class="font-label-md text-label-md text-secondary hover:text-on-tertiary-container font-bold inline-flex items-center gap-1 group-hover:translate-x-1 transition-all" data-path="book-service" href="#">
+              Business Dispatch →
+            </a>
+</div>
+</div>
+</article>
+<!-- Category 4: Commercial 2 -->
+<article class="service-card group bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden" data-category="commercial">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Plumber testing a dual check RPZ backflow preventer assembly attached to a brass commercial potable water supply header with test gauges." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpKo0MzGCE7JEDLbGIEswL8R7fb5LvKoy2L_GZlL2O8DngUKFZ-DAhdAvnzQ_O5tKOrKiQ1kg3RgfbLFHZ7DevGbhUCKMVmlKXogp9dodSP-Q0x8RvhkzwJ0HH-0aDffDFOJi3h6XGmH2u6SK6Nq1lN0X7Bp0owsFnJkmoJUnm7fVULSQXqEFEgfYBU5YdVhtCTCRfWoAr5Qx8sjSsOxm_qiv40yQczGljFUMhRoFS7q0Hhdhp4mqr"/>
+<div class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-md px-2.5 py-1 rounded-full font-label-sm text-label-sm text-primary flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified_user</span> Certification
+          </div>
+<span class="absolute top-3 right-3 bg-primary text-on-primary text-[11px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">State Certified</span>
+</div>
+<div class="p-space-lg flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-baseline justify-between mb-2">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Backflow Prevention Testing &amp; Certs</h3>
+<span class="font-label-md text-label-md text-secondary font-bold">$125 / Assembly</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+              Certified RPZ, DCVA, and PVB testing. We complete all regulatory municipal paperwork submission directly to the county water authority for you.
+            </p>
+<div class="flex flex-wrap gap-1.5 mb-space-md">
+<span class="bg-surface-container px-2 py-0.5 rounded text-[12px] text-on-surface font-medium">Digital Filing Included</span>
+<span class="bg-surface-container px-2 py-0.5 rounded text-[12px] text-on-surface font-medium">Rebuild Kits On Truck</span>
+</div>
+</div>
+<div class="pt-space-md flex items-center justify-between border-t border-surface-container">
+<span class="font-label-sm text-label-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">task_alt</span> County Sign-off
+            </span>
+<a class="font-label-md text-label-md text-secondary hover:text-on-tertiary-container font-bold inline-flex items-center gap-1 group-hover:translate-x-1 transition-all" data-path="book-service" href="#">
+              Book Inspection →
+            </a>
+</div>
+</div>
+</article>
+<!-- Category 4: Commercial 3 -->
+<article class="service-card group bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden" data-category="commercial">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Commercial mechanical room showing complex network of pressurized plumbing manifolds, boiler recirc pumps, and pressure relief assemblies." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJkmcdXQmWKzW4xaWuEml7r03b70R9Aam0ZJx36UDuF5e0oolbHPYMKC_825ZWhzS29oHCI8nHcIHPWtD_4XfQHawX1W_NUyGlBYpO39G98_28orb2sB7zYwJty8MEE7Qg1nGNeGg0JAgCDGljL7OHd5kHyjLw38wQBRRubUYTFjrf-uG6In41KOdldwtsI3CmITIpCRpSTeU1uiH49z2dB7OW76Ko-tLLKohmvTbleFB00zJg0HIK"/>
+<div class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-md px-2.5 py-1 rounded-full font-label-sm text-label-sm text-primary flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">gavel</span> Compliance
+          </div>
+</div>
+<div class="p-space-lg flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-baseline justify-between mb-2">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Plumbing Code Audit &amp; Retrofit</h3>
+<span class="font-label-md text-label-md text-secondary font-bold">Custom Scope</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+              ADA restroom updates, venting corrections, storm sewer bypass corrections, and tenant-improvement fit outs for commercial property managers.
+            </p>
+<div class="flex flex-wrap gap-1.5 mb-space-md">
+<span class="bg-surface-container px-2 py-0.5 rounded text-[12px] text-on-surface font-medium">ADA Compliance</span>
+<span class="bg-surface-container px-2 py-0.5 rounded text-[12px] text-on-surface font-medium">Engineering Blueprints</span>
+</div>
+</div>
+<div class="pt-space-md flex items-center justify-between border-t border-surface-container">
+<span class="font-label-sm text-label-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">engineering</span> Dedicated PM
+            </span>
+<a class="font-label-md text-label-md text-secondary hover:text-on-tertiary-container font-bold inline-flex items-center gap-1 group-hover:translate-x-1 transition-all" data-path="book-service" href="#">
+              Consult an Engineer →
+            </a>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- Service Comparison & Transparent Flat-Rate Pricing Guidelines -->
+<section class="w-full bg-surface-container-low py-space-xl px-6 lg:px-12 my-space-lg">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-space-lg gap-space-md">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest font-bold">Honest Economics</span>
+<h2 class="font-headline-lg text-headline-lg text-primary tracking-tight font-extrabold mt-1">
+            Service Tiers &amp; Pricing Guidelines
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mt-1">
+            We operate on a strictly enforced Flat-Rate Book. That means you receive a binding, written quote before a single wrench touches your hardware. No hourly run-ups.
+          </p>
+</div>
+<div class="inline-flex items-center gap-2 bg-surface-container-lowest px-space-md py-space-sm rounded-xl shadow-sm text-primary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[20px] text-on-tertiary-container">receipt_long</span> Free Estimates on Replacements &amp; Repiping
+        </div>
+</div>
+<!-- Comparison Matrix Table Card -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-md overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-primary text-on-primary font-headline-sm text-[15px]">
+<th class="py-space-md px-space-lg font-bold">Service Classification</th>
+<th class="py-space-md px-space-md font-bold">Pricing Framework</th>
+<th class="py-space-md px-space-md font-bold">Diagnostic Visit</th>
+<th class="py-space-md px-space-md font-bold">Standard Labor Warranty</th>
+<th class="py-space-md px-space-lg font-bold text-right">Dispatch Urgency</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container font-body-sm text-body-sm text-on-surface">
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-space-md px-space-lg">
+<div class="font-headline-sm text-headline-sm text-primary font-bold">Standard Fixture Repair</div>
+<div class="text-on-surface-variant text-[13px]">Toilets, faucets, leak repair, disposals</div>
+</td>
+<td class="py-space-md px-space-md font-semibold text-secondary">Flat-Rate Menu ($129 – $290)</td>
+<td class="py-space-md px-space-md">Waived with any authorized repair</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 font-semibold text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span> 1 Full Year
+                  </span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<span class="inline-block bg-surface-container-high px-2.5 py-1 rounded text-primary font-label-sm text-label-sm font-semibold">Same-Day Window</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-space-md px-space-lg">
+<div class="font-headline-sm text-headline-sm text-primary font-bold">Drain Clearing &amp; Jetting</div>
+<div class="text-on-surface-variant text-[13px]">Main sewer lines, interior branches, hydro-jetting</div>
+</td>
+<td class="py-space-md px-space-md font-semibold text-secondary">Guaranteed Clearance ($195 – $550)</td>
+<td class="py-space-md px-space-md">Includes live video camera verify</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 font-semibold text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span> 60–365 Days
+                  </span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<span class="inline-block bg-surface-container-high px-2.5 py-1 rounded text-primary font-label-sm text-label-sm font-semibold">1 to 2 Hour Rapid</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-space-md px-space-lg">
+<div class="font-headline-sm text-headline-sm text-primary font-bold">Major Water Heating System</div>
+<div class="text-on-surface-variant text-[13px]">Tankless changeouts, 50-80 gal commercial/res</div>
+</td>
+<td class="py-space-md px-space-md font-semibold text-secondary">Fixed Project Bid (All-Inclusive)</td>
+<td class="py-space-md px-space-md font-bold text-on-tertiary-container">100% Free Consultation</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 font-semibold text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span> 3-Yr Labor + 10-Yr Tank
+                  </span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<span class="inline-block bg-surface-container-high px-2.5 py-1 rounded text-primary font-label-sm text-label-sm font-semibold">Priority Dispatch</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-space-md px-space-lg">
+<div class="font-headline-sm text-headline-sm text-primary font-bold">Commercial &amp; Backflow Audits</div>
+<div class="text-on-surface-variant text-[13px]">Annual testing, certification, industrial manifolds</div>
+</td>
+<td class="py-space-md px-space-md font-semibold text-secondary">Standard Fee or Commercial Scope</td>
+<td class="py-space-md px-space-md">Detailed code deficiency report</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 font-semibold text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span> Municipal Compliance
+                  </span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<span class="inline-block bg-primary text-on-primary px-2.5 py-1 rounded font-label-sm text-label-sm font-semibold">Scheduled / 24-7</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Clarification Banner -->
+<div class="bg-surface-container-high/50 p-space-md flex flex-col md:flex-row items-center justify-between gap-space-sm text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">info</span>
+<span>All costs include parts, certified technician labor, cleanup, and disposal of discarded machinery.</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-primary">No After-Hours Overtime Surprises on Club Members.</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Walt's Ironclad Guarantee Bento Block -->
+<section class="w-full max-w-7xl mx-auto px-6 lg:px-12 py-space-xl">
+<div class="bg-primary text-on-primary rounded-2xl p-space-lg lg:p-space-xl relative overflow-hidden shadow-xl">
+<!-- Decorative Backdrop Geometry -->
+<div class="absolute right-0 bottom-0 translate-x-12 translate-y-12 w-96 h-96 rounded-full bg-secondary-container/10 pointer-events-none"></div>
+<div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<!-- Left: Badge and Heading -->
+<div class="lg:col-span-7 space-y-space-md">
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[18px] text-on-tertiary-container">verified_user</span>
+            THE WALT'S PLUMBING FOUR-POINT ASSURANCE
+          </div>
+<h2 class="font-headline-xl text-headline-xl lg:text-display-lg text-on-primary tracking-tight font-extrabold leading-tight">
+            Fixed Right the First Time, or We Make It Right On Our Dime.
+          </h2>
+<p class="font-body-lg text-body-lg text-primary-fixed-dim">
+            Plumbing isn't just pipes; it's the foundation of your home's hygiene and comfort. If an installed fixture drips within 365 days, or a cleared mainline backs up inside our guarantee window, we re-dispatch immediately at zero cost.
+          </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md pt-space-sm">
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-secondary-container text-[24px]">verified</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-primary font-bold">Licensed Master Plumbers</h4>
+<p class="font-body-sm text-body-sm text-primary-fixed-dim">Zero unsupervised apprentices working on complex lines.</p>
+</div>
+</div>
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-secondary-container text-[24px]">cleaning_bucket</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-primary font-bold">Shoe-Cover Cleanliness</h4>
+<p class="font-body-sm text-body-sm text-primary-fixed-dim">Floor runners deployed. We leave job sites cleaner than we found them.</p>
+</div>
+</div>
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-secondary-container text-[24px]">timer</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-primary font-bold">On-Time Or $50 Credit</h4>
+<p class="font-body-sm text-body-sm text-primary-fixed-dim">We respect your window. If our truck is late, we credit your invoice.</p>
+</div>
+</div>
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-secondary-container text-[24px]">price_check</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-primary font-bold">Firm Flat-Rate Pricing</h4>
+<p class="font-body-sm text-body-sm text-primary-fixed-dim">No ticking clock meters. You approve the exact cost upfront.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Dispatch Conversion Module -->
+<div class="lg:col-span-5 bg-surface-container-lowest text-on-surface p-space-lg rounded-xl shadow-lg flex flex-col justify-between">
+<div class="space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-tertiary-container font-extrabold uppercase tracking-wider">Fast Track Scheduling</span>
+<span class="flex items-center gap-1 text-[12px] text-outline font-medium">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container"></span> Real-time Slots
+              </span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary font-bold">Reserve Certified Plumber</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Select your issue category and preferred window. A live dispatcher will confirm in under 10 minutes.
+            </p>
+</div>
+<form class="space-y-space-sm my-space-md" onsubmit="event.preventDefault(); alert('Booking request sent. A dispatcher is contacting you immediately.');">
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface mb-1">Select Needed Service</label>
+<select class="w-full bg-surface-container-low px-space-md py-space-sm rounded-lg font-body-sm text-body-sm text-primary focus:outline-none focus:ring-2 focus:ring-secondary">
+<option>Residential Drain Clog or Leak</option>
+<option>Water Heater Breakdown / Replacement</option>
+<option>Sewer Line Backup / Video Scope</option>
+<option>Commercial Compliance / Grease Trap</option>
+<option>Emergency - Immediate Dispatch Required</option>
+</select>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface mb-1">Your Name</label>
+<input class="w-full bg-surface-container-low px-space-md py-space-sm rounded-lg font-body-sm text-body-sm text-primary focus:outline-none focus:ring-2 focus:ring-secondary placeholder:text-outline" placeholder="John Doe" required="" type="text"/>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface mb-1">Phone Number</label>
+<input class="w-full bg-surface-container-low px-space-md py-space-sm rounded-lg font-body-sm text-body-sm text-primary focus:outline-none focus:ring-2 focus:ring-secondary placeholder:text-outline" placeholder="(555) 000-0000" required="" type="tel"/>
+</div>
+</div>
+<button class="w-full py-space-md px-space-lg rounded-lg bg-on-tertiary-container hover:bg-tertiary text-on-tertiary font-label-lg text-label-lg font-bold shadow-md hover:shadow-lg transition-all duration-200 flex items-center justify-center gap-2" type="submit">
+<span class="material-symbols-outlined text-[20px]">calendar_month</span> Confirm Priority Dispatch
+            </button>
+</form>
+<div class="pt-space-xs text-center border-t border-surface-container">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Prefer immediate voice contact?</span>
+<a class="font-label-md text-label-md text-secondary hover:text-on-tertiary-container font-bold block mt-0.5" href="tel:5558399258">
+              Call (555) 839-WALT (24/7 Response)
+            </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Filter Script -->
+<script>
+    function filterService(category) {
+      // Update nav styling
+      const tabs = document.querySelectorAll('#categoryNav .cat-tab');
+      tabs.forEach(tab => {
+        if(tab.getAttribute('data-category') === category) {
+          tab.classList.remove('text-on-surface-variant');
+          tab.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+        } else {
+          tab.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+          tab.classList.add('text-on-surface-variant');
+        }
+      });
+
+      // Filter catalog cards
+      const cards = document.querySelectorAll('#servicesCatalog .service-card');
+      cards.forEach(card => {
+        if(category === 'all' || card.getAttribute('data-category') === category) {
+          card.classList.remove('hidden');
+          card.classList.add('flex');
+        } else {
+          card.classList.add('hidden');
+          card.classList.remove('flex');
+        }
+      });
+    }
+  </script>
+</div></main><footer class="w-full bg-primary text-on-primary mt-space-xl"><div class="max-w-7xl mx-auto px-6 lg:px-12 pt-space-xl pb-space-lg"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-space-xl"><div><div class="flex items-center gap-space-sm mb-space-md"><span class="material-symbols-outlined text-secondary-fixed text-[28px]">plumbing</span><span class="font-headline-sm text-headline-sm text-on-primary font-bold">Walt's Plumbing Co.</span></div><p class="font-body-sm text-body-sm text-primary-fixed-dim mb-space-lg">Engineered reliability, upfront pricing, and immediate emergency response for residential and light commercial plumbing across the tri-county area.</p><div class="flex flex-wrap gap-space-xs"><span class="inline-flex items-center gap-1 bg-primary-container text-on-primary px-space-sm py-1 rounded-full font-label-sm text-label-sm"><span class="material-symbols-outlined text-[14px] text-secondary-container">verified</span>Master Plumber #10492</span><span class="inline-flex items-center gap-1 bg-primary-container text-on-primary px-space-sm py-1 rounded-full font-label-sm text-label-sm"><span class="material-symbols-outlined text-[14px] text-secondary-container">shield</span>Fully Insured</span></div></div><div><h4 class="font-headline-sm text-headline-sm text-on-primary mb-space-md">Our Guarantee</h4><div class="bg-primary-container p-space-md rounded-xl space-y-space-sm"><div class="flex items-start gap-space-xs"><span class="material-symbols-outlined text-on-tertiary-container text-[20px]">verified_user</span><p class="font-body-sm text-body-sm text-primary-fixed">100% Satisfaction Guarantee on all repairs, labor, and fixture installs.</p></div><div class="flex items-start gap-space-xs"><span class="material-symbols-outlined text-secondary-container text-[20px]">schedule</span><p class="font-body-sm text-body-sm text-primary-fixed">On-time dispatch promise with live technician tracking notifications.</p></div><div class="flex items-start gap-space-xs"><span class="material-symbols-outlined text-secondary-container text-[20px]">payments</span><p class="font-body-sm text-body-sm text-primary-fixed">Transparent flat-rate pricing upfront. No hidden dispatch surcharges.</p></div></div></div><div><h4 class="font-headline-sm text-headline-sm text-on-primary mb-space-md">Service Areas</h4><ul class="space-y-space-xs font-body-sm text-body-sm text-primary-fixed-dim"><li>Metro Downtown &amp; Financial District</li><li>Northfield, Highlands &amp; Westridge</li><li>River Oaks &amp; Pine Valley</li><li>Fairview Heights &amp; South Point</li><li>Oakridge &amp; Sunset Valley</li><li>Expanded 24/7 County Emergency Zone</li></ul></div><div><h4 class="font-headline-sm text-headline-sm text-on-primary mb-space-md">Direct Contact</h4><div class="space-y-space-sm"><div class="bg-surface-container-lowest text-on-surface p-space-md rounded-xl"><div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">24/7 Emergency Dispatch</div><a class="font-headline-sm text-headline-sm text-on-tertiary-container font-bold flex items-center gap-space-xs mt-1" href="tel:5558399258"><span class="material-symbols-outlined text-[24px]">support_agent</span>(555) 839-WALT</a></div><p class="font-body-sm text-body-sm text-primary-fixed-dim flex items-center gap-space-xs"><span class="material-symbols-outlined text-[18px]">mail</span>service@waltsplumbing.com</p><p class="font-body-sm text-body-sm text-primary-fixed-dim flex items-center gap-space-xs"><span class="material-symbols-outlined text-[18px]">location_on</span>4820 Industrial Pkwy, Suite 100</p></div></div></div><div class="border-t border-primary-container pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md text-primary-fixed-dim font-body-sm text-body-sm"><div>© 2024 Walt's Plumbing Co. All rights reserved. State Lic #MP-10492-C.</div><div class="flex items-center gap-space-md"><a class="hover:text-on-primary transition-colors" data-path="privacy-policy" href="#">Privacy Policy</a><a class="hover:text-on-primary transition-colors" data-path="terms-of-service" href="#">Terms of Service</a><a class="hover:text-on-primary transition-colors" data-path="warranty-details" href="#">Warranty Coverage</a></div></div></div></footer></body></html>
