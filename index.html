@@ -58,6 +58,7 @@
         .button.selected { background:var(--lime); border-color:var(--lime); color:var(--ink); }
         .preview-link { background:transparent; border:0; color:var(--muted); font-size:12px; padding:5px 0; }
         .preview-link:hover { color:var(--ink); }
+        .page-links { border-top:1px solid var(--line); display:flex; flex-wrap:wrap; gap:4px 14px; margin-top:16px; padding-top:12px; }
         .empty { color:var(--muted); display:none; grid-column:1 / -1; padding:60px 0; text-align:center; }
         .empty.visible { display:block; }
         dialog { background:var(--paper); border:1px solid var(--line); box-shadow:0 28px 80px rgba(23,34,29,.3); height:min(88vh,850px); max-width:1150px; padding:0; width:calc(100% - 30px); }
@@ -79,12 +80,12 @@
     <main>
 
         <section class="hero">
-            <div class="eyebrow">Template library · 2026</div><h1>Find a look that feels like you.</h1><p class="hero-copy">Browse ready-to-use website templates, open a live preview, and choose the direction that fits your next project.</p><div class="hero-meta"><span class="count" id="resultCount">07 templates</span><span class="meta-label">Curated, editable, ready to explore.</span></div>
+            <div class="eyebrow">Template library · 2026</div><h1>Find a look that feels like you.</h1><p class="hero-copy">Browse ready-to-use website templates, open a live preview, and choose the direction that fits your next project.</p><div class="hero-meta"><span class="count" id="resultCount">08 templates</span><span class="meta-label">Curated, editable, ready to explore.</span></div>
         </section>
 
         <section class="library" aria-label="Template library">
 
-            <aside class="controls"><h2>Filter by</h2><div class="filter-list"><button class="filter active" data-filter="all">All templates <span>07</span></button><button class="filter" data-filter="hospitality">Hospitality <span>01</span></button><button class="filter" data-filter="services">Services <span>06</span></button></div><label class="search"><span class="search-icon" aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="Search templates" aria-label="Search templates"></label>
+            <aside class="controls"><h2>Filter by</h2><div class="filter-list"><button class="filter active" data-filter="all">All templates <span>08</span></button><button class="filter" data-filter="hospitality">Hospitality <span>01</span></button><button class="filter" data-filter="services">Services <span>07</span></button></div><label class="search"><span class="search-icon" aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="Search templates" aria-label="Search templates"></label>
             </aside>
 
             <div class="grid" id="templateGrid">
@@ -113,6 +114,9 @@
 
                 <article class="template-card" data-category="services" data-name="ElitePlumb">
                     <div class="preview-frame"><iframe src="plumber_designs/eliteplumb/" title="ElitePlumb live preview" loading="lazy"></iframe><button class="preview-overlay" data-preview="plumber_designs/eliteplumb/" aria-label="Preview ElitePlumb"></button></div><div class="card-body"><div class="card-top"><h3>ElitePlumb</h3><span class="tag">Services</span></div><p class="description">A premium plumbing brand with a dedicated Downtown location page and emergency-ready calls to action.</p><div class="card-actions"><button class="button primary select-button">Choose template</button><button class="preview-link full-preview" data-preview="plumber_designs/eliteplumb/">View full preview ↗</button><a class="preview-link" href="plumber_designs/eliteplumb/downtown.html" target="_blank" rel="noopener noreferrer">Downtown page ↗</a></div></div>
+                </article>
+
+                <article class="template-card" data-category="services" data-name="Autopage Plumbing"><div class="preview-frame"><iframe src="plumber_designs/autopage_plumbing/home.html" title="Autopage Plumbing live preview" loading="lazy"></iframe><button class="preview-overlay" data-preview="plumber_designs/autopage_plumbing/home.html" aria-label="Preview Autopage Plumbing"></button></div><div class="card-body"><div class="card-top"><h3>Autopage Plumbing</h3><span class="tag">Services</span></div><p class="description">A complete Gauteng plumbing website with dedicated home, services, emergency, about, and quote pages.</p><div class="card-actions"><button class="button primary select-button">Choose template</button><button class="preview-link full-preview" data-preview="plumber_designs/autopage_plumbing/home.html">View full preview ↗</button></div><nav class="page-links" aria-label="Autopage Plumbing pages"><a class="preview-link" href="plumber_designs/autopage_plumbing/home.html" target="_blank" rel="noopener noreferrer">Home</a><a class="preview-link" href="plumber_designs/autopage_plumbing/services.html" target="_blank" rel="noopener noreferrer">Services</a><a class="preview-link" href="plumber_designs/autopage_plumbing/emergency.html" target="_blank" rel="noopener noreferrer">Emergency</a><a class="preview-link" href="plumber_designs/autopage_plumbing/about.html" target="_blank" rel="noopener noreferrer">About</a><a class="preview-link" href="plumber_designs/autopage_plumbing/contact_quote.html" target="_blank" rel="noopener noreferrer">Contact &amp; Quote</a></nav></div>
                 </article>
                 <p class="empty" id="emptyState">No templates match that search. Try another name or category.</p>
             </div>
