@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Autopage Plumbing | Master Plumbers Johannesburg &amp; Gauteng</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "outline-variant": "#c4c6cf", "surface-dim": "#cbdbf5", "surface-container-high": "#dce9ff", "on-secondary-fixed-variant": "#004b74", "surface-container-lowest": "#ffffff", "error": "#ba1a1a", "tertiary-container": "#3e1b00", "on-secondary-container": "#004972", "tertiary": "#1e0a00", "surface-container": "#e5eeff", "tertiary-fixed-dim": "#ffb784", "primary-fixed-dim": "#b1c7f0", "error-container": "#ffdad6", "primary-fixed": "#d5e3ff", "on-error-container": "#93000a", "background": "#f8f9ff", "on-tertiary": "#ffffff", "tertiary-fixed": "#ffdcc6", "inverse-on-surface": "#eaf1ff", "secondary-container": "#67bafd", "primary": "#001026", "outline": "#74777f", "on-error": "#ffffff", "on-primary-fixed-variant": "#314769", "surface-container-low": "#eff4ff", "primary-container": "#0b2545", "surface-container-highest": "#d3e4fe", "on-surface-variant": "#44474e", "surface-bright": "#f8f9ff", "surface-variant": "#d3e4fe", "on-tertiary-container": "#d96f00", "on-tertiary-fixed": "#301400", "inverse-surface": "#213145", "on-tertiary-fixed-variant": "#713700", "secondary": "#006399", "secondary-fixed-dim": "#94ccff", "on-secondary-fixed": "#001d32", "on-surface": "#0b1c30", "on-secondary": "#ffffff", "on-primary-fixed": "#001c3b", "on-primary-container": "#778db2", "inverse-primary": "#b1c7f0", "surface-tint": "#495f82", "on-primary": "#ffffff", "secondary-fixed": "#cde5ff", "surface": "#f8f9ff", "on-background": "#0b1c30" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "margin": "2.5rem", "space-xxl": "4rem", "gutter": "1.5rem", "space-xl": "2.5rem", "space-sm": "0.5rem", "space-lg": "1.5rem", "gutter-mobile": "1rem", "space-xs": "0.25rem", "margin-mobile": "1rem", "space-md": "1rem" }, "fontFamily": { "display-hero": [ "Plus Jakarta Sans" ], "headline-lg": [ "Plus Jakarta Sans" ], "body-lg": [ "Inter" ], "body-sm": [ "Inter" ], "label-sm": [ "Inter" ], "display-hero-mobile": [ "Plus Jakarta Sans" ], "headline-lg-mobile": [ "Plus Jakarta Sans" ], "headline-sm": [ "Plus Jakarta Sans" ], "data-metric": [ "Plus Jakarta Sans" ], "headline-md": [ "Plus Jakarta Sans" ], "body-md": [ "Inter" ], "label-md": [ "Inter" ], "label-lg": [ "Inter" ] }, "fontSize": { "display-hero": [ "56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "800" } ], "headline-lg": [ "38px", { "lineHeight": "46px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "body-lg": [ "18px", { "lineHeight": "28px", "fontWeight": "400" } ], "body-sm": [ "13px", { "lineHeight": "20px", "fontWeight": "400" } ], "label-sm": [ "11px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "700" } ], "display-hero-mobile": [ "36px", { "lineHeight": "42px", "letterSpacing": "-0.02em", "fontWeight": "800" } ], "headline-lg-mobile": [ "28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" } ], "headline-sm": [ "20px", { "lineHeight": "28px", "fontWeight": "600" } ], "data-metric": [ "32px", { "lineHeight": "38px", "fontWeight": "800" } ], "headline-md": [ "26px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" } ], "body-md": [ "15px", { "lineHeight": "24px", "fontWeight": "400" } ], "label-md": [ "13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" } ], "label-lg": [ "15px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" } ] } } } };</script>
+<style>
+  /* ============ GLOBAL RESPONSIVE + FAB STYLES ============ */
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { overflow-x: hidden; }
+
+  /* Floating contact (FAB) menu animation */
+  #contactMenu { transform: translateY(12px) scale(0.9); }
+  #contactMenu.fab-menu-open { opacity: 1 !important; transform: translateY(0) scale(1) !important; pointer-events: auto !important; }
+
+  /* Prevent long select option text from stretching the layout on tiny screens */
+  select { text-overflow: ellipsis; }
+
+  /* Better touch targets */
+  @media (max-width: 767px) {
+    a, button, summary { -webkit-tap-highlight-color: transparent; }
+  }
+
+  /* Hide scrollbar for horizontal filter row */
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+</style>
+</head><body class="bg-background font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 w-full z-50 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="bg-primary-container text-on-primary py-space-xs px-margin-mobile md:px-margin"><div class="max-w-7xl mx-auto flex items-center justify-between gap-3 font-label-sm text-label-sm tracking-wide"><div class="flex items-center gap-space-sm min-w-0 truncate"><span class="inline-flex items-center justify-center w-2 h-2 rounded-full bg-secondary-container animate-pulse shrink-0"></span><span class="uppercase text-on-primary truncate"><span class="md:hidden">24/7 Emergency Plumbing • 45-Min Rapid Response • Gauteng</span><span class="hidden md:inline">24/7 Emergency Plumbing Across Greater Johannesburg &amp; Gauteng | 45-Min Rapid Response | PIRB Registered Master Plumbers</span></span></div><div class="hidden md:flex items-center gap-space-md shrink-0"><span class="text-surface-dim uppercase">Dispatch Hotline:</span><a class="font-label-md text-label-md text-surface-container-lowest hover:text-secondary-fixed transition-colors font-bold tracking-wider" href="tel:+27118849200">+27 11 884 9200</a></div></div></div><div class="h-20 bg-surface-container-lowest/95 backdrop-blur-xl px-margin-mobile md:px-margin flex items-center"><div class="max-w-7xl w-full mx-auto flex items-center justify-between gap-3 md:gap-space-lg"><div class="flex items-center gap-space-sm md:gap-space-md min-w-0"><img alt="Autopage Plumbing Logo" class="h-8 w-auto object-contain shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjP11_RK5nKXhIjjURYL8e97naKQR7hDmoSNZcNO2MezDJCxCaazgG1t0NJXGWFu68NEt3hkuAS91fE-1AbbjwLP077-QvvmTvSNq_VGwciM4U-9EZh-fahJ464ZQwQpChltlqbegTPLn3WtKNPVD4kuHa2ZUV0b8ej_iyWNWxpw0gI0P0V2I7h4EYuH8e1DM4fclhuHL3-IzqMy0QPAygR2teRK02WBADJGh_0n3bfwR8YR3jFDA"/><div class="flex flex-col min-w-0"><span class="font-headline-sm text-[16px] sm:text-headline-sm text-primary tracking-tight font-bold truncate">Autopage Plumbing</span><span class="hidden sm:block font-label-sm text-label-sm text-secondary uppercase tracking-widest truncate">Gauteng Engineering &amp; Emergency</span></div></div><nav class="hidden lg:flex items-center gap-space-xs p-space-xs rounded-xl bg-surface-container-low" data-active-classes="bg-surface-container-high text-on-surface font-semibold rounded-lg"><a class="px-space-md py-space-sm font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="home" href="home.html">Home</a><a aria-current="page" class="px-space-md py-space-sm transition-colors bg-surface-container-high text-on-surface font-semibold rounded-lg" data-path="services" href="services.html">Services</a><a class="px-space-md py-space-sm font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="emergency-24-7" href="emergency.html">Emergency 24/7</a><a class="px-space-md py-space-sm font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="about-us" href="about.html">About Us</a><a class="px-space-md py-space-sm font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="contact-quote" href="contact_quote.html">Contact &amp; Quote</a></nav><div class="flex items-center gap-2 md:gap-space-md shrink-0"><div class="hidden xl:flex flex-col items-end"><span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-bold">24/7 Rapid Dispatch</span><a class="font-headline-sm text-headline-sm text-primary font-bold hover:text-secondary transition-colors" href="tel:0118849200">011 884 9200</a></div><a class="hidden sm:inline-flex items-center justify-center px-space-md lg:px-space-lg py-space-sm bg-primary text-on-primary font-label-md text-label-md font-bold rounded-lg shadow-sm hover:bg-primary-container transition-all text-center" data-path="contact-quote" href="contact_quote.html">Book a Plumber / Get Quote</a><a class="sm:hidden inline-flex items-center justify-center px-space-md py-space-sm bg-primary text-on-primary font-label-sm text-label-sm font-bold rounded-lg shadow-sm" data-path="contact-quote" href="contact_quote.html">Book</a><div class="hidden md:flex w-8 h-8 rounded-full bg-primary items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><button aria-controls="mobileMenu" aria-expanded="false" aria-label="Open navigation menu" class="lg:hidden w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary active:scale-95 transition-transform" id="mobileMenuBtn"><span class="material-symbols-outlined text-[22px]" id="mobileMenuIcon">menu</span></button></div></div></div>
+<!-- Mobile Navigation Drawer -->
+<div class="lg:hidden hidden bg-surface-container-lowest/98 backdrop-blur-xl border-t border-outline-variant/40 px-margin-mobile py-space-md shadow-lg" id="mobileMenu">
+<nav class="flex flex-col gap-1">
+<a class="px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low font-label-md text-label-md transition-colors" data-mobile-link href="home.html">Home</a>
+<a class="px-space-md py-space-sm rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md font-bold" data-mobile-link href="services.html">Services</a>
+<a class="px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low font-label-md text-label-md transition-colors" data-mobile-link href="emergency.html">Emergency 24/7</a>
+<a class="px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low font-label-md text-label-md transition-colors" data-mobile-link href="about.html">About Us</a>
+<a class="px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low font-label-md text-label-md transition-colors" data-mobile-link href="contact_quote.html">Contact &amp; Quote</a>
+</nav>
+<div class="grid grid-cols-1 xs:grid-cols-2 gap-space-sm mt-space-md">
+<a class="inline-flex items-center justify-center gap-2 px-space-md py-space-md rounded-lg bg-primary text-on-primary font-label-md text-label-md font-bold" href="tel:0118849200"><span class="material-symbols-outlined text-[18px]">call</span> 011 884 9200</a>
+<a class="inline-flex items-center justify-center gap-2 px-space-md py-space-md rounded-lg bg-surface-container-high text-primary font-label-md text-label-md font-bold" href="https://wa.me/27118849200?text=Emergency%20Plumbing%20Assistance%20Required" rel="noopener" target="_blank"><span class="material-symbols-outlined text-[18px]">chat</span> WhatsApp</a>
+</div>
+</div></header><main class="w-full pt-28 bg-background"><div class="flex flex-col w-full">
+<!-- Top Technical Breadcrumb & Meta Bar -->
+<section class="w-full bg-surface-container-low py-space-sm px-margin-mobile md:px-margin">
+<div class="max-w-7xl mx-auto flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center justify-between gap-2 sm:gap-space-sm">
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider flex-wrap">
+<a class="hover:text-primary transition-colors" href="home.html">Home</a>
+<span>/</span>
+<span class="text-primary font-bold">Services Directory &amp; Engineering Specifications</span>
+</div>
+<div class="flex flex-wrap items-center gap-2 sm:gap-space-md">
+<span class="inline-flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-surface-container-high text-secondary font-label-sm text-label-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-secondary-container animate-ping"></span>
+          26 Gauteng Master Crews In Transit
+        </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant hidden md:inline">SANS 10252-1 &amp; SANS 10400-P Compliant</span>
+</div>
+</div>
+</section>
+<!-- Page Header & Intelligent Search Filter -->
+<section class="w-full bg-surface py-space-lg md:py-space-xl px-margin-mobile md:px-margin">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-lg mb-space-lg md:mb-space-xl">
+<div class="max-w-3xl">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-bold uppercase tracking-wider mb-space-sm">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+            SABS &amp; PIRB Registered Hydraulic Engineers
+          </div>
+<h1 class="font-display-hero text-display-hero-mobile sm:text-headline-lg lg:text-display-hero text-primary tracking-tight font-extrabold mb-space-sm">
+            Expert Plumbing Solutions Engineered for Johannesburg Homes &amp; Businesses
+          </h1>
+<p class="font-body-md md:font-body-lg text-body-md md:text-body-lg text-on-surface-variant leading-relaxed">
+            From emergency burst geysers in Sandton to municipal backup reservoir engineering in Midrand, browse our certified hydraulic services with upfront ZAR pricing, rapid turnaround benchmarks, and insured CoC issue.
+          </p>
+</div>
+<!-- Quick Stats Pill -->
+<div class="bg-surface-container p-space-md rounded-xl flex items-center gap-space-lg shadow-sm shrink-0 w-full lg:w-auto justify-center lg:justify-start">
+<div class="text-center lg:text-left">
+<div class="font-data-metric text-[26px] sm:text-data-metric text-primary font-extrabold">45m</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase">Avg. Response In JHB</div>
+</div>
+<div class="w-px h-10 bg-outline-variant/40"></div>
+<div class="text-center lg:text-left">
+<div class="font-data-metric text-[26px] sm:text-data-metric text-secondary font-extrabold">100%</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase">PIRB CoC Guaranteed</div>
+</div>
+</div>
+</div>
+<!-- Live Search & Filtering Mechanism -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-md space-y-space-md">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-space-md top-1/2 -translate-y-1/2 text-on-surface-variant text-[22px]">search</span>
+<input class="w-full pl-12 pr-space-md py-space-sm bg-surface-container-low text-on-surface placeholder:text-on-surface-variant rounded-lg font-body-md text-body-md focus:outline-none focus:bg-surface-container transition-all" id="serviceSearchInput" placeholder="Search by issue (e.g., 'Kwikot geyser burst', 'CCTV drain inspect', 'PRV pressure valve', 'JoJo DAB pump')..." type="text"/>
+</div>
+<!-- Category Filters -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar -mx-1 px-1" id="filterContainer">
+<button class="filter-btn active whitespace-nowrap px-space-md py-space-xs rounded-lg font-label-md text-label-md transition-all bg-primary text-on-primary font-bold shadow-sm" data-filter="all">
+            All Services (6)
+          </button>
+<button class="filter-btn whitespace-nowrap px-space-md py-space-xs rounded-lg font-label-md text-label-md transition-all bg-surface-container text-on-surface hover:bg-surface-container-high font-medium" data-filter="geysers">
+            Geysers &amp; Heating
+          </button>
+<button class="filter-btn whitespace-nowrap px-space-md py-space-xs rounded-lg font-label-md text-label-md transition-all bg-surface-container text-on-surface hover:bg-surface-container-high font-medium" data-filter="drain">
+            Drain Care &amp; Jetting
+          </button>
+<button class="filter-btn whitespace-nowrap px-space-md py-space-xs rounded-lg font-label-md text-label-md transition-all bg-surface-container text-on-surface hover:bg-surface-container-high font-medium" data-filter="leak">
+            Leak Detection &amp; Relining
+          </button>
+<button class="filter-btn whitespace-nowrap px-space-md py-space-xs rounded-lg font-label-md text-label-md transition-all bg-surface-container text-on-surface hover:bg-surface-container-high font-medium" data-filter="water">
+            Water Storage &amp; Backup
+          </button>
+<button class="filter-btn whitespace-nowrap px-space-md py-space-xs rounded-lg font-label-md text-label-md transition-all bg-surface-container text-on-surface hover:bg-surface-container-high font-medium" data-filter="commercial">
+            Commercial Infrastructure
+          </button>
+<button class="filter-btn whitespace-nowrap px-space-md py-space-xs rounded-lg font-label-md text-label-md transition-all bg-surface-container text-on-surface hover:bg-surface-container-high font-medium" data-filter="sanitaryware">
+            Sanitaryware &amp; Mixers
+          </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Detailed Service Categorization Grid -->
+<section class="w-full bg-surface-container-low py-space-xl md:py-space-xxl px-margin-mobile md:px-margin">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg md:gap-space-xl" id="servicesGrid">
+<!-- 1. Geyser Specialist Services -->
+<article class="service-card bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden" data-category="geysers">
+<div class="h-2 bg-on-tertiary-container w-full"></div>
+<div class="p-space-lg md:p-space-xl flex-1 flex flex-col">
+<div class="flex items-start justify-between gap-space-md mb-space-md">
+<div>
+<span class="inline-block px-space-sm py-space-xs bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold uppercase rounded-md mb-space-xs">
+                  Emergency &amp; Standard
+                </span>
+<h3 class="font-headline-md text-[22px] sm:text-headline-md text-primary font-bold">
+                  Geyser Specialist Engineering &amp; Insurance Replacement
+                </h3>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-tertiary-container text-[28px]">water_heater</span>
+</div>
+</div>
+<div class="relative w-full h-44 sm:h-48 rounded-lg overflow-hidden mb-space-md">
+<img class="w-full h-full object-cover" loading="lazy" data-alt="Modern certified Kwikot horizontal geyser mounted inside a clean residential ceiling crawlspace with insulated copper piping, brass safety relief valve, vacuum breakers, and galvanized drip tray in a Sandton home." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVQZfEY1LalOe_labEpPZMNsRVSTz5DNrFEHEAJ3Vj7_jhZETbJAdnIrA9aOgq0Cxd6K72uA5_qyi4Zj3zH7k8OBXpYuxaxa0HLMGt1NahlpE46eJFbeTXV_B3snVlJEWn_ry_G_2mP7kKC_Psfe7MPgpgYcEvfE9PAYQWO-9miSE9C5NQoQpFjXupYRCVXIc1LBc6xLCmp84k5R4_UccfD0V8PYbwCIpuiiz2DOr5mL6A025FrWc"/>
+<div class="absolute bottom-2 left-2 bg-primary/80 backdrop-blur-md px-space-sm py-space-xs rounded font-label-sm text-label-sm text-on-primary">
+                Kwikot &amp; Heat Tech Master Installer
+              </div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-md leading-relaxed">
+              Certified installation and repair of 100L, 150L, and 200L electric geysers, retrofit solar thermal conversion setups, immersion elements, and spiral thermostats. Comprehensive burst geyser claims facilitation with direct insurer submission and official PIRB Certificate of Compliance (CoC) issued instantly.
+            </p>
+<!-- Technical Specifications Checklist -->
+<div class="bg-surface-container p-space-md rounded-lg mb-space-lg">
+<h4 class="font-label-md text-label-md text-primary uppercase font-bold tracking-wider mb-space-xs">Technical Protocols:</h4>
+<ul class="grid grid-cols-1 sm:grid-cols-2 gap-space-xs font-body-sm text-body-sm text-on-surface">
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[16px] shrink-0">check_circle</span>SANS 10254 Compliance Tested</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[16px] shrink-0">check_circle</span>400kPa/600kPa Safety Valves</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[16px] shrink-0">check_circle</span>Galvanized Overflow Drip Tray</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[16px] shrink-0">check_circle</span>Direct Insurance CoC Dispatch</li>
+</ul>
+</div>
+<!-- Price & Timing Footer -->
+<div class="pt-space-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-md mt-auto">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase">Estimated Investment</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">From R1,450 <span class="font-body-sm text-body-sm font-normal text-on-surface-variant">(Parts/Labour)</span></span>
+<span class="block font-label-sm text-label-sm text-secondary font-semibold">Turnaround: 45 Min Emergency / 3h Full Swap</span>
+</div>
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-lg py-space-sm bg-primary text-on-primary hover:bg-primary-container rounded-lg font-label-md text-label-md font-bold transition-all shadow-sm text-center" data-path="contact-quote" href="contact_quote.html">
+<span>Book Geyser Specialist</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- 2. Drain Unblocking & Hydro-Jetting -->
+<article class="service-card bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden" data-category="drain">
+<div class="h-2 bg-secondary w-full"></div>
+<div class="p-space-lg md:p-space-xl flex-1 flex flex-col">
+<div class="flex items-start justify-between gap-space-md mb-space-md">
+<div>
+<span class="inline-block px-space-sm py-space-xs bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold uppercase rounded-md mb-space-xs">
+                  Sanitation &amp; Mains
+                </span>
+<h3 class="font-headline-md text-[22px] sm:text-headline-md text-primary font-bold">
+                  Drain Unblocking &amp; Sewer Hydro-Jetting
+                </h3>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-[28px]">cleaning_services</span>
+</div>
+</div>
+<div class="relative w-full h-44 sm:h-48 rounded-lg overflow-hidden mb-space-md">
+<img class="w-full h-full object-cover" loading="lazy" data-alt="Professional plumber in tactical protective gear operating a high-pressure sewer jetting nozzle into a residential inspection chamber driveway in Johannesburg with digital CCTV screen display." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjuwJGwB8_y2zxeiHm3irW7UxYu880IL1BraNYEBQuBr2d2-IO79kOQYJcwyuK6_-4AlBmQ_s-Rf0wRlFIKOMfl-RdyQ5II4wqUHwI04rbnmTbF8E0kCaHaiug8XVEFvZCECqAyx9IaZSkaYkhqitc14Y8dEK9Ag7N_ZTTZKN7dVfgVvI-deviOMju0nrnPddxIrHRhJimvCPKwIlklVVe8bwZJCNlKm_tpEERhy0z2fNj3KqBIGg"/>
+<div class="absolute bottom-2 left-2 bg-primary/80 backdrop-blur-md px-space-sm py-space-xs rounded font-label-sm text-label-sm text-on-primary">
+                4000 PSI Industrial Jetting Unit
+              </div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-md leading-relaxed">
+              Industrial-grade rotary mechanical augers and 4000-PSI hydro-jetters blast away severe calcification, commercial kitchen grease traps, and invasive tree roots. Full HD endoscopic CCTV diagnostic pipeline surveys with USB video playback provided for municipal reporting.
+            </p>
+<!-- Technical Specifications Checklist -->
+<div class="bg-surface-container p-space-md rounded-lg mb-space-lg">
+<h4 class="font-label-md text-label-md text-primary uppercase font-bold tracking-wider mb-space-xs">Technical Protocols:</h4>
+<ul class="grid grid-cols-1 sm:grid-cols-2 gap-space-xs font-body-sm text-body-sm text-on-surface">
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[16px] shrink-0">check_circle</span>HD Pipe Camera Inspection (0-60m)</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[16px] shrink-0">check_circle</span>High-Volume Rotary Root Cleavers</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[16px] shrink-0">check_circle</span>Bio-Enzymatic Fat Trap Degreasing</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[16px] shrink-0">check_circle</span>Zero Invasive Surface Digging</li>
+</ul>
+</div>
+<!-- Price & Timing Footer -->
+<div class="pt-space-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-md mt-auto">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase">Estimated Investment</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">From R1,250 <span class="font-body-sm text-body-sm font-normal text-on-surface-variant">(Standard Clear)</span></span>
+<span class="block font-label-sm text-label-sm text-secondary font-semibold">Turnaround: 60-90 Min Site Clearance</span>
+</div>
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-lg py-space-sm bg-primary text-on-primary hover:bg-primary-container rounded-lg font-label-md text-label-md font-bold transition-all shadow-sm text-center" data-path="contact-quote" href="contact_quote.html">
+<span>Book Jetting Crew</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- 3. Leak Detection & Pipe Relining -->
+<article class="service-card bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden" data-category="leak">
+<div class="h-2 bg-secondary-container w-full"></div>
+<div class="p-space-lg md:p-space-xl flex-1 flex flex-col">
+<div class="flex items-start justify-between gap-space-md mb-space-md">
+<div>
+<span class="inline-block px-space-sm py-space-xs bg-surface-container-highest text-primary font-label-sm text-label-sm font-bold uppercase rounded-md mb-space-xs">
+                  Non-Destructive Diagnostic
+                </span>
+<h3 class="font-headline-md text-[22px] sm:text-headline-md text-primary font-bold">
+                  Ultrasonic Leak Detection &amp; Trenchless Pipe Relining
+                </h3>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-[28px]">graphic_eq</span>
+</div>
+</div>
+<div class="relative w-full h-44 sm:h-48 rounded-lg overflow-hidden mb-space-md">
+<img class="w-full h-full object-cover" loading="lazy" data-alt="Technical engineer using an ultrasonic frequency ground acoustic probe and thermal imaging FLIR camera scanning a luxury marble bathroom floor for hidden pipe leaks." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqsU6rA4q7b2BApsHXoZVmAQ5xzB-q4Nrkoo-42a8qJqQ8yckAqsi3vF19wBu4ptoJ-4K-tGdyhieyKT45eI5LYbue8chrsyp4ScjXPlvyV3q2IJYWB5av4iPaFXFUKyJjs_rtqLDOTvBSuR36qzgaVbNJpv_td7ywGHdJygq39x6zM04wn1nYTL5q9Wf0-kRwftaD336qX_WU3HlCOelwEj7Ui7WRCoWKO4wza9Hf2sfEKexw8Uo"/>
+<div class="absolute bottom-2 left-2 bg-primary/80 backdrop-blur-md px-space-sm py-space-xs rounded font-label-sm text-label-sm text-on-primary">
+                Acoustic Frequency &amp; FLIR Thermal
+              </div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-md leading-relaxed">
+              Detect hidden pinhole bursts deep inside concrete foundation slabs, behind tiled bathroom walls, and along underground mains without destructive jackhammering. CIPP epoxy cured-in-place pipe relining creates a brand-new internal conduit without garden excavation.
+            </p>
+<!-- Technical Specifications Checklist -->
+<div class="bg-surface-container p-space-md rounded-lg mb-space-lg">
+<h4 class="font-label-md text-label-md text-primary uppercase font-bold tracking-wider mb-space-xs">Technical Protocols:</h4>
+<ul class="grid grid-cols-1 sm:grid-cols-2 gap-space-xs font-body-sm text-body-sm text-on-surface">
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[16px] shrink-0">check_circle</span>Helium Gas Tracer Detection</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[16px] shrink-0">check_circle</span>High-Precision Acoustic Microphones</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[16px] shrink-0">check_circle</span>Epoxy Inversion Pipe Sleeve (50yr Lifespan)</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[16px] shrink-0">check_circle</span>Insurance Leak Reports Provided</li>
+</ul>
+</div>
+<!-- Price & Timing Footer -->
+<div class="pt-space-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-md mt-auto">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase">Estimated Investment</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">From R2,200 <span class="font-body-sm text-body-sm font-normal text-on-surface-variant">(Full Acoustic Scan)</span></span>
+<span class="block font-label-sm text-label-sm text-secondary font-semibold">Turnaround: Same-Day Pinpoint Location</span>
+</div>
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-lg py-space-sm bg-primary text-on-primary hover:bg-primary-container rounded-lg font-label-md text-label-md font-bold transition-all shadow-sm text-center" data-path="contact-quote" href="contact_quote.html">
+<span>Book Leak Detection</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- 4. JoJo Tank & Water Security Systems -->
+<article class="service-card bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden" data-category="water">
+<div class="h-2 bg-primary-container w-full"></div>
+<div class="p-space-lg md:p-space-xl flex-1 flex flex-col">
+<div class="flex items-start justify-between gap-space-md mb-space-md">
+<div>
+<span class="inline-block px-space-sm py-space-xs bg-primary-fixed-dim text-on-primary-fixed font-label-sm text-label-sm font-bold uppercase rounded-md mb-space-xs">
+                  Water Security &amp; Off-Grid
+                </span>
+<h3 class="font-headline-md text-[22px] sm:text-headline-md text-primary font-bold">
+                  JoJo Tank &amp; Municipal Backup Reservoir Systems
+                </h3>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-[28px]">water_bottle</span>
+</div>
+</div>
+<div class="relative w-full h-44 sm:h-48 rounded-lg overflow-hidden mb-space-md">
+<img class="w-full h-full object-cover" loading="lazy" data-alt="Twin dark green 5000L JoJo water storage tanks linked to a DAB variable speed inverter booster pump and multi-stage 3-tier carbon sediment filtration system beside a modern brick suburban home." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMEE8bYY53nbFpTB11ixFhqXf392owcJOvwf5XGwAGgQlcapyprb9Pp8GARCJS9VteVdcczJwADK0yR0UdXP38KQhmR8TIMF5YS4-qccYpl3LD8EnO0_1L1MqNAQPAUo9-p-J1GVoltwG1RX6Q7MrqpjmDl0JOlgbYhmZ6TQvM9FLsBc6axc7daJDzvO7ok_onI6hj7IlbZJb3Ezj5MHJP-qNmWGAdinqtcvqMBc6Mq8JS74_hU10"/>
+<div class="absolute bottom-2 left-2 bg-primary/80 backdrop-blur-md px-space-sm py-space-xs rounded font-label-sm text-label-sm text-on-primary">
+                DAB &amp; Grundfos Inverter Booster Pumps
+              </div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-md leading-relaxed">
+              Safeguard your household or facility against Johannesburg Water supply outages. We engineer automated changeover systems with 2,500L to 10,000L food-grade JoJo tanks, high-efficiency DAB or Grundfos booster pumps, automated non-return valves, and UV sediment filtration.
+            </p>
+<!-- Technical Specifications Checklist -->
+<div class="bg-surface-container p-space-md rounded-lg mb-space-lg">
+<h4 class="font-label-md text-label-md text-primary uppercase font-bold tracking-wider mb-space-xs">Technical Protocols:</h4>
+<ul class="grid grid-cols-1 sm:grid-cols-2 gap-space-xs font-body-sm text-body-sm text-on-surface">
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[16px] shrink-0">check_circle</span>Automatic Float &amp; Solenoid Inflow</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[16px] shrink-0">check_circle</span>DAB Esybox Variable Constant Pressure</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[16px] shrink-0">check_circle</span>3-Stage 20-inch Big Blue Filtration</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[16px] shrink-0">check_circle</span>Dual Municipal Non-Return Safeguards</li>
+</ul>
+</div>
+<!-- Price & Timing Footer -->
+<div class="pt-space-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-md mt-auto">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase">Estimated Investment</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">From R16,500 <span class="font-body-sm text-body-sm font-normal text-on-surface-variant">(Installed System)</span></span>
+<span class="block font-label-sm text-label-sm text-secondary font-semibold">Turnaround: 1-2 Working Days Installation</span>
+</div>
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-lg py-space-sm bg-primary text-on-primary hover:bg-primary-container rounded-lg font-label-md text-label-md font-bold transition-all shadow-sm text-center" data-path="contact-quote" href="contact_quote.html">
+<span>Configure Storage</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- 5. Commercial Plumbing Infrastructure -->
+<article class="service-card bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden" data-category="commercial">
+<div class="h-2 bg-on-secondary-fixed-variant w-full"></div>
+<div class="p-space-lg md:p-space-xl flex-1 flex flex-col">
+<div class="flex items-start justify-between gap-space-md mb-space-md">
+<div>
+<span class="inline-block px-space-sm py-space-xs bg-surface-container-high text-on-surface font-label-sm text-label-sm font-bold uppercase rounded-md mb-space-xs">
+                  Industrial &amp; Corporate SLAs
+                </span>
+<h3 class="font-headline-md text-[22px] sm:text-headline-md text-primary font-bold">
+                  Commercial Plumbing &amp; High-Rise Hydraulic Systems
+                </h3>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-[28px]">apartment</span>
+</div>
+</div>
+<div class="relative w-full h-44 sm:h-48 rounded-lg overflow-hidden mb-space-md">
+<img class="w-full h-full object-cover" loading="lazy" data-alt="Commercial plant room in a Sandton office tower displaying heavy-duty flanged water booster pumps, industrial pressure manifolds, pressure relief valves, and blue hydraulic piping." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnyZ4aEiTciCmdYZMGYNp99x_DQDpgtHNFPSackIDScLpxy3MJgehvLMuKNV3_Lhc0zT22dEprRYQcVwPUG-E8BcmcBbt9VGwPDQ-rsYvFA1u3L4PKpyH8GF9yOOdgWlTtOTqJ2K_3UpGe8HY3i69WEF1j48OUA7YSL42p_kQAx4XdJOl7apATTZa_UhPkhlbo7zuMMS2ci18VUsdwAhc-wCRZzgOZQ0317ILgwMY0xnD5eJiHbNI"/>
+<div class="absolute bottom-2 left-2 bg-primary/80 backdrop-blur-md px-space-sm py-space-xs rounded font-label-sm text-label-sm text-on-primary">
+                Corporate Facilities &amp; Property Portfolios
+              </div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-md leading-relaxed">
+              Engineered infrastructure solutions for shopping malls, multi-story corporate towers, logistics centers, and residential estates. We manage ring-main fire hydrant feeds, annual backflow preventer testing, boiler loops, and preventative maintenance service agreements.
+            </p>
+<!-- Technical Specifications Checklist -->
+<div class="bg-surface-container p-space-md rounded-lg mb-space-lg">
+<h4 class="font-label-md text-label-md text-primary uppercase font-bold tracking-wider mb-space-xs">Technical Protocols:</h4>
+<ul class="grid grid-cols-1 sm:grid-cols-2 gap-space-xs font-body-sm text-body-sm text-on-surface">
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[16px] shrink-0">check_circle</span>Annual RPZ Backflow Certification</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[16px] shrink-0">check_circle</span>Commercial Geyser Banks &amp; Heat Pumps</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[16px] shrink-0">check_circle</span>Dedicated SLA Priority 30-Min Dispatch</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[16px] shrink-0">check_circle</span>Full OHS &amp; SABS Audit Compliance</li>
+</ul>
+</div>
+<!-- Price & Timing Footer -->
+<div class="pt-space-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-md mt-auto">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase">Commercial Retainer / Project</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">Custom SLA <span class="font-body-sm text-body-sm font-normal text-on-surface-variant">(Site Audit Free)</span></span>
+<span class="block font-label-sm text-label-sm text-secondary font-semibold">Turnaround: 24/7 Dedicated Account Lead</span>
+</div>
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-lg py-space-sm bg-primary text-on-primary hover:bg-primary-container rounded-lg font-label-md text-label-md font-bold transition-all shadow-sm text-center" data-path="contact-quote" href="contact_quote.html">
+<span>Request Facility Audit</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- 6. Sanitaryware & Fixture Upgrades -->
+<article class="service-card bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden" data-category="sanitaryware">
+<div class="h-2 bg-secondary-container w-full"></div>
+<div class="p-space-lg md:p-space-xl flex-1 flex flex-col">
+<div class="flex items-start justify-between gap-space-md mb-space-md">
+<div>
+<span class="inline-block px-space-sm py-space-xs bg-surface-container text-on-surface font-label-sm text-label-sm font-bold uppercase rounded-md mb-space-xs">
+                  Precision Architectural Fittings
+                </span>
+<h3 class="font-headline-md text-[22px] sm:text-headline-md text-primary font-bold">
+                  Sanitaryware &amp; Designer Fixture Upgrades
+                </h3>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-[28px]">faucet</span>
+</div>
+</div>
+<div class="relative w-full h-44 sm:h-48 rounded-lg overflow-hidden mb-space-md">
+<img class="w-full h-full object-cover" loading="lazy" data-alt="Close up of a luxury matte black Hansgrohe thermostatic bathroom basin mixer tap installed on a white engineered stone vanity in a Johannesburg home." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwoxZCQSIFKA7HojHrfuXhrvdnKpPIgJCzYS46zU0zm6xxYvbzv2hZ5j8rJOlCW3E9rYOJGdp0eAM7VN35XMnX6Wnl2gWLo_8WiT4WaTT5RAb3o372cC8QGLHmT8bJncE6x1RWG-xBpQ0wtk4HvuHhi6Vu6CPSX9mb4q2qFOiZKbFGc124Zcnyz9FuqphKpkwZYqBegSDl6Ci_-0Jz9BoPZE6lWAxocz_LUTbGSlv7uYo6l74LT68"/>
+<div class="absolute bottom-2 left-2 bg-primary/80 backdrop-blur-md px-space-sm py-space-xs rounded font-label-sm text-label-sm text-on-primary">
+                Hansgrohe, Cobra &amp; Geberit Specialists
+              </div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-md leading-relaxed">
+              Precision installation and refurbishment of high-end tapware, thermostatic concealed shower mixers, wall-hung toilets with Geberit pneumatic in-wall cisterns, and water-saving laminar aerators. We eliminate silent toilet leaks and erratic pressure fluctuations.
+            </p>
+<!-- Technical Specifications Checklist -->
+<div class="bg-surface-container p-space-md rounded-lg mb-space-lg">
+<h4 class="font-label-md text-label-md text-primary uppercase font-bold tracking-wider mb-space-xs">Technical Protocols:</h4>
+<ul class="grid grid-cols-1 sm:grid-cols-2 gap-space-xs font-body-sm text-body-sm text-on-surface">
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[16px] shrink-0">check_circle</span>Ceramic Disk Cartridge Calibration</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[16px] shrink-0">check_circle</span>Geberit Concealed In-Wall Service</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[16px] shrink-0">check_circle</span>Pressure Balancing Shower Valves</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[16px] shrink-0">check_circle</span>Eco Aerators (Saves 40% Water)</li>
+</ul>
+</div>
+<!-- Price & Timing Footer -->
+<div class="pt-space-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-md mt-auto">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase">Estimated Investment</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">From R850 <span class="font-body-sm text-body-sm font-normal text-on-surface-variant">(Service Call + Fit)</span></span>
+<span class="block font-label-sm text-label-sm text-secondary font-semibold">Turnaround: Same-Day Scheduled Fitting</span>
+</div>
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-lg py-space-sm bg-primary text-on-primary hover:bg-primary-container rounded-lg font-label-md text-label-md font-bold transition-all shadow-sm text-center" data-path="contact-quote" href="contact_quote.html">
+<span>Book Fitting Service</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- Johannesburg Water Pressure Advisory Section -->
+<section class="w-full bg-surface-container py-space-xl md:py-space-xxl px-margin-mobile md:px-margin">
+<div class="max-w-7xl mx-auto">
+<div class="bg-surface-container-lowest rounded-xl p-space-lg md:p-space-xl lg:p-space-xxl shadow-md">
+<div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-lg lg:gap-space-xl">
+<div class="max-w-2xl">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-bold uppercase mb-space-sm">
+<span class="material-symbols-outlined text-[16px]">warning</span>
+              Johannesburg Municipal Infrastructure Alert
+            </div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary font-bold tracking-tight mb-space-md">
+              Protecting Your Home from Municipal Pressure Surges &amp; Water Hammer
+            </h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-space-md">
+              Due to persistent reservoir load-shifting across Sandton, Randburg, and Midrand, municipal mains frequently experience catastrophic pressure spikes up to 900+ kPa when lines recharge. This sudden kinetic shock shatters geyser cylinders, blows out flexible connector hoses, and ruptures internal joints.
+            </p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Autopage Plumbing installs upstream brass Pressure Reducing Valves (PRVs) with inline pressure gauges at your water meter, stabilizing inlet supply to a safe, constant 400 kPa, protecting your entire property.
+            </p>
+</div>
+<!-- Technical Schematic Card -->
+<div class="w-full lg:w-96 bg-surface-container-low rounded-xl p-space-lg shrink-0">
+<div class="flex flex-wrap items-center justify-between gap-2 mb-space-md">
+<span class="font-label-md text-label-md text-primary font-bold uppercase">Mains Pressure Reading</span>
+<span class="px-space-xs py-0.5 rounded bg-error/10 text-error font-label-sm text-label-sm font-bold">Unregulated: 900 kPa</span>
+</div>
+<!-- Pressure Gauge Visual representation using inline SVG -->
+<div class="relative flex flex-col items-center justify-center py-space-sm">
+<svg class="w-48 h-28" viewbox="0 0 100 60">
+<path class="text-surface-container-high" d="M 10 50 A 40 40 0 0 1 90 50" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="8"></path>
+<path class="text-secondary" d="M 10 50 A 40 40 0 0 1 50 10" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="8"></path>
+<circle class="text-primary" cx="50" cy="50" fill="currentColor" r="5"></circle>
+<line class="text-primary" stroke="currentColor" stroke-linecap="round" stroke-width="2.5" x1="50" x2="35" y1="50" y2="22"></line>
+</svg>
+<div class="text-center mt-space-xs">
+<span class="font-data-metric text-data-metric text-secondary font-black">400 kPa</span>
+<span class="block font-label-sm text-label-sm text-on-surface-variant">Calibrated Safe Operating Target</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm space-y-space-xs font-body-sm text-body-sm text-on-surface">
+<div class="flex items-center justify-between">
+<span class="text-on-surface-variant">PRV Model:</span>
+<span class="font-semibold">Apex / Caleffi Master PRV</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-on-surface-variant">CoC Included:</span>
+<span class="font-semibold text-secondary">Yes (PIRB SANS 10252-1)</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-on-surface-variant">Installation Time:</span>
+<span class="font-semibold">Under 2 Hours</span>
+</div>
+</div>
+<a class="mt-space-md w-full inline-flex items-center justify-center gap-space-xs py-space-sm bg-secondary text-on-secondary rounded-lg font-label-md text-label-md font-bold hover:bg-on-secondary-container transition-colors text-center" data-path="contact-quote" href="contact_quote.html">
+              Book PRV Inspection (R950)
+            </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Standard Operating Procedure (SOP) Timeline -->
+<section class="w-full bg-surface py-space-xl md:py-space-xxl px-margin-mobile md:px-margin">
+<div class="max-w-7xl mx-auto">
+<div class="text-center max-w-2xl mx-auto mb-space-lg md:mb-space-xxl">
+<span class="inline-block px-space-sm py-space-xs bg-surface-container-high text-primary font-label-sm text-label-sm font-bold uppercase rounded-md mb-space-xs">
+          Engineered Discipline
+        </span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary font-bold tracking-tight mb-space-sm">
+          The Autopage 5-Step Execution Protocol
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          No vague estimates, no callout surprises. Here is how our certified technicians handle your residential or commercial hydraulic requirements from dispatch to departure.
+        </p>
+</div>
+<!-- Timeline Rail -->
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-space-md">
+<!-- Step 1 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between relative group hover:bg-surface-container transition-all">
+<div>
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary font-headline-sm text-headline-sm font-bold flex items-center justify-center mb-space-md">
+              1
+            </div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold mb-space-xs">Instant Dispatch</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Book online or call our 24/7 hotline. Nearest mobile unit in Sandton, Midrand, or Randburg receives immediate tactical GPS routing.
+            </p>
+</div>
+<div class="mt-space-md font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">
+            Time: Instant
+          </div>
+</div>
+<!-- Step 2 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between relative group hover:bg-surface-container transition-all">
+<div>
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary font-headline-sm text-headline-sm font-bold flex items-center justify-center mb-space-md">
+              2
+            </div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold mb-space-xs">Diagnostic Arrival</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              PIRB-registered plumber arrives in a stocked mobile workshop. Full non-invasive mechanical assessment performed on site.
+            </p>
+</div>
+<div class="mt-space-md font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">
+            Target: 45 Mins
+          </div>
+</div>
+<!-- Step 3 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between relative group hover:bg-surface-container transition-all">
+<div>
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary font-headline-sm text-headline-sm font-bold flex items-center justify-center mb-space-md">
+              3
+            </div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold mb-space-xs">Fixed Upfront Quote</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Transparent digital quote presented before any wrench turns. Zero hidden fees, hourly padding, or billing markups.
+            </p>
+</div>
+<div class="mt-space-md font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">
+            100% Upfront Lock
+          </div>
+</div>
+<!-- Step 4 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between relative group hover:bg-surface-container transition-all">
+<div>
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary font-headline-sm text-headline-sm font-bold flex items-center justify-center mb-space-md">
+              4
+            </div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold mb-space-xs">Precision Execution</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Job carried out using SABS-approved brass, copper, and composite materials according strictly to SANS 10252-1 standards.
+            </p>
+</div>
+<div class="mt-space-md font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">
+            Certified Materials Only
+          </div>
+</div>
+<!-- Step 5 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between relative group hover:bg-surface-container transition-all sm:col-span-2 md:col-span-1">
+<div>
+<div class="w-10 h-10 rounded-full bg-secondary text-on-secondary font-headline-sm text-headline-sm font-bold flex items-center justify-center mb-space-md">
+              5
+            </div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold mb-space-xs">CoC &amp; Clean Site</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Digital PIRB Certificate of Compliance issued. Site sanitized and all hazardous old cylinders or debris hauled away.
+            </p>
+</div>
+<div class="mt-space-md font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">
+            PIRB CoC Handover
+          </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Strategic Dispatch Hub Coverage Map/Section -->
+<section class="w-full bg-surface-container-low py-space-lg md:py-space-xl px-margin-mobile md:px-margin">
+<div class="max-w-7xl mx-auto">
+<div class="bg-primary text-on-primary rounded-xl p-space-lg md:p-space-xl lg:p-space-xxl shadow-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg lg:gap-space-xl items-center">
+<div class="lg:col-span-7">
+<span class="inline-flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-primary-container text-secondary-fixed font-label-sm text-label-sm font-bold uppercase mb-space-sm">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+              Strategic Gauteng Rapid Response Grid
+            </span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-primary font-bold tracking-tight mb-space-md">
+              Within 45 Minutes of Every Major Hub in Johannesburg
+            </h2>
+<p class="font-body-md text-body-md text-on-primary-container leading-relaxed mb-space-lg">
+              Our 26 fully kitted mobile plumbing engineering vehicles do not operate out of a single depot; they are stationed tactically across northern and central Gauteng corridors to bypass traffic and arrest water damage instantly.
+            </p>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md">
+<div class="bg-primary-container/80 p-space-md rounded-lg">
+<span class="block font-headline-sm text-headline-sm text-on-primary font-bold">15-25 min</span>
+<span class="font-body-sm text-body-sm text-on-primary-container">Sandton &amp; Rosebank</span>
+</div>
+<div class="bg-primary-container/80 p-space-md rounded-lg">
+<span class="block font-headline-sm text-headline-sm text-on-primary font-bold">20-30 min</span>
+<span class="font-body-sm text-body-sm text-on-primary-container">Fourways &amp; Bryanston</span>
+</div>
+<div class="bg-primary-container/80 p-space-md rounded-lg">
+<span class="block font-headline-sm text-headline-sm text-on-primary font-bold">25-35 min</span>
+<span class="font-body-sm text-body-sm text-on-primary-container">Midrand &amp; Centurion</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5">
+<div class="w-full h-64 sm:h-72 bg-cover bg-center rounded-xl shadow-lg relative overflow-hidden" data-location="Sandton, Johannesburg, South Africa" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB410hjkSk-XHbi6GZ-waBojHE-C3EyY9x1AxHxtFXA7Mka4xASqkgeSNUzxdOqmeawEF-VvLQQAL32_W7zkddnsCd99gs4Qkh6O2Qu05zan0FlfOTvzz2NWTYycp3ImTH2l22ueUXLcX5Ou48JH9sEJI_JOQX8Eu32c-IaM--89oc84Ra9pNIQ50qv-9IaC1dj7sGqg98jLjFLVyjCCIAGMVWfWgPR7fdsRlAq79tXqWkk5nG0-_Q')">
+<div class="absolute inset-0 bg-primary/20 backdrop-blur-[1px]"></div>
+<div class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-md px-space-md py-space-xs rounded-lg shadow-sm max-w-[85%]">
+<span class="font-label-sm text-label-sm text-primary font-bold uppercase tracking-wider block">Central Control HQ</span>
+<span class="font-body-sm text-body-sm text-on-surface">120 Katherine St, Sandown, Sandton</span>
+</div>
+<div class="absolute bottom-3 right-3 bg-primary text-on-primary px-space-sm py-space-xs rounded font-label-sm text-label-sm font-semibold">
+                Live Fleet Tracking Active
+              </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Comprehensive Booking & Obligation-Free Quote Form Section -->
+<section class="w-full bg-surface py-space-xl md:py-space-xxl px-margin-mobile md:px-margin">
+<div class="max-w-7xl mx-auto">
+<div class="bg-surface-container-lowest rounded-xl shadow-xl overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+<!-- Left Context Rail -->
+<div class="lg:col-span-5 bg-surface-container p-space-lg md:p-space-xl flex flex-col justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider block mb-space-xs">
+              Fast Response Priority
+            </span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary font-bold tracking-tight mb-space-md">
+              Schedule an Inspection or Request an Instant Quote
+            </h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-space-lg">
+              Fill out this quick specification form. For burst pipes or active flooding, please call our 24/7 emergency dispatch desk immediately.
+            </p>
+<div class="space-y-space-md">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[24px] shrink-0">verified_user</span>
+<div>
+<h4 class="font-label-md text-label-md text-primary font-bold">100% PIRB Certified</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">All work certified under SABS &amp; IOPSA standard codes.</p>
+</div>
+</div>
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[24px] shrink-0">payments</span>
+<div>
+<h4 class="font-label-md text-label-md text-primary font-bold">Fixed Digital Pricing</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">No unexpected invoices. Credit card, EFT &amp; insurance direct payment accepted.</p>
+</div>
+</div>
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[24px] shrink-0">support_agent</span>
+<div>
+<h4 class="font-label-md text-label-md text-primary font-bold">Direct Insurance Handling</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">We submit reports directly to Discovery, Santam, Outsurance &amp; Hollard.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-space-lg pt-space-md bg-surface-container-high p-space-md rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase">Immediate Phone Dispatch</span>
+<a class="font-headline-md text-[22px] sm:text-headline-md text-primary font-bold hover:text-secondary transition-colors block break-words" href="tel:0118849200">
+              +27 11 884 9200
+            </a>
+<span class="font-body-sm text-body-sm text-secondary font-medium">Available 24 hours a day, 365 days a year</span>
+</div>
+</div>
+<!-- Right Form Rail -->
+<div class="lg:col-span-7 p-space-lg md:p-space-xl">
+<form class="space-y-space-md" id="bookingForm" onsubmit="event.preventDefault(); document.getElementById('bookingSuccess').classList.remove('hidden');">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div>
+<label class="block font-label-md text-label-md text-primary mb-space-xs font-semibold">Your Full Name *</label>
+<input class="w-full px-space-md py-space-sm bg-surface-container-low text-on-surface rounded-lg font-body-md text-body-md focus:outline-none focus:bg-surface-container transition-all" placeholder="e.g. Johan van der Merwe" required="" type="text"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-primary mb-space-xs font-semibold">Contact Mobile *</label>
+<div class="flex">
+<span class="inline-flex items-center px-space-sm bg-surface-container text-on-surface-variant font-label-md text-label-md rounded-l-lg font-semibold shrink-0">
+                    +27
+                  </span>
+<input class="w-full min-w-0 px-space-md py-space-sm bg-surface-container-low text-on-surface rounded-r-lg font-body-md text-body-md focus:outline-none focus:bg-surface-container transition-all" placeholder="82 123 4567" required="" type="tel"/>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div>
+<label class="block font-label-md text-label-md text-primary mb-space-xs font-semibold">Service Required *</label>
+<select class="w-full px-space-md py-space-sm bg-surface-container-low text-on-surface rounded-lg font-body-md text-body-md focus:outline-none focus:bg-surface-container transition-all">
+<option value="geyser">Geyser Repair / Burst Replacement</option>
+<option value="drain">Blocked Drain &amp; Hydro Jetting</option>
+<option value="leak">Acoustic Leak Detection</option>
+<option value="jojo">JoJo Tank &amp; Backup Water System</option>
+<option value="prv">Municipal PRV Pressure Valve Fitting</option>
+<option value="commercial">Commercial SLA Maintenance</option>
+<option value="sanitary">Sanitaryware &amp; Tapware Install</option>
+</select>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-primary mb-space-xs font-semibold">Johannesburg Region *</label>
+<select class="w-full px-space-md py-space-sm bg-surface-container-low text-on-surface rounded-lg font-body-md text-body-md focus:outline-none focus:bg-surface-container transition-all">
+<option value="sandton">Sandton / Bryanston / Morningside</option>
+<option value="rosebank">Rosebank / Parkhurst / Houghton</option>
+<option value="randburg">Randburg / Linden / Northcliff</option>
+<option value="fourways">Fourways / Midrand / Sunninghill</option>
+<option value="bedfordview">Bedfordview / Edenvale</option>
+<option value="centurion">Centurion / Pretoria South</option>
+<option value="other">Other Gauteng Area</option>
+</select>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-primary mb-space-xs font-semibold">Issue Details or Specific Requirements</label>
+<textarea class="w-full px-space-md py-space-sm bg-surface-container-low text-on-surface rounded-lg font-body-md text-body-md focus:outline-none focus:bg-surface-container transition-all" placeholder="Describe current symptoms (e.g., geyser dripping through ceiling, sewer overflow outside garage, cold water only, low water pressure)..." rows="3"></textarea>
+</div>
+<div class="flex items-start gap-space-sm">
+<input class="w-4 h-4 rounded text-secondary focus:ring-0 mt-0.5 shrink-0" id="urgentCheckbox" type="checkbox"/>
+<label class="font-body-sm text-body-sm text-on-surface select-none" for="urgentCheckbox">
+                Mark as <strong class="text-on-tertiary-container font-semibold">Urgent Immediate Callout</strong> (Prioritize next available van within 45 mins)
+              </label>
+</div>
+<div class="hidden p-space-md bg-surface-container-high text-primary rounded-lg font-body-sm text-body-sm" id="bookingSuccess">
+<div class="flex items-center gap-space-xs font-bold mb-1">
+<span class="material-symbols-outlined text-secondary">task_alt</span>
+                Request Received &amp; Logged in Autopage Dispatch
+              </div>
+              A technical coordinator will ring your mobile within 5 minutes with master plumber ETA and job reference number.
+            </div>
+<button class="w-full py-space-md bg-primary text-on-primary hover:bg-primary-container rounded-lg font-label-lg text-label-lg font-bold transition-all shadow-md flex items-center justify-center gap-space-sm text-center" type="submit">
+<span class="material-symbols-outlined text-[20px] shrink-0">send</span>
+<span>Submit Request for Obligation-Free Quote</span>
+</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- Client-Side Filter & Search Script -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('serviceSearchInput');
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const serviceCards = document.querySelectorAll('.service-card');
+
+      function filterServices() {
+        const query = searchInput.value.toLowerCase().trim();
+        const activeBtn = document.querySelector('.filter-btn.active');
+        const activeCategory = activeBtn ? activeBtn.getAttribute('data-filter') : 'all';
+
+        serviceCards.forEach(card => {
+          const cardCategory = card.getAttribute('data-category');
+          const cardText = card.innerText.toLowerCase();
+
+          const matchesCategory = (activeCategory === 'all' || cardCategory === activeCategory);
+          const matchesQuery = query === '' || cardText.includes(query);
+
+          if (matchesCategory && matchesQuery) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      }
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => {
+            b.classList.remove('active', 'bg-primary', 'text-on-primary', 'font-bold', 'shadow-sm');
+            b.classList.add('bg-surface-container', 'text-on-surface', 'font-medium');
+          });
+          btn.classList.remove('bg-surface-container', 'text-on-surface', 'font-medium');
+          btn.classList.add('active', 'bg-primary', 'text-on-primary', 'font-bold', 'shadow-sm');
+          filterServices();
+        });
+      });
+
+      if (searchInput) {
+        searchInput.addEventListener('input', filterServices);
+      }
+    });
+  </script>
+</div></main><footer class="w-full bg-surface-container-low pt-space-xl md:pt-space-xxl pb-space-xl"><div class="max-w-7xl mx-auto px-margin-mobile md:px-margin"><div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-lg md:gap-space-xl mb-space-xl md:mb-space-xxl"><div><div class="flex items-center gap-space-md mb-space-md"><img alt="Autopage Plumbing Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjP11_RK5nKXhIjjURYL8e97naKQR7hDmoSNZcNO2MezDJCxCaazgG1t0NJXGWFu68NEt3hkuAS91fE-1AbbjwLP077-QvvmTvSNq_VGwciM4U-9EZh-fahJ464ZQwQpChltlqbegTPLn3WtKNPVD4kuHa2ZUV0b8ej_iyWNWxpw0gI0P0V2I7h4EYuH8e1DM4fclhuHL3-IzqMy0QPAygR2teRK02WBADJGh_0n3bfwR8YR3jFDA"/><span class="font-headline-sm text-headline-sm text-primary font-bold">Autopage</span></div><p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md leading-relaxed">PIRB certified precision plumbing engineering and emergency mitigation. Delivering compliant residential, commercial, and industrial hydraulic systems throughout Gauteng since 2004.</p><div class="flex flex-wrap gap-space-xs"><span class="px-space-sm py-space-xs rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm uppercase tracking-wider">PIRB Registered</span><span class="px-space-sm py-space-xs rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm uppercase tracking-wider">IOPSA Certified</span><span class="px-space-sm py-space-xs rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm uppercase tracking-wider">SABS Approved</span></div></div><div><h4 class="font-headline-sm text-headline-sm text-primary mb-space-md">Quick Navigation</h4><ul class="space-y-space-sm"><li class="font-body-sm text-body-sm"><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="home" href="home.html">Corporate Profile &amp; Home</a></li><li class="font-body-sm text-body-sm"><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="services" href="services.html">Plumbing Engineering Services</a></li><li class="font-body-sm text-body-sm"><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="emergency-24-7" href="emergency.html">24/7 Rapid Emergency Dispatch</a></li><li class="font-body-sm text-body-sm"><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="about-us" href="about.html">Compliance &amp; Certifications</a></li><li class="font-body-sm text-body-sm"><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="contact-quote" href="contact_quote.html">Book Plumber / Instant Quote</a></li></ul></div><div><h4 class="font-headline-sm text-headline-sm text-primary mb-space-md">Gauteng Service Hubs</h4><p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Active tactical dispatch vehicles stationed within 15 minutes of:</p><div class="grid grid-cols-2 gap-y-space-xs font-body-sm text-body-sm text-on-surface-variant"><span>Sandton Central</span><span>Rosebank</span><span>Randburg</span><span>Bryanston</span><span>Fourways</span><span>Midrand</span><span>Bedfordview</span><span>Centurion</span></div></div><div><h4 class="font-headline-sm text-headline-sm text-primary mb-space-md">Emergency Dispatch HQ</h4><div class="space-y-space-sm font-body-sm text-body-sm text-on-surface-variant"><p class="flex items-start gap-space-sm"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0">call</span><span class="font-semibold text-on-surface">+27 11 884 9200 (Emergency)</span></p><p class="flex items-start gap-space-sm"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0">schedule</span><span>24 Hours / 7 Days / 365 Days Rapid Callout</span></p><p class="flex items-start gap-space-sm"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0">location_on</span><span>120 Katherine Street, Sandown, Sandton, Johannesburg, 2196</span></p><p class="flex items-start gap-space-sm"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0">mail</span><span class="break-all">dispatch@autopageplumbing.co.za</span></p></div></div></div><div class="pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md font-body-sm text-body-sm text-on-surface-variant text-center md:text-left"><p>© 2025 Autopage Plumbing (Pty) Ltd. PIRB Reg #54210. IOPSA Member #8841. All Rights Reserved.</p><div class="flex flex-wrap items-center justify-center gap-space-md md:gap-space-lg"><a class="hover:text-on-surface transition-colors" href="about.html">SANS 10252-1 Compliance</a><a class="hover:text-on-surface transition-colors" href="#">Privacy Policy</a><a class="hover:text-on-surface transition-colors" href="#">Terms of Service</a></div></div></div></footer>
+<!-- ============ FLOATING TOGGLE CONTACT (CALL / WHATSAPP) ============ -->
+<div class="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-[60] flex flex-col items-end gap-3" id="contactWidget">
+<!-- Expandable actions -->
+<div class="flex flex-col items-end gap-3 opacity-0 pointer-events-none transition-all duration-300 origin-bottom-right" id="contactMenu">
+<a class="flex items-center gap-3 pl-4 pr-5 py-3 rounded-full bg-[#25D366] text-white font-label-md text-label-md font-bold shadow-2xl hover:brightness-110 active:scale-95 transition-all whitespace-nowrap" href="https://wa.me/27118849200?text=Hi%20Autopage%20Plumbing%2C%20I%20need%20assistance%20with%20a%20plumbing%20issue." rel="noopener" target="_blank">
+<svg aria-hidden="true" class="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+<span>WhatsApp Us</span>
+</a>
+<a class="flex items-center gap-3 pl-4 pr-5 py-3 rounded-full bg-primary text-on-primary font-label-md text-label-md font-bold shadow-2xl hover:bg-primary-container active:scale-95 transition-all whitespace-nowrap" href="tel:+27118849200">
+<span class="material-symbols-outlined text-[20px] shrink-0" style="font-variation-settings: 'FILL' 1;">call</span>
+<span>Call 011 884 9200</span>
+</a>
+</div>
+<!-- Toggle button -->
+<button aria-controls="contactMenu" aria-expanded="false" aria-label="Toggle quick contact options" class="relative w-14 h-14 md:w-16 md:h-16 rounded-full bg-secondary text-on-secondary shadow-2xl flex items-center justify-center active:scale-95 transition-transform duration-200" id="contactToggle" type="button">
+<span class="material-symbols-outlined text-[26px] md:text-[28px] transition-transform duration-300" id="contactToggleIcon">chat</span>
+<span class="absolute -top-0.5 -right-0.5 w-4 h-4 rounded-full bg-tertiary-fixed-dim border-2 border-surface-container-lowest"></span>
+</button>
+</div>
+<!-- ============ PAGE SCRIPTS ============ -->
+<script>
+  /* ---------- Mobile Navigation Drawer ---------- */
+  (function () {
+    var btn = document.getElementById('mobileMenuBtn');
+    var icon = document.getElementById('mobileMenuIcon');
+    var menu = document.getElementById('mobileMenu');
+    if (!btn || !menu) return;
+
+    function setMenu(open) {
+      menu.classList.toggle('hidden', !open);
+      icon.textContent = open ? 'close' : 'menu';
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+
+    btn.addEventListener('click', function () {
+      setMenu(menu.classList.contains('hidden'));
+    });
+
+    menu.querySelectorAll('[data-mobile-link]').forEach(function (link) {
+      link.addEventListener('click', function () { setMenu(false); });
+    });
+
+    window.addEventListener('resize', function () {
+      if (window.innerWidth >= 1024) setMenu(false);
+    });
+  })();
+
+  /* ---------- Floating Call / WhatsApp Toggle ---------- */
+  (function () {
+    var toggle = document.getElementById('contactToggle');
+    var menu = document.getElementById('contactMenu');
+    var icon = document.getElementById('contactToggleIcon');
+    if (!toggle || !menu) return;
+
+    var open = false;
+
+    function setOpen(state) {
+      open = state;
+      menu.classList.toggle('fab-menu-open', open);
+      icon.textContent = open ? 'close' : 'chat';
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+
+    toggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      setOpen(!open);
+    });
+
+    menu.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () { setOpen(false); });
+    });
+
+    document.addEventListener('click', function (e) {
+      if (open && !menu.contains(e.target) && e.target !== toggle) setOpen(false);
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') setOpen(false);
+    });
+  })();
+</script>
+</body></html>
